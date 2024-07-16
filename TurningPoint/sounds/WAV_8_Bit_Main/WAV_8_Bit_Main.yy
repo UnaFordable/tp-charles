@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"WAV_8_Bit_Main",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":114.418594,
+  "name":"WAV_8_Bit_Main",
+  "parent":{
+    "name":"TurningPoint",
+    "path":"TurningPoint.yyp",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"WAV_8_Bit_Main.wav",
+  "type":0,
+  "volume":1.0,
+}

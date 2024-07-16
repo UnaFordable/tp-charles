@@ -1,0 +1,43 @@
+{
+  "$GMObject":"",
+  "%Name":"obj_mm_petsim",
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
+  "managed":true,
+  "name":"obj_mm_petsim",
+  "overriddenProperties":[
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_mm_buttton","path":"objects/obj_mm_buttton/obj_mm_buttton.yy",},"propertyId":{"name":"action","path":"objects/obj_mm_buttton/obj_mm_buttton.yy",},"resource":{"name":"rm_pet_sim","path":"rooms/rm_pet_sim/rm_pet_sim.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"rm_pet_sim",},
+  ],
+  "parent":{
+    "name":"Main Menu Buttons",
+    "path":"folders/Objects/Main Menu Buttons.yy",
+  },
+  "parentObjectId":{
+    "name":"obj_mm_buttton",
+    "path":"objects/obj_mm_buttton/obj_mm_buttton.yy",
+  },
+  "persistent":false,
+  "physicsAngularDamping":0.1,
+  "physicsDensity":0.5,
+  "physicsFriction":0.2,
+  "physicsGroup":1,
+  "physicsKinematic":false,
+  "physicsLinearDamping":0.1,
+  "physicsObject":false,
+  "physicsRestitution":0.1,
+  "physicsSensor":false,
+  "physicsShape":1,
+  "physicsShapePoints":[],
+  "physicsStartAwake":true,
+  "properties":[],
+  "resourceType":"GMObject",
+  "resourceVersion":"2.0",
+  "solid":false,
+  "spriteId":{
+    "name":"spr_mm_petsim",
+    "path":"sprites/spr_mm_petsim/spr_mm_petsim.yy",
+  },
+  "spriteMaskId":null,
+  "visible":true,
+}
