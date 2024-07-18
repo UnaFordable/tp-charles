@@ -239,7 +239,7 @@ function char_stats(){
 		level: 1,
 		exp_max: 20,
 		sprites: {idle: spr_baxter_idle, attack: spr_baxter_idle, dodge: spr_lusaka_hurt, knockout: spr_rip, defend: spr_baxter_idle},
-		actions: [global.action_library.punch,global.action_library.rub,global.action_library.run] 
+		actions: [global.action_library.punch,global.action_library.rub,global.action_library.run]
 	},*/{
 		name: "Donohue",
 		hp: 115,
