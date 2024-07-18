@@ -1,10 +1,10 @@
 {
   "$GMSprite":"",
-  "%Name":"lemur_color_copy",
+  "%Name":"DS_DSi___Pokemon_HeartGold_SoulSilver___Pokemon_4th_Generation",
   "bboxMode":0,
-  "bbox_bottom":2189,
+  "bbox_bottom":3510,
   "bbox_left":0,
-  "bbox_right":1765,
+  "bbox_right":3240,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -12,16 +12,16 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"518853f3-979f-4637-8d7a-474b62e8f12d","name":"518853f3-979f-4637-8d7a-474b62e8f12d","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"90f44d50-a784-41e1-9a8c-221bf3bb3f62","name":"90f44d50-a784-41e1-9a8c-221bf3bb3f62","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
-  "height":2190,
+  "height":3511,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"156516a4-f8e4-4c94-a3ac-510351bb2507","blendMode":0,"displayName":"default","isLocked":false,"name":"156516a4-f8e4-4c94-a3ac-510351bb2507","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"ce8eb06e-7bdd-41ae-9d07-6fb3686383b6","blendMode":0,"displayName":"default","isLocked":false,"name":"ce8eb06e-7bdd-41ae-9d07-6fb3686383b6","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
-  "name":"lemur_color_copy",
+  "name":"DS_DSi___Pokemon_HeartGold_SoulSilver___Pokemon_4th_Generation",
   "nineSlice":null,
   "origin":0,
   "parent":{
@@ -33,7 +33,7 @@
   "resourceVersion":"2.0",
   "sequence":{
     "$GMSequence":"",
-    "%Name":"lemur_color_copy",
+    "%Name":"DS_DSi___Pokemon_HeartGold_SoulSilver___Pokemon_4th_Generation",
     "autoRecord":true,
     "backdropHeight":768,
     "backdropImageOpacity":0.5,
@@ -57,7 +57,7 @@
       "resourceType":"KeyframeStore<MomentsEventKeyframe>",
       "resourceVersion":"2.0",
     },
-    "name":"lemur_color_copy",
+    "name":"DS_DSi___Pokemon_HeartGold_SoulSilver___Pokemon_4th_Generation",
     "playback":1,
     "playbackSpeed":30.0,
     "playbackSpeedType":0,
@@ -69,8 +69,8 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"518853f3-979f-4637-8d7a-474b62e8f12d","path":"sprites/lemur_color_copy/lemur_color_copy.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"d1443b3f-aa6c-4fb4-a723-88f32fd9eabd","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"90f44d50-a784-41e1-9a8c-221bf3bb3f62","path":"sprites/DS_DSi___Pokemon_HeartGold_SoulSilver___Pokemon_4th_Generation/DS_DSi___Pokemon_HeartGold_SoulSilver___Pokemon_4th_Generation.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"d5b1c70d-8f9b-4360-b8bf-7d633eacb847","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
@@ -86,5 +86,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":1766,
+  "width":3241,
 }
