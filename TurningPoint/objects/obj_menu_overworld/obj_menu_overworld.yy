@@ -9,8 +9,8 @@
   "name":"obj_menu_overworld",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"overworld menu",
+    "path":"folders/Objects/overworld menu.yy",
   },
   "parentObjectId":null,
   "persistent":false,
