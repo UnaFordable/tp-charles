@@ -225,7 +225,7 @@ function char_stats(){
 		spd: 2,
 		level: 1,
 		exp_max: 20,
-		sprites :{idle: spr_lyraka_idle_1, attack: spr_lyraka_idle_1, dodge: spr_lyraka_idle_1, knockout: spr_rip, defend: spr_lyraka_idle_1},
+		sprites :{walk: spr_lusaka_walk, idle: spr_lyraka_idle_1, attack: spr_lyraka_idle_1, dodge: spr_lyraka_idle_1, knockout: spr_rip, defend: spr_lyraka_idle_1},
 		actions: [global.action_library.punch, global.action_library.spin_attack, global.action_library.fart_attack, global.action_library.run]
 	},/*{
 		name: "Baxter",
@@ -238,7 +238,7 @@ function char_stats(){
 		spd: 3,
 		level: 1,
 		exp_max: 20,
-		sprites: {idle: spr_baxter_idle, attack: spr_baxter_idle, dodge: spr_lusaka_hurt, knockout: spr_rip, defend: spr_baxter_idle},
+		sprites: {walk: spr_baxter_walk, idle: spr_baxter_idle, attack: spr_baxter_idle, dodge: spr_lusaka_hurt, knockout: spr_rip, defend: spr_baxter_idle},
 		actions: [global.action_library.punch,global.action_library.rub,global.action_library.run]
 	},*/{
 		name: "Donohue",
@@ -251,7 +251,7 @@ function char_stats(){
 		spd: 2,
 		level: 1,
 		exp_max: 20,
-		sprites :{idle: spr_donohue_idle, attack: spr_donohue_idle, dodge: spr_donohue_idle, knockout: spr_rip, defend: spr_donohue_idle},
+		sprites :{walk: spr_baxter_walk, idle: spr_donohue_idle, attack: spr_donohue_idle, dodge: spr_donohue_idle, knockout: spr_rip, defend: spr_donohue_idle},
 		actions: [global.action_library.punch, global.action_library.manshot, global.action_library.run]
 	},{
 		name: "Shelly",
@@ -264,7 +264,7 @@ function char_stats(){
 		spd: 2,
 		level: 1,
 		exp_max: 20,
-		sprites :{idle: spr_shelly_idle, attack: spr_shelly_idle, dodge: spr_shelly_idle, knockout: spr_rip, defend: spr_shelly_idle},
+		sprites :{walk: spr_baxter_walk, idle: spr_shelly_idle, attack: spr_shelly_idle, dodge: spr_shelly_idle, knockout: spr_rip, defend: spr_shelly_idle},
 		actions: [global.action_library.punch, global.action_library.slime_spit, global.action_library.run]
 	}]
 

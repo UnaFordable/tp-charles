@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_LusakaWalk",
-    "path":"sprites/spr_LusakaWalk/spr_LusakaWalk.yy",
+    "name":"spr_lusaka_walk",
+    "path":"sprites/spr_lusaka_walk/spr_lusaka_walk.yy",
   },
   "spriteMaskId":null,
   "visible":true,

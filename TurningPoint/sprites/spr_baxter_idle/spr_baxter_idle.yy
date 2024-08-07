@@ -3,7 +3,7 @@
   "%Name":"spr_baxter_idle",
   "bboxMode":0,
   "bbox_bottom":63,
-  "bbox_left":10,
+  "bbox_left":17,
   "bbox_right":43,
   "bbox_top":12,
   "collisionKind":1,

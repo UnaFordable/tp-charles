@@ -7,6 +7,7 @@
   "overriddenProperties":[
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_bsm_button_1","path":"objects/obj_bsm_button_1/obj_bsm_button_1.yy",},"propertyId":{"name":"sprite","path":"objects/obj_bsm_button_1/obj_bsm_button_1.yy",},"resource":{"name":"spr_bsmtb_3","path":"sprites/spr_bsmtb_3/spr_bsmtb_3.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"spr_bsmtb_3",},
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_bsm_button_1","path":"objects/obj_bsm_button_1/obj_bsm_button_1.yy",},"propertyId":{"name":"new_state","path":"objects/obj_bsm_button_1/obj_bsm_button_1.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"MENU.PERKS",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_bsm_button_1","path":"objects/obj_bsm_button_1/obj_bsm_button_1.yy",},"propertyId":{"name":"button_text","path":"objects/obj_bsm_button_1/obj_bsm_button_1.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"PERKS",},
   ],
   "parent":{
     "name":"overworld menu",
