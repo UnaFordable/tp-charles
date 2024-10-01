@@ -215,19 +215,20 @@ function char_stats(){
 	
 	global.party = [
 	{
+		/*
 		name: "Lyraka",
-		hp: 112,
-		hp_max: 112,
+		hp: 20,
+		hp_max: 20,
 		ep: 2,
 		ep_max: 2,
-		attack: 8,
+		attack: 4,
 		defense: 2,
 		spd: 2,
 		level: 1,
 		exp_max: 20,
 		sprites :{walk: spr_lusaka_walk, idle: spr_lyraka_idle_1, attack: spr_lyraka_idle_1, dodge: spr_lyraka_idle_1, knockout: spr_rip, defend: spr_lyraka_idle_1},
 		actions: [global.action_library.punch, global.action_library.spin_attack, global.action_library.fart_attack, global.action_library.run]
-	},/*{
+	},{*/
 		name: "Baxter",
 		hp: 160,
 		hp_max: 160,
@@ -240,7 +241,7 @@ function char_stats(){
 		exp_max: 20,
 		sprites: {walk: spr_baxter_walk, idle: spr_baxter_idle, attack: spr_baxter_idle, dodge: spr_lusaka_hurt, knockout: spr_rip, defend: spr_baxter_idle},
 		actions: [global.action_library.punch,global.action_library.rub,global.action_library.run]
-	},*/{
+	},{
 		name: "Donohue",
 		hp: 115,
 		hp_max: 115,
@@ -253,7 +254,7 @@ function char_stats(){
 		exp_max: 20,
 		sprites :{walk: spr_baxter_walk, idle: spr_donohue_idle, attack: spr_donohue_idle, dodge: spr_donohue_idle, knockout: spr_rip, defend: spr_donohue_idle},
 		actions: [global.action_library.punch, global.action_library.manshot, global.action_library.run]
-	},{
+	}/*,{
 		name: "Shelly",
 		hp: 300,
 		hp_max: 300,
@@ -266,7 +267,7 @@ function char_stats(){
 		exp_max: 20,
 		sprites :{walk: spr_baxter_walk, idle: spr_shelly_idle, attack: spr_shelly_idle, dodge: spr_shelly_idle, knockout: spr_rip, defend: spr_shelly_idle},
 		actions: [global.action_library.punch, global.action_library.slime_spit, global.action_library.run]
-	}]
+	}*/]
 
 	global.enemies = {
 		#region Basic enemies
@@ -300,6 +301,24 @@ function char_stats(){
 			role: "BOSS",
 			sprites: {idle: spr_regulana_idle, defend: spr_regulana_idle},
 			actions: [global.action_library.heartburn],
+			xp_value:1,
+			AIscript: function(){
+				var _action = actions[0];
+				var _possible_targets = array_filter(obj_battle.party_units, function(_unit, _index){return(_unit.hp > 0);});
+				var _target = _possible_targets[irandom(array_length(_possible_targets)-1)];
+				return [_action, _target];
+			}
+		},
+		lyraka:{
+			name: "Lyraka",
+			hp: 80,
+			hp_max: 80,
+			attack: 10,
+			defense: 5,
+			spd: 2,
+			role: "BOSS",
+			sprites: {idle: spr_lyraka_idle, defend: spr_lyraka_idle_1},
+			actions: [global.action_library.punch],
 			xp_value:1,
 			AIscript: function(){
 				var _action = actions[0];

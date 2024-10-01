@@ -10,7 +10,7 @@ for(var _i = 0; _i < array_length(unit_render_order); _i++){
 }
 
 draw_sprite(spr_battle_background_ui, 0, global.cam_bottom_x, global.cam_bottom_y);
-
+draw_sprite(spr_film_background, film_frame, global.cam_top_x, global.cam_top_y);
 draw_sprite_stretched(spr_text_box, 0, global.cam_top_x, global.cam_top_y+16*9, 256, 16*3);
 /*
 draw_sprite_stretched(spr_text_box, 0, global.cam_bottom_x+16, global.cam_bottom_y+16, 32, 32);

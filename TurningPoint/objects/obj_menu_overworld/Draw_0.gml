@@ -13,8 +13,10 @@ switch(m_state){
 		background_img = 0;
 		for(var _i = 0; _i < array_length(global.party); _i ++){
 			var _ss = global.party[_i];
-			draw_text(global.cam_bottom_x,global.cam_bottom_y +(_i*40)+32, ss.name);
-			draw_text(global.cam_bottom_x,global.cam_bottom_y +(_i*40)+32, ss.name);
+			draw_text(global.cam_bottom_x + 45, global.cam_bottom_y +(_i*40)+32, _ss.name);
+			draw_text(global.cam_bottom_x + 128, global.cam_bottom_y +(_i*40)+32, "Lv: " + string(_ss.level));
+			draw_text(global.cam_bottom_x + 45, global.cam_bottom_y +(_i*40)+45, "Hp: " + string(_ss.hp)+"/"+string(_ss.hp_max));
+			if(_ss.name!="Shelly")draw_text(global.cam_bottom_x + 45, global.cam_bottom_y +(_i*40)+57, "NRG: " + string(_ss.ep) + "/" + string(_ss.ep_max));
 		}
 		break;
 	case MENU.ITEMS:

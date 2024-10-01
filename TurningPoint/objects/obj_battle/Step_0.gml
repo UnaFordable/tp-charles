@@ -2,6 +2,8 @@
 // You can write your code in this editor
 battle_state();
 
+if(film_frame <8){film_frame++;}else{film_frame =0;}
+
 if(cursor.active){
 	with(cursor){
 		var _key_up = keyboard_check_pressed(vk_up);

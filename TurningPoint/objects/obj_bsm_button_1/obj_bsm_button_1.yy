@@ -11,8 +11,8 @@
   "name":"obj_bsm_button_1",
   "overriddenProperties":[],
   "parent":{
-    "name":"overworld menu",
-    "path":"folders/Objects/overworld menu.yy",
+    "name":"bsm buttons",
+    "path":"folders/Objects/overworld menu/bsm buttons.yy",
   },
   "parentObjectId":null,
   "persistent":false,

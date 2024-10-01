@@ -1,5 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
+film_frame = 0;
+
 randomize();
 transition_prog = 0;
 surf_transition = surface_create(surface_get_width(application_surface),surface_get_height(application_surface));
@@ -10,6 +12,7 @@ units = [];
 turn = 0;
 unit_turn_order = [];
 unit_render_order = [];
+
 
 battle_text = "";
 battle_end_message = [];
@@ -271,7 +274,7 @@ function battle_state_ending(){
 	}
 }
 function battle_state_begin(){
-	battle_text = "I haven't felt this good in the past 20 years!";
+	battle_text = "Ka...";
 	transition_prog += 0.01;
 	if(transition_prog >= 1){
 		transition_prog = 1;

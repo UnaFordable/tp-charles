@@ -17,3 +17,4 @@ function four_direction_animate() {
 	}else animation_end = false;
 }
 
+action_button = keyboard_check_pressed(ord("Z"));

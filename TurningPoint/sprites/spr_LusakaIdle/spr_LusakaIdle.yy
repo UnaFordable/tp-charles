@@ -28,8 +28,8 @@
   "nineSlice":null,
   "origin":9,
   "parent":{
-    "name":"Player",
-    "path":"folders/Sprites/Main Heroes/Player.yy",
+    "name":"Lyraka",
+    "path":"folders/Sprites/Main Heroes/Lyraka.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

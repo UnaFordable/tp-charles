@@ -10,8 +10,8 @@
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_bsm_button_1","path":"objects/obj_bsm_button_1/obj_bsm_button_1.yy",},"propertyId":{"name":"button_text","path":"objects/obj_bsm_button_1/obj_bsm_button_1.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"PERKS",},
   ],
   "parent":{
-    "name":"overworld menu",
-    "path":"folders/Objects/overworld menu.yy",
+    "name":"bsm buttons",
+    "path":"folders/Objects/overworld menu/bsm buttons.yy",
   },
   "parentObjectId":{
     "name":"obj_bsm_button_1",
