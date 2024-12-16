@@ -55,7 +55,7 @@ function char_stats(){
 					obj_battle.escaped = true;
 				}
 				else{
-					obj_battle.battle_text = "Failed to escape!";
+					dialogue(DISPLAY.OVERHEAD,{text:"It didn't work...",name:""});
 				}
 			}
 		},

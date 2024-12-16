@@ -253,7 +253,7 @@ function battle_state_victor_check(){
 		dialogue(DISPLAY.OVERHEAD,{text:"No experenced gained.",name:""});
 		
 	}
-	
+
 	battle_state = _end_the_battle ? battle_state_ending : battle_state_turn_progression;
 }
 
@@ -286,6 +286,7 @@ function battle_state_ending(){
 	else
 	{
 	//	battle_text = battle_end_messages[battle_end_message_prog];
+		
 	}
 }
 function battle_state_begin(){
