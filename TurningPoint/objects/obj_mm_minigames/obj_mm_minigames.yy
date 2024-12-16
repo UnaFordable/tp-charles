@@ -1,19 +1,19 @@
 {
   "$GMObject":"",
   "%Name":"obj_mm_minigames",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "eventList":[],
   "managed":true,
   "name":"obj_mm_minigames",
-  "overriddenProperties":[],
+  "overriddenProperties":[
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_save_file_button","path":"objects/obj_save_file_button/obj_save_file_button.yy",},"propertyId":{"name":"file_num","path":"objects/obj_save_file_button/obj_save_file_button.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"3",},
+  ],
   "parent":{
     "name":"Main Menu Buttons",
     "path":"folders/Objects/Main Menu Buttons.yy",
   },
   "parentObjectId":{
-    "name":"obj_mm_buttton",
-    "path":"objects/obj_mm_buttton/obj_mm_buttton.yy",
+    "name":"obj_save_file_button",
+    "path":"objects/obj_save_file_button/obj_save_file_button.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

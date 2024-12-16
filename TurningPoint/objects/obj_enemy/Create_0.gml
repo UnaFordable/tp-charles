@@ -1,5 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-escape_delay = 0;
+line_length = 48;
+// Inherit the parent event
+event_inherited();
 
-dead = false;

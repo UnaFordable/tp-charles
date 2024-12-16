@@ -1,13 +1,15 @@
 /// @description Insert description here
 // You can write your code in this editor
-film_frame = 0;
 
 randomize();
+
 transition_prog = 0;
 surf_transition = surface_create(surface_get_width(application_surface),surface_get_height(application_surface));
 surface_copy(surf_transition,0,0,application_surface);
 instance_deactivate_all(true);
 
+//instance_create_depth(global.cam_top_x, global.cam_top_y+128,depth-11, obj_filmbackground, {angle: 0});
+//instance_create_depth(global.cam_top_x+256, global.cam_top_y+16,depth-11, obj_filmbackground, {angle: 180});
 units = [];
 turn = 0;
 unit_turn_order = [];
@@ -51,7 +53,7 @@ for (var _i = 0; _i < array_length(enemies); _i++){
 
 //Make party
 for (var _i = 0; _i < array_length(global.party); _i++){
-	party_units[_i]= instance_create_depth(global.cam_top_x+90-((_i mod 4)*25), global.cam_top_y+140-((_i mod 4)*15), depth-10, obj_battle_unit_pc, global.party[_i])
+	party_units[_i]= instance_create_depth(global.cam_top_x+40+((_i mod 4)*40), global.cam_top_y+148, depth-10, obj_battle_unit_pc, global.party[_i])
 	array_push(units, party_units[_i]);
 }
 
@@ -65,7 +67,7 @@ refresh_render_order = function(){
 refresh_render_order();
 
 function battle_state_select_action(){
-	if(!instance_exists(obj_menu)){
+	if(!instance_exists(obj_menu) and !instance_exists(obj_dialogue)){
 		var _unit = unit_turn_order[turn];
 		//Is the unit alive and able to act
 		if(instance_exists(_unit)) and (_unit.hp > 0){
@@ -148,7 +150,8 @@ function begin_action(_user, _action, _targets){
 	if(!is_array(current_targets)){
 		current_targets = [current_targets];
 	}
-	battle_text = string_ext(_action.description, [_user.name]);
+	//battle_text = string_ext(_action.description, [_user.name]);
+	dialogue(DISPLAY.OVERHEAD,{text: string_ext(_action.description, [_user.name]),name:""});
 	battle_wait_time_remaining = battle_wait_time_frames;
 	with(_user){
 		acting = true;
@@ -215,8 +218,11 @@ function battle_state_victor_check(){
 	{
 		_end_the_battle = true;
 		conclusion_type = 0;
-		battle_end_messages[0] = "All party members defeated!";
-		battle_end_messages[1] = "Game over...";
+		//battle_end_messages[0] = "All party members defeated!";
+		//battle_end_messages[1] = "Game over...";
+		dialogue(DISPLAY.OVERHEAD,{text: "All party members defeated!",name:""});
+		dialogue(DISPLAY.OVERHEAD,{text: "Game over...",name:""});
+		
 	}
 	else
 	{
@@ -225,12 +231,14 @@ function battle_state_victor_check(){
 		{
 			conclusion_type = 1;
 			_end_the_battle = true;
-			battle_end_messages[0] = "Victory!!";
+			//battle_end_messages[0] = "Victory!!";
+			dialogue(DISPLAY.OVERHEAD,{text: "Victory!",name:""});
 			for (var _i = 0; _i < array_length(enemy_units); _i++)
 			{
 				battle_xp_gained += enemy_units[_i].xp_value;
 			}
-			battle_end_messages[1] = string("Gained {0} experience points", battle_xp_gained);
+			//battle_end_messages[1] = string("Gained {0} experience points", battle_xp_gained);
+			dialogue(DISPLAY.OVERHEAD,{text: string("Gained {0} experience points", battle_xp_gained),name:""});
 		}
 	}
 	
@@ -239,8 +247,11 @@ function battle_state_victor_check(){
 	{
 		conclusion_type = 2;
 		_end_the_battle = true;
-		battle_end_messages[0] = "Escaped!"
-		battle_end_messages[1] = "No experience gained."
+		//battle_end_messages[0] = "Escaped!"
+		//battle_end_messages[1] = "No experience gained."
+		dialogue(DISPLAY.OVERHEAD,{text:"Escaped!",name:""});
+		dialogue(DISPLAY.OVERHEAD,{text:"No experenced gained.",name:""});
+		
 	}
 	
 	battle_state = _end_the_battle ? battle_state_ending : battle_state_turn_progression;
@@ -254,13 +265,17 @@ function battle_state_turn_progression(){
 		turn = 0;
 		round_count ++;
 	}
+	//Add EP to prepare next turn
+	if(unit_turn_order[turn].enemy == false) and (unit_turn_order[turn].id.ep < unit_turn_order[turn].id.ep_max){
+		unit_turn_order[turn].id.ep += 1;
+	}
 	battle_state = battle_state_select_action;
 }
 function battle_state_ending(){
 	if (keyboard_check_pressed(ord("Z"))){
 		battle_end_message_prog++;
 	}
-	if (battle_end_message_prog >= array_length(battle_end_messages))
+	if(!instance_exists(obj_dialogue))//if (battle_end_message_prog >= array_length(battle_end_messages))
 	{
 		transition_prog -= 0.01;
 		if (transition_prog <= 0.0)
@@ -270,14 +285,19 @@ function battle_state_ending(){
 	}
 	else
 	{
-		battle_text = battle_end_messages[battle_end_message_prog];
+	//	battle_text = battle_end_messages[battle_end_message_prog];
 	}
 }
 function battle_state_begin(){
-	battle_text = "Ka...";
+	//battle_text = "Ka...";
 	transition_prog += 0.01;
 	if(transition_prog >= 1){
 		transition_prog = 1;
+		dialogue(DISPLAY.OVERHEAD,{text:"Sea Snail Takeover!",name:"Shelly"});
+		dialogue(DISPLAY.OVERHEAD,{text:"HAHAHAHAHAHA AHH!",name:"Shelly"});
+		dialogue(DISPLAY.OVERHEAD,{text:"Step back before things get violent!",name:"Shelly"});
+		dialogue(DISPLAY.OVERHEAD,{text:"Get off Lyraka! You freaky snail!",name:"Baxter"});
+		dialogue(DISPLAY.OVERHEAD,{text:"This body is perfect! No one else can have it!",name:"Shelly"});
 		battle_state = battle_state_select_action;
 	}
 }

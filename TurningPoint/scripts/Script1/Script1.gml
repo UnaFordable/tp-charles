@@ -26,8 +26,8 @@ function char_stats(){
 			effect_sprite: spr_scratch,
 			effect_on_target: MODE.ALWAYS,
 			func: function(_user, _targets){
-				var _damage = ceil(4*(_user.attack)-(2*_targets[0].defense) + irandom_range(0,1));
-				battle_change_hp(_targets[0], -_damage, 0);
+				var _damage = ceil(2*(_user.attack)-1.5*(_targets[0].defense) + irandom_range(0,1));
+				battle_change_hp(_targets[0], -_damage+choose(0,1), 0);
 			}
 		},
 		roll: {},
@@ -95,31 +95,28 @@ function char_stats(){
 			}
 		},
 		#endregion
-		#region CAIRO MOVESET
+		#region BAXTER MOVESET
 		rub: {
-			name: "Rub",
+			name: "Heal Rub",
 			description: "{0} gives rubs!",
 			sub_menu: "Skills",
 			ep_cost: 1,
 			target_required: true,
 			target_enemy_by_default: false,
 			target_all: MODE.NEVER,
-			//user_animation: "attack",
-			//effect_sprite: spr_scratch,
-			//effect_on_target: MODE.ALWAYS,
 			func: function(_user, _targets){
-				var _heal = 20;
-				battle_change_hp(_targets[0], _heal, 1);
+				var _heal = ceil(1.5*_user.attack+irandom_range(1,4));
+				battle_change_hp(_targets[0], _heal);
 				_user.ep -= ep_cost;
 			}
 		},
 		#endregion
-		#region NAIROBI MOVESET
+		#region DONOHUE MOVESET
 		manshot: {
-			name: "Manshot",
-			description: "{0} shoots with its gun!",
+			name: "Wing Whip",
+			description: "{0} whips its wing!",
 			sub_menu: "Skills",
-			ep_cost: 1,
+			ep_cost: 2,
 			target_required: true,
 			target_enemy_by_default: true,
 			target_all: MODE.NEVER,
@@ -127,7 +124,7 @@ function char_stats(){
 			effect_sprite: spr_scratch,
 			effect_on_target: MODE.ALWAYS,
 			func: function(_user, _targets){
-				var _damage = ceil(4*(_user.attack)-(2*_targets[0].defense) + irandom_range(0,1));
+				var _damage = ceil(2.5*(_user.attack)-(1.5*_targets[0].defense));
 				battle_change_hp(_targets[0], -_damage, 0);
 				_user.ep -= ep_cost;
 			}
@@ -212,7 +209,7 @@ function char_stats(){
 		}
 		#endregion
 	};
-	
+	#region MAIN PARTY
 	global.party = [
 	{
 		/*
@@ -221,38 +218,42 @@ function char_stats(){
 		hp_max: 20,
 		ep: 2,
 		ep_max: 2,
-		attack: 4,
+		attack: 2,
 		defense: 2,
+
 		spd: 2,
 		level: 1,
+		experience : 0,
 		exp_max: 20,
-		sprites :{walk: spr_lusaka_walk, idle: spr_lyraka_idle_1, attack: spr_lyraka_idle_1, dodge: spr_lyraka_idle_1, knockout: spr_rip, defend: spr_lyraka_idle_1},
+		sprites :{walk: spr_lusaka_walk, idle: spr_Lyraka_bat_bak, attack: spr_lyraka_idle_1, dodge: spr_lyraka_idle_1, knockout: spr_rip, defend: spr_lyraka_idle_1},
 		actions: [global.action_library.punch, global.action_library.spin_attack, global.action_library.fart_attack, global.action_library.run]
 	},{*/
 		name: "Baxter",
-		hp: 160,
-		hp_max: 160,
-		ep: 3,
-		ep_max: 3,
-		attack: 6,
-		defense: 6,
+		hp: 29,
+		hp_max: 29,
+		ep: 6,
+		ep_max: 6,
+		attack: 5,
+		defense: 4,
 		spd: 3,
-		level: 1,
+		level: 12,
+		experience: 0,
 		exp_max: 20,
-		sprites: {walk: spr_baxter_walk, idle: spr_baxter_idle, attack: spr_baxter_idle, dodge: spr_lusaka_hurt, knockout: spr_rip, defend: spr_baxter_idle},
+		sprites: {walk: spr_baxter_walk, idle: spr_bax_bat_bak, attack: spr_baxter_idle, dodge: spr_lusaka_hurt, knockout: spr_rip, defend: spr_baxter_idle},
 		actions: [global.action_library.punch,global.action_library.rub,global.action_library.run]
 	},{
 		name: "Donohue",
-		hp: 115,
-		hp_max: 115,
-		ep: 2,
-		ep_max: 2,
+		hp: 34,
+		hp_max: 34,
+		ep: 6,
+		ep_max: 6,
 		attack: 8,
 		defense: 2,
 		spd: 2,
-		level: 1,
+		level: 27,
+		experience: 0,
 		exp_max: 20,
-		sprites :{walk: spr_baxter_walk, idle: spr_donohue_idle, attack: spr_donohue_idle, dodge: spr_donohue_idle, knockout: spr_rip, defend: spr_donohue_idle},
+		sprites :{walk: spr_baxter_walk, idle: spr_Dono_bat_back, attack: spr_donohue_idle, dodge: spr_donohue_idle, knockout: spr_rip, defend: spr_donohue_idle},
 		actions: [global.action_library.punch, global.action_library.manshot, global.action_library.run]
 	}/*,{
 		name: "Shelly",
@@ -265,21 +266,58 @@ function char_stats(){
 		spd: 2,
 		level: 1,
 		exp_max: 20,
-		sprites :{walk: spr_baxter_walk, idle: spr_shelly_idle, attack: spr_shelly_idle, dodge: spr_shelly_idle, knockout: spr_rip, defend: spr_shelly_idle},
+		sprites :{walk: spr_baxter_walk, idle: spr_shel_bat_bak, attack: spr_shelly_idle, dodge: spr_shelly_idle, knockout: spr_rip, defend: spr_shelly_idle},
 		actions: [global.action_library.punch, global.action_library.slime_spit, global.action_library.run]
 	}*/]
-
+#endregion
+	#region ALL EMEMIES
 	global.enemies = {
 		#region Basic enemies
 		buck_o:{
 			name: "Buck O'",
-			hp: 20,
-			hp_max: 20,
-			attack: 6,
-			defense: 6,
+			hp: 12,
+			hp_max: 12,
+			attack: 4,
+			defense: 1,
 			spd: 2,
 			role: "COMMON",
 			sprites: {idle: spr_buck_o_idle, defend: spr_buck_o_idle},
+			actions: [global.action_library.punch],
+			xp_value:1,
+			AIscript: function(){
+				var _action = actions[0];
+				var _possible_targets = array_filter(obj_battle.party_units, function(_unit, _index){return(_unit.hp > 0);});
+				var _target = _possible_targets[irandom(array_length(_possible_targets)-1)];
+				return [_action, _target];
+			}
+		},
+		buck_o:{
+			name: "Buck E'",
+			hp: 12,
+			hp_max: 12,
+			attack: 1,
+			defense: 1,
+			spd: 2,
+			role: "COMMON",
+			sprites: {idle: spr_buck_e_idle, defend: spr_buck_e_idle},
+			actions: [global.action_library.punch],
+			xp_value:1,
+			AIscript: function(){
+				var _action = actions[0];
+				var _possible_targets = array_filter(obj_battle.party_units, function(_unit, _index){return(_unit.hp > 0);});
+				var _target = _possible_targets[irandom(array_length(_possible_targets)-1)];
+				return [_action, _target];
+			}
+		},
+		buck_o:{
+			name: "Buck L'",
+			hp: 12,
+			hp_max: 12,
+			attack: 3,
+			defense: 1,
+			spd: 2,
+			role: "COMMON",
+			sprites: {idle: spr_buck_r_idle, defend: spr_buck_r_idle},
 			actions: [global.action_library.punch],
 			xp_value:1,
 			AIscript: function(){
@@ -309,15 +347,15 @@ function char_stats(){
 				return [_action, _target];
 			}
 		},
-		lyraka:{
-			name: "Lyraka",
+		possessed_lyraka:{
+			name: "Possesed Lyraka",
 			hp: 80,
 			hp_max: 80,
-			attack: 10,
-			defense: 5,
+			attack: 6,
+			defense: 3,
 			spd: 2,
 			role: "BOSS",
-			sprites: {idle: spr_lyraka_idle, defend: spr_lyraka_idle_1},
+			sprites: {idle: spr_possessedlyraka},
 			actions: [global.action_library.punch],
 			xp_value:1,
 			AIscript: function(){
@@ -328,8 +366,8 @@ function char_stats(){
 			}
 		}
 		#endregion
-		
 	}
+	#endregion
 	global.inventory = [
 	[global.action_library.tulip, 4],
 	[global.action_library.milk, 1],

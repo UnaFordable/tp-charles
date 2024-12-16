@@ -12,10 +12,7 @@
     "name":"Main Menu Buttons",
     "path":"folders/Objects/Main Menu Buttons.yy",
   },
-  "parentObjectId":{
-    "name":"obj_mm_buttton",
-    "path":"objects/obj_mm_buttton/obj_mm_buttton.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

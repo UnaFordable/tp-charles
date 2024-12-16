@@ -3,6 +3,17 @@
 spd_walk = 2;
 anim_index = 0;
 
+_savedface_x = 0;
+_savedface_y = 0;
+
+key_left = keyboard_check(vk_left);
+key_right = keyboard_check(vk_right);
+key_up = keyboard_check(vk_up);
+key_down = keyboard_check(vk_down);
+
+key_action = keyboard_check_pressed(ord("Z"));
+key_back = keyboard_check_pressed(ord("X"));
+
 function four_direction_animate() {
 	//Update Sprite
 	var _anim_length = sprite_get_number(sprite_index) / 4;
@@ -17,4 +28,3 @@ function four_direction_animate() {
 	}else animation_end = false;
 }
 
-action_button = keyboard_check_pressed(ord("Z"));

@@ -2,7 +2,7 @@
   "$GMSprite":"",
   "%Name":"spr_film_background",
   "bboxMode":0,
-  "bbox_bottom":95,
+  "bbox_bottom":63,
   "bbox_left":0,
   "bbox_right":255,
   "bbox_top":0,
@@ -23,7 +23,7 @@
   ],
   "gridX":0,
   "gridY":0,
-  "height":96,
+  "height":64,
   "HTile":false,
   "layers":[
     {"$GMImageLayer":"","%Name":"7548260b-de4d-4ae2-a9ed-9b8b55293df7","blendMode":0,"displayName":"default","isLocked":false,"name":"7548260b-de4d-4ae2-a9ed-9b8b55293df7","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},

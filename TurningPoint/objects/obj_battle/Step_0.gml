@@ -2,7 +2,6 @@
 // You can write your code in this editor
 battle_state();
 
-if(film_frame <8){film_frame++;}else{film_frame =0;}
 
 if(cursor.active){
 	with(cursor){
@@ -20,8 +19,8 @@ if(cursor.active){
 			_key_toggle = keyboard_check_pressed(vk_shift);
 		}
 		var _move_h = _key_right-_key_left;
-		var _move_v = _key_down-_key_up;
-		switch(_move_h){
+		var _move_v = _key_up-_key_down;
+		switch(_move_v){
 			case -1:
 				target_side = obj_battle.party_units;
 				break;
@@ -35,7 +34,7 @@ if(cursor.active){
 		}
 	
 		if(target_all == 0){
-			switch(_move_v){
+			switch(_move_h){
 				case -1:
 					target_index--;
 					break;

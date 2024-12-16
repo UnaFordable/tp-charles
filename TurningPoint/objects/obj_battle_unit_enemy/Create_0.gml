@@ -4,4 +4,4 @@ event_inherited();
 acting = false;
 sprite_index = sprites.idle;
 enemy = true;
-image_xscale = -1;
+image_xscale = 1;
