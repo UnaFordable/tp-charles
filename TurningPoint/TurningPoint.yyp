@@ -172,6 +172,7 @@
     {"id":{"name":"spr_film_background","path":"sprites/spr_film_background/spr_film_background.yy",},},
     {"id":{"name":"spr_grasstile","path":"sprites/spr_grasstile/spr_grasstile.yy",},},
     {"id":{"name":"spr_healmove","path":"sprites/spr_healmove/spr_healmove.yy",},},
+    {"id":{"name":"spr_ICON","path":"sprites/spr_ICON/spr_ICON.yy",},},
     {"id":{"name":"spr_lightAttack","path":"sprites/spr_lightAttack/spr_lightAttack.yy",},},
     {"id":{"name":"spr_lock_silver","path":"sprites/spr_lock_silver/spr_lock_silver.yy",},},
     {"id":{"name":"spr_lusaka_attack","path":"sprites/spr_lusaka_attack/spr_lusaka_attack.yy",},},

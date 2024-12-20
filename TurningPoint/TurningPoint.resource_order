@@ -58,6 +58,7 @@
     {"name":"spr_film_background_s","order":4,"path":"sprites/spr_film_background_s/spr_film_background_s.yy",},
     {"name":"spr_film_background","order":3,"path":"sprites/spr_film_background/spr_film_background.yy",},
     {"name":"spr_healmove","order":7,"path":"sprites/spr_healmove/spr_healmove.yy",},
+    {"name":"spr_ICON","order":30,"path":"sprites/spr_ICON/spr_ICON.yy",},
     {"name":"spr_lightAttack","order":4,"path":"sprites/spr_lightAttack/spr_lightAttack.yy",},
     {"name":"spr_lusaka_attack","order":4,"path":"sprites/spr_lusaka_attack/spr_lusaka_attack.yy",},
     {"name":"spr_lusaka_walk","order":5,"path":"sprites/spr_lusaka_walk/spr_lusaka_walk.yy",},
