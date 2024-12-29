@@ -70,7 +70,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.8.1.171",
+    "IDEVersion":"2024.11.0.179",
   },
   "name":"TurningPoint",
   "resources":[
@@ -122,6 +122,7 @@
     {"id":{"name":"rm_brig","path":"rooms/rm_brig/rm_brig.yy",},},
     {"id":{"name":"rm_cowbage_pasture","path":"rooms/rm_cowbage_pasture/rm_cowbage_pasture.yy",},},
     {"id":{"name":"rm_init","path":"rooms/rm_init/rm_init.yy",},},
+    {"id":{"name":"rm_main_menu","path":"rooms/rm_main_menu/rm_main_menu.yy",},},
     {"id":{"name":"rm_minigame_hub","path":"rooms/rm_minigame_hub/rm_minigame_hub.yy",},},
     {"id":{"name":"rm_minigame_rules","path":"rooms/rm_minigame_rules/rm_minigame_rules.yy",},},
     {"id":{"name":"rm_pet_sim","path":"rooms/rm_pet_sim/rm_pet_sim.yy",},},
@@ -135,6 +136,10 @@
     {"id":{"name":"fireSequence","path":"sequences/fireSequence/fireSequence.yy",},},
     {"id":{"name":"sqn_codic","path":"sequences/sqn_codic/sqn_codic.yy",},},
     {"id":{"name":"sqn_mmtitle","path":"sequences/sqn_mmtitle/sqn_mmtitle.yy",},},
+    {"id":{"name":"_065___Victorious__","path":"sounds/_065___Victorious__/_065___Victorious__.yy",},},
+    {"id":{"name":"_1_24__Tough_Enemy__vs__Boss____King_Dedede_s_Theme__from_Kirby_s_Dream_Land_","path":"sounds/_1_24__Tough_Enemy__vs__Boss____King_Dedede_s_Theme__from_Kirby_s_Dream_Land_/_1_24__Tough_Enemy__vs__Boss____King_Dedede_s_Theme__from_Kirby_s_Dream_Land_.yy",},},
+    {"id":{"name":"_17__Snowfall","path":"sounds/_17__Snowfall/_17__Snowfall.yy",},},
+    {"id":{"name":"_57__Green_Grounds","path":"sounds/_57__Green_Grounds/_57__Green_Grounds.yy",},},
     {"id":{"name":"snd_beep","path":"sounds/snd_beep/snd_beep.yy",},},
     {"id":{"name":"snd_select","path":"sounds/snd_select/snd_select.yy",},},
     {"id":{"name":"WAV_8_Bit_Main","path":"sounds/WAV_8_Bit_Main/WAV_8_Bit_Main.yy",},},
@@ -239,6 +244,7 @@
     {"roomId":{"name":"rm_cowbage_pasture","path":"rooms/rm_cowbage_pasture/rm_cowbage_pasture.yy",},},
     {"roomId":{"name":"rm_pet_sim","path":"rooms/rm_pet_sim/rm_pet_sim.yy",},},
     {"roomId":{"name":"rm_brig","path":"rooms/rm_brig/rm_brig.yy",},},
+    {"roomId":{"name":"rm_main_menu","path":"rooms/rm_main_menu/rm_main_menu.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

@@ -10,7 +10,7 @@ if(display_delay < 0){
 		else{
 			all_text_displayed = false;
 			if(pendingnum = 0){
-				
+				audio_stop_sound(_17__Snowfall);
 				with(obj_tween){
 					instance_destroy();
 				}

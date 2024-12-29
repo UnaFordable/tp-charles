@@ -1,10 +1,12 @@
 /// @description Insert description here
 // You can write your code in this 
+audio_stop_all();
 switch(room){
 	case rm_minigame_hub:
 		
 		break;
-	case rm_init:
+	case rm_main_menu:
+		audio_play_sound(_57__Green_Grounds,1,false)
 		instance_create_depth(global.cam_top_x, global.cam_top_y+176,-257, obj_filmbackground, {angle: 0, size: spr_film_background_s});
 		instance_create_depth(global.cam_top_x+256, global.cam_top_y+16,-257, obj_filmbackground, {angle: 180, size: spr_film_background_s});
 		break;

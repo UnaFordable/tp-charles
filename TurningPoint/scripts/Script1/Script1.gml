@@ -48,7 +48,7 @@ function char_stats(){
 		run: {
 			name:"Run",
 			description: "Ran away",
-			sub_menu: -1,
+			sub_menu: "Skills",
 			target_required: false,
 			func: function(){
 				if (random(1) < 0.8){
@@ -240,7 +240,7 @@ function char_stats(){
 		experience: 0,
 		exp_max: 20,
 		sprites: {walk: spr_baxter_walk, idle: spr_bax_bat_bak, attack: spr_baxter_idle, dodge: spr_lusaka_hurt, knockout: spr_rip, defend: spr_baxter_idle},
-		actions: [global.action_library.punch,global.action_library.rub,global.action_library.run]
+		actions: [global.action_library.punch, global.action_library.rub, global.action_library.run]
 	},{
 		name: "Donohue",
 		hp: 34,
@@ -254,7 +254,7 @@ function char_stats(){
 		experience: 0,
 		exp_max: 20,
 		sprites :{walk: spr_baxter_walk, idle: spr_Dono_bat_back, attack: spr_donohue_idle, dodge: spr_donohue_idle, knockout: spr_rip, defend: spr_donohue_idle},
-		actions: [global.action_library.punch, global.action_library.manshot, global.action_library.run]
+		actions: [global.action_library.punch, global.action_library.manshot]
 	}/*,{
 		name: "Shelly",
 		hp: 300,

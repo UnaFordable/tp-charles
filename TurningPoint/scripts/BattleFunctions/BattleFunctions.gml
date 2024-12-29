@@ -1,6 +1,7 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function new_encounter(_enemies, _bg){
+	audio_play_sound(_1_24__Tough_Enemy__vs__Boss____King_Dedede_s_Theme__from_Kirby_s_Dream_Land_, 1, true);
 	instance_create_depth(global.cam_top_x, global.cam_top_y, -9999, obj_battle, {enemies: _enemies, creator: id, battle_background: _bg});
 }
 

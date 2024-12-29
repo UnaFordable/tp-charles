@@ -229,6 +229,8 @@ function battle_state_victor_check(){
 		//Win check
 		if (_no_enemies_alive)
 		{
+			audio_stop_all();
+			audio_play_sound(_065___Victorious__, 1, false);
 			conclusion_type = 1;
 			_end_the_battle = true;
 			//battle_end_messages[0] = "Victory!!";
@@ -281,6 +283,7 @@ function battle_state_ending(){
 		if (transition_prog <= 0.0)
 		{
 			instance_destroy();
+			audio_stop_all();
 		}
 	}
 	else
