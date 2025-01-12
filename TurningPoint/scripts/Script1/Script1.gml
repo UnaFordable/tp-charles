@@ -212,7 +212,7 @@ function char_stats(){
 	#region MAIN PARTY
 	global.party = [
 	{
-		/*
+		
 		name: "Lyraka",
 		hp: 20,
 		hp_max: 20,
@@ -220,14 +220,14 @@ function char_stats(){
 		ep_max: 2,
 		attack: 2,
 		defense: 2,
-
+		special: 10,
 		spd: 2,
 		level: 1,
 		experience : 0,
 		exp_max: 20,
-		sprites :{walk: spr_lusaka_walk, idle: spr_Lyraka_bat_bak, attack: spr_lyraka_idle_1, dodge: spr_lyraka_idle_1, knockout: spr_rip, defend: spr_lyraka_idle_1},
+		sprites :{walk: spr_lusaka_walk, idle: spr_Lyraka_bat_bak, knockout: spr_rip},
 		actions: [global.action_library.punch, global.action_library.spin_attack, global.action_library.fart_attack, global.action_library.run]
-	},{*/
+	},{
 		name: "Baxter",
 		hp: 29,
 		hp_max: 29,
@@ -235,11 +235,12 @@ function char_stats(){
 		ep_max: 6,
 		attack: 5,
 		defense: 4,
+		special: 5,
 		spd: 3,
 		level: 12,
 		experience: 0,
 		exp_max: 20,
-		sprites: {walk: spr_baxter_walk, idle: spr_bax_bat_bak, attack: spr_baxter_idle, dodge: spr_lusaka_hurt, knockout: spr_rip, defend: spr_baxter_idle},
+		sprites: {walk: spr_baxter_walk, idle: spr_bax_bat_bak, knockout: spr_rip},
 		actions: [global.action_library.punch, global.action_library.rub, global.action_library.run]
 	},{
 		name: "Donohue",
@@ -249,13 +250,14 @@ function char_stats(){
 		ep_max: 6,
 		attack: 8,
 		defense: 2,
+		special: 5,
 		spd: 2,
 		level: 27,
 		experience: 0,
 		exp_max: 20,
 		sprites :{walk: spr_baxter_walk, idle: spr_Dono_bat_back, attack: spr_donohue_idle, dodge: spr_donohue_idle, knockout: spr_rip, defend: spr_donohue_idle},
 		actions: [global.action_library.punch, global.action_library.manshot]
-	}/*,{
+	},{
 		name: "Shelly",
 		hp: 300,
 		hp_max: 300,
@@ -263,12 +265,13 @@ function char_stats(){
 		ep_max: 0,
 		attack: 8,
 		defense: 2,
+		special: 20,
 		spd: 2,
 		level: 1,
 		exp_max: 20,
 		sprites :{walk: spr_baxter_walk, idle: spr_shel_bat_bak, attack: spr_shelly_idle, dodge: spr_shelly_idle, knockout: spr_rip, defend: spr_shelly_idle},
 		actions: [global.action_library.punch, global.action_library.slime_spit, global.action_library.run]
-	}*/]
+	}]
 #endregion
 	#region ALL EMEMIES
 	global.enemies = {
