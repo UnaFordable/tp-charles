@@ -133,6 +133,7 @@
     {"id":{"name":"Filters","path":"scripts/Filters/Filters.yy",},},
     {"id":{"name":"MenuFunctions","path":"scripts/MenuFunctions/MenuFunctions.yy",},},
     {"id":{"name":"Script1","path":"scripts/Script1/Script1.yy",},},
+    {"id":{"name":"text_display","path":"scripts/text_display/text_display.yy",},},
     {"id":{"name":"Vertecies","path":"scripts/Vertecies/Vertecies.yy",},},
     {"id":{"name":"fireSequence","path":"sequences/fireSequence/fireSequence.yy",},},
     {"id":{"name":"sqn_codic","path":"sequences/sqn_codic/sqn_codic.yy",},},

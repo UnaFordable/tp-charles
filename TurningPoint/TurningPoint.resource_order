@@ -33,6 +33,7 @@
     {"name":"obj_tween","order":2,"path":"objects/obj_tween/obj_tween.yy",},
     {"name":"rm_brig","order":1,"path":"rooms/rm_brig/rm_brig.yy",},
     {"name":"rm_main_menu","order":2,"path":"rooms/rm_main_menu/rm_main_menu.yy",},
+    {"name":"text_display","order":1,"path":"scripts/text_display/text_display.yy",},
     {"name":"sqn_codic","order":1,"path":"sequences/sqn_codic/sqn_codic.yy",},
     {"name":"sqn_mmtitle","order":2,"path":"sequences/sqn_mmtitle/sqn_mmtitle.yy",},
     {"name":"_065___Victorious__","order":5,"path":"sounds/_065___Victorious__/_065___Victorious__.yy",},

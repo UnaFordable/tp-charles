@@ -268,6 +268,7 @@ function char_stats(){
 		special: 20,
 		spd: 2,
 		level: 1,
+		experience: 0,
 		exp_max: 20,
 		sprites :{walk: spr_baxter_walk, idle: spr_shel_bat_bak, attack: spr_shelly_idle, dodge: spr_shelly_idle, knockout: spr_rip, defend: spr_shelly_idle},
 		actions: [global.action_library.punch, global.action_library.slime_spit, global.action_library.run]

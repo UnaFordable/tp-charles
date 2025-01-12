@@ -4,29 +4,42 @@ draw_sprite(spr_bsm_background, background_img, global.cam_bottom_x, global.cam_
 
 draw_set_font(fnt_ds);
 draw_set_valign(fa_top);
-draw_set_halign(fa_left)
+draw_set_halign(fa_left);
 switch(m_state){
 	case MENU.STATS:
 		background_img = 0;
 		var _ss = global.party[m_character_selected];
-		draw_text(global.cam_bottom_x + 40, global.cam_bottom_y + 40, _ss.name);
-		draw_text(global.cam_bottom_x + 48, global.cam_bottom_y +(48)+16, "Level: " + string(_ss.level));
-		draw_text(global.cam_bottom_x + 48, global.cam_bottom_y +(48)+32, "Attack: " + string(_ss.attack));
-		draw_text(global.cam_bottom_x + 48, global.cam_bottom_y +(48)+48, "Defense: " + string(_ss.defense));
-		draw_text(global.cam_bottom_x + 48, global.cam_bottom_y +(48)+64, "Special: " + string(_ss.special));
-		draw_text(global.cam_bottom_x + 48, global.cam_bottom_y +(48)+80, "Speed: " + string(_ss.spd));
-		draw_text(global.cam_bottom_x + 48, global.cam_bottom_y +(48)+96, "EXP: " + string(_ss.spd));
-		draw_text(global.cam_bottom_x + 48, global.cam_bottom_y +(48)+112, "Next Level: " + string(_ss.spd));
-		
-		draw_text(global.cam_bottom_x + 144, global.cam_bottom_y +(48)+16, "Hp:" + string(_ss.hp)+"/"+string(_ss.hp_max));
-		if(_ss.name!="Shelly")draw_text(global.cam_bottom_x + 144, global.cam_bottom_y +(48)+32, "NRG:" + string(_ss.ep) + "/" + string(_ss.ep_max));
-		
+		text_display(1,global.cam_bottom_x + 40, global.cam_bottom_y + 40, _ss.name);
+		draw_set_halign(fa_left);
+		text_display(1,global.cam_bottom_x + 40, global.cam_bottom_y +(48)+16, "Level:");
+		text_display(1,global.cam_bottom_x + 40, global.cam_bottom_y +(48)+32, "Attack:");
+		text_display(1,global.cam_bottom_x + 40, global.cam_bottom_y +(48)+48, "Defense:");
+		text_display(1,global.cam_bottom_x + 40, global.cam_bottom_y +(48)+64, "Special:");
+		text_display(1,global.cam_bottom_x + 40, global.cam_bottom_y +(48)+80, "Speed:");
+		text_display(1,global.cam_bottom_x + 40, global.cam_bottom_y +(48)+96, "EXP:");
+		text_display(1,global.cam_bottom_x + 40, global.cam_bottom_y +(48)+112, "Next Level:");
+		draw_set_halign(fa_right);
+		text_display(2,global.cam_bottom_x + 135, global.cam_bottom_y +(48)+16, string(_ss.level));
+		text_display(2,global.cam_bottom_x + 135, global.cam_bottom_y +(48)+32, string(_ss.attack));
+		text_display(2,global.cam_bottom_x + 135, global.cam_bottom_y +(48)+48, string(_ss.defense));
+		text_display(2,global.cam_bottom_x + 135, global.cam_bottom_y +(48)+64, string(_ss.special));
+		text_display(2,global.cam_bottom_x + 135, global.cam_bottom_y +(48)+80, string(_ss.spd));
+		text_display(2,global.cam_bottom_x + 135, global.cam_bottom_y +(48)+96, string(_ss.experience));
+		text_display(2,global.cam_bottom_x + 135, global.cam_bottom_y +(48)+112, string(_ss.exp_max));
+		draw_set_halign(fa_left);
+		text_display(1,global.cam_bottom_x + 152, global.cam_bottom_y +(48)+16, "Hp: ");
+		if(_ss.name!="Shelly")text_display(1,global.cam_bottom_x + 152, global.cam_bottom_y +(48)+32, "NRG:");
+		draw_set_halign(fa_right);
+		text_display(2,global.cam_bottom_x + 247, global.cam_bottom_y +(48)+16,string(_ss.hp)+"/"+string(_ss.hp_max));
+		if(_ss.name!="Shelly")text_display(2,global.cam_bottom_x + 247, global.cam_bottom_y +(48)+32, string(_ss.ep) + "/" + string(_ss.ep_max));
 		break;
 	case MENU.ITEMS:
 		background_img = 1;
 		for(var _i = 0; _i < array_length(global.inventory); _i++){
-			draw_text(global.cam_bottom_x + 48, global.cam_bottom_y +48 +(_i*16), string(global.inventory[_i][0].name)+" "+string(global.inventory[_i][1]));
-			//draw_text(global.cam_bottom_x + 48, global.cam_bottom_y +48 +(_i*16), );
+			draw_set_halign(fa_left);
+			text_display(1,global.cam_bottom_x + 40, global.cam_bottom_y +48 +(_i*16), string(global.inventory[_i][0].name));
+			draw_set_halign(fa_right);
+			text_display(2,global.cam_bottom_x + 135, global.cam_bottom_y +48 +(_i*16), string(global.inventory[_i][1]));
 		}
 		break;
 	case MENU.PERKS:
