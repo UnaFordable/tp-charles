@@ -91,7 +91,6 @@
     {"name":"spr_title_button","order":11,"path":"sprites/spr_title_button/spr_title_button.yy",},
     {"name":"spr_transition","order":5,"path":"sprites/spr_transition/spr_transition.yy",},
     {"name":"Sprite23","order":1,"path":"sprites/Sprite23/Sprite23.yy",},
-    {"name":"Sprite85","order":1,"path":"sprites/Sprite85/Sprite85.yy",},
     {"name":"Sprite90","order":1,"path":"sprites/Sprite90/Sprite90.yy",},
     {"name":"tpCodices","order":22,"path":"sprites/tpCodices/tpCodices.yy",},
     {"name":"TileSet3","order":1,"path":"tilesets/TileSet3/TileSet3.yy",},

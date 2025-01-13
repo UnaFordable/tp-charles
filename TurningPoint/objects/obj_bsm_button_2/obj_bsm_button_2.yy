@@ -17,7 +17,7 @@
     "name":"obj_bsm_button_1",
     "path":"objects/obj_bsm_button_1/obj_bsm_button_1.yy",
   },
-  "persistent":false,
+  "persistent":true,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
   "physicsFriction":0.2,
