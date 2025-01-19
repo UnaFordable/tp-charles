@@ -229,18 +229,22 @@ function battle_state_victor_check(){
 		//Win check
 		if (_no_enemies_alive)
 		{
-			audio_stop_all();
-			audio_play_sound(_065___Victorious__, 1, false);
+			
 			conclusion_type = 1;
 			_end_the_battle = true;
 			//battle_end_messages[0] = "Victory!!";
 			dialogue(DISPLAY.OVERHEAD,{text: "Victory!",name:""});
+			audio_stop_all();
+			audio_play_sound(_065___Victorious__, 1, false);
 			for (var _i = 0; _i < array_length(enemy_units); _i++)
 			{
 				battle_xp_gained += enemy_units[_i].xp_value;
 			}
 			//battle_end_messages[1] = string("Gained {0} experience points", battle_xp_gained);
 			dialogue(DISPLAY.OVERHEAD,{text: string("Gained {0} experience points", battle_xp_gained),name:""});
+			recieve_exp(battle_xp_gained);
+			//distribute exp
+			
 		}
 	}
 	

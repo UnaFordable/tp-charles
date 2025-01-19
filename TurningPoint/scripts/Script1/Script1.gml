@@ -11,6 +11,10 @@ function char_stats(){
 		COMMON,
 		BOSS
 	}
+	enum EQUIPTYPE{
+		ARMOR,
+		WEAPON,
+	}
 	
 	global.action_library = {
 		#region PHYSICAL ATTACKS
@@ -209,70 +213,102 @@ function char_stats(){
 		}
 		#endregion
 	};
+	global.equipment = {
+		tunic: {
+			name: "Leather Tunic",
+			type: EQUIPTYPE.ARMOR,
+			desc: "Made from fresh cow hide.\n+2 defense",
+			bonus: 2
+		}
+	}
 	#region MAIN PARTY
 	global.party = [
 	{
 		
 		name: "Lyraka",
-		level: 3,
-		hp: 20    ,//  + global.party[0].level*1.55,
-		hp_max: 20, // + level*1.55,
-		ep: 5 ,     // + level*0.55,
-		ep_max: 5 , // + level*0.55,
-		attack: 6,  // + level*0.68,
-		defense: 6,// + level*0.64,
-		special: 4,//  + level*0.45,
-		spd: 3,    //  + level*0.31,
-		experience : 0,
-		exp_max: 20,
+		level:	    5,
+		//BASE STATS
+		hp_max_BASE:	 95,
+		ep_max_BASE:     85,
+		attack_BASE:     109,
+		defense_BASE:    105,
+		special_BASE:    75,
+		spd_BASE:        56,
+		//ACTUAL STATS
+		hp:		    20,
+		hp_max:	    20,
+		ep:		    2,
+		ep_max:     2,
+		attack:     6,
+		defense:    6,
+		special:    4,
+		spd:        3,
+		experience: 0,
+		exp_max:    10,
 		sprites :{walk: spr_lusaka_walk, idle: spr_Lyraka_bat_bak, knockout: spr_rip},
 		actions: [global.action_library.punch, global.action_library.spin_attack, global.action_library.fart_attack, global.action_library.run]
 	},{
 		name: "Baxter",
-		level: 12,
-		hp: 20,
-		hp_max: 20,
-		ep: 6,
-		ep_max: 6,
-		attack: 5,
-		defense: 4,
-		special: 5,
-		spd: 3,
+		level:      5,
+		//BASE STATS
+		hp_max_BASE:	 76,
+		ep_max_BASE:     71,
+		attack_BASE:     104,
+		defense_BASE:    71,
+		special_BASE:    104,
+		spd_BASE:        108,
+		//ACTUAL STATS
+		hp:         1,
+		hp_max:     20,
+		ep:         1,
+		ep_max:     6,
+		attack:     5,
+		defense:    4,
+		special:    5,
+		spd:        3,
 		experience: 0,
-		exp_max: 20,
+		exp_max:    10,
 		sprites: {walk: spr_baxter_walk, idle: spr_bax_bat_bak, knockout: spr_rip},
 		actions: [global.action_library.punch, global.action_library.rub, global.action_library.run]
-	},{
+	}/*,{
 		name: "Donohue",
-		level: 27,
-		hp: 20,
-		hp_max: 20,
-		ep: 6,
-		ep_max: 6,
-		attack: 8,
-		defense: 2,
-		special: 5,
-		spd: 2,
-		experience: 0,
-		exp_max: 20,
+		level:      5,
+		//BASE STATS
+		hp_max_BASE:	 84,
+		ep_max_BASE:     101,
+		attack_BASE:     86,
+		defense_BASE:    88,
+		special_BASE:    111,
+		spd_BASE:        60,
+		//ACTUAL STATS
+		hp:         1,
+		hp_max:     20,
+		ep:         1,
+		ep_max:     6,
+		attack:     8,
+		defense:    2,
+		special:    5,
+		spd:        2,
+		experience: 1,
+		exp_max:    10,
 		sprites :{walk: spr_baxter_walk, idle: spr_Dono_bat_back, attack: spr_donohue_idle, dodge: spr_donohue_idle, knockout: spr_rip, defend: spr_donohue_idle},
 		actions: [global.action_library.punch, global.action_library.manshot]
-	},{
+	}/*,{
 		name: "Shelly",
-		level: 1,
-		hp: 300,
-		hp_max: 300,
-		ep: 0,
-		ep_max: 0,
-		attack: 8,
-		defense: 2,
-		special: 20,
-		spd: 2,
-		experience: 0,
-		exp_max: 20,
+		level:      1,
+		hp:         300,
+		hp_max:     300,
+		ep:         0,
+		ep_max:     0,
+		attack:     8,
+		defense:    2,
+		special:    20,
+		spd:        2,
+		experience: 19,
+		exp_max:    20,
 		sprites :{walk: spr_baxter_walk, idle: spr_shel_bat_bak, attack: spr_shelly_idle, dodge: spr_shelly_idle, knockout: spr_rip, defend: spr_shelly_idle},
 		actions: [global.action_library.punch, global.action_library.slime_spit, global.action_library.run]
-	}]
+	}*/]
 #endregion
 	#region ALL EMEMIES
 	global.enemies = {
@@ -353,7 +389,7 @@ function char_stats(){
 		},
 		possessed_lyraka:{
 			name: "Possesed Lyraka",
-			hp: 80,
+			hp: 1,
 			hp_max: 80,
 			attack: 6,
 			defense: 3,
@@ -361,7 +397,7 @@ function char_stats(){
 			role: "BOSS",
 			sprites: {idle: spr_possessedlyraka},
 			actions: [global.action_library.punch],
-			xp_value:1,
+			xp_value:10,
 			AIscript: function(){
 				var _action = actions[0];
 				var _possible_targets = array_filter(obj_battle.party_units, function(_unit, _index){return(_unit.hp > 0);});
@@ -379,7 +415,53 @@ function char_stats(){
 ]
 }
 
+function recieve_exp(_xp){
+	for(var _i = 0; _i < array_length(global.party); _i++){
+		var _party = global.party[_i];
+		if(_party.hp > 0) _party.experience += _xp;
+		if (_party.experience >= _party.exp_max) {
+			level_up(_party, _party.hp_max, _party.ep_max, _party.attack, _party.defense, _party.special, _party.spd);
+		}
+	}
+}
 
+function stats_update(){
+	for(var _i = 0; _i < array_length(global.party); _i++){
+		var _party = global.party[_i];
+		if(_party.name != "Shelly"){
+			_party.hp_max = round((_party.hp_max_BASE*2*_party.level)/100)+_party.level+28;
+			_party.ep_max = round((_party.ep_max_BASE*2*_party.level)/100)+_party.level+6;
+			_party.attack = round((_party.attack_BASE*2*_party.level)/100)+1;
+			_party.defense = round((_party.defense_BASE*2*_party.level)/100)+1;
+			_party.special = round((_party.special_BASE*2*_party.level)/100)+1;
+			_party.spd = round((_party.spd_BASE*2*_party.level)/100)+2;
+		}
+	}
+}
+
+function level_up(_member, _hpm, _epm, _atk, _def, _sp, _spd){
+	while(_member.experience >= _member.exp_max){
+		_member.level += 1;
+		_member.experience -= _member.exp_max;
+		_member.exp_max += 10;
+	}
+	stats_update();
+	
+	var _name = _member.name
+	var _hpm_diff = _member.hp_max - _hpm;
+	var _epm_diff = _member.ep_max - _epm;
+	var _atk_diff = _member.attack - _atk;
+	var _def_diff = _member.defense - _def;
+	var _sp_diff = _member.special - _sp;
+	var _spd_diff = _member.spd - _spd;
+	dialogue(DISPLAY.OVERHEAD,{text: _name+" is now level " + string(_member.level)+"!",name:""});
+	if(_hpm_diff != 0) dialogue(DISPLAY.OVERHEAD,{text: _name+"'s max health increased by "+ string(_hpm_diff),name:""});
+	if(_epm_diff != 0) dialogue(DISPLAY.OVERHEAD,{text: _name+"'s max energy increased by "+ string(_epm_diff),name:""});
+	if(_atk_diff != 0) dialogue(DISPLAY.OVERHEAD,{text: _name+"'s attack increased by "+ string(_atk_diff),name:""});
+	if(_def_diff != 0) dialogue(DISPLAY.OVERHEAD,{text: _name+"'s defense increased by "+ string(_def_diff),name:""});
+	if(_sp_diff != 0) dialogue(DISPLAY.OVERHEAD,{text: _name+"'s special increased by "+ string(_sp_diff),name:""});
+	if(_spd_diff != 0) dialogue(DISPLAY.OVERHEAD,{text: _name+"'s speed increased by "+ string(_spd_diff),name:""});
+}
 
 function remove_item_from_inventory(_item, _amount){
 	for (var _i = 0; _i < array_length(global.inventory); _i++)

@@ -121,6 +121,7 @@
     {"id":{"name":"obj_tween","path":"objects/obj_tween/obj_tween.yy",},},
     {"id":{"name":"obj_wall","path":"objects/obj_wall/obj_wall.yy",},},
     {"id":{"name":"rm_brig","path":"rooms/rm_brig/rm_brig.yy",},},
+    {"id":{"name":"rm_buckotrail","path":"rooms/rm_buckotrail/rm_buckotrail.yy",},},
     {"id":{"name":"rm_cowbage_pasture","path":"rooms/rm_cowbage_pasture/rm_cowbage_pasture.yy",},},
     {"id":{"name":"rm_init","path":"rooms/rm_init/rm_init.yy",},},
     {"id":{"name":"rm_main_menu","path":"rooms/rm_main_menu/rm_main_menu.yy",},},
@@ -249,6 +250,7 @@
     {"roomId":{"name":"rm_pet_sim","path":"rooms/rm_pet_sim/rm_pet_sim.yy",},},
     {"roomId":{"name":"rm_brig","path":"rooms/rm_brig/rm_brig.yy",},},
     {"roomId":{"name":"rm_main_menu","path":"rooms/rm_main_menu/rm_main_menu.yy",},},
+    {"roomId":{"name":"rm_buckotrail","path":"rooms/rm_buckotrail/rm_buckotrail.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

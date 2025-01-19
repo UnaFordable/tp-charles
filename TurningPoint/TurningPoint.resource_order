@@ -32,6 +32,7 @@
     {"name":"obj_save_file_button","order":1,"path":"objects/obj_save_file_button/obj_save_file_button.yy",},
     {"name":"obj_tween","order":2,"path":"objects/obj_tween/obj_tween.yy",},
     {"name":"rm_brig","order":1,"path":"rooms/rm_brig/rm_brig.yy",},
+    {"name":"rm_buckotrail","order":3,"path":"rooms/rm_buckotrail/rm_buckotrail.yy",},
     {"name":"rm_main_menu","order":2,"path":"rooms/rm_main_menu/rm_main_menu.yy",},
     {"name":"text_display","order":1,"path":"scripts/text_display/text_display.yy",},
     {"name":"sqn_codic","order":1,"path":"sequences/sqn_codic/sqn_codic.yy",},
