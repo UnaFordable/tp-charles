@@ -14,7 +14,9 @@ screen_height = 192;
 party_members[0] = 1;
 col = c_green;
 
-char_stats();
+
+char_stats()
+
 //Minigame variables
 minigame_scores = [[],[],[],[],[]];
 for (var _i = 0; _i < array_length(minigame_scores); _i++){

@@ -35,12 +35,17 @@ switch(m_state){
 		break;
 	case MENU.ITEMS:
 		background_img = 1;
-		for(var _i = 0; _i < array_length(global.inventory); _i++){
-			draw_set_halign(fa_left);
-			text_display(1,global.cam_bottom_x + 40, global.cam_bottom_y +48 +(_i*16), string(global.inventory[_i][0].name));
-			draw_set_halign(fa_right);
-			text_display(2,global.cam_bottom_x + 135, global.cam_bottom_y +48 +(_i*16), string(global.inventory[_i][1]));
-		}
+		var _ss = global.party[m_character_selected];
+		draw_set_halign(fa_left);
+		text_display(1,global.cam_bottom_x + 152, global.cam_bottom_y +(48)+16, "Hp: ");
+		if(_ss.name!="Shelly")text_display(1,global.cam_bottom_x + 152, global.cam_bottom_y +(48)+32, "NRG:");
+		draw_set_halign(fa_right);
+		text_display(2,global.cam_bottom_x + 247, global.cam_bottom_y +(48)+16,string(_ss.hp)+"/"+string(_ss.hp_max));
+		if(_ss.name!="Shelly")text_display(2,global.cam_bottom_x + 247, global.cam_bottom_y +(48)+32, string(_ss.ep) + "/" + string(_ss.ep_max));
+		draw_set_halign(fa_left);
+		var _item = global.inventory[m_item_seleted][0];
+		text_display(1,global.cam_bottom_x + 152, global.cam_bottom_y +(48)+48, string(_item.info));
+		
 		break;
 	case MENU.PERKS:
 		background_img = 2;

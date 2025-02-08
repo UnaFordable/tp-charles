@@ -47,7 +47,7 @@ cursor = {
 
 //Make enemies
 for (var _i = 0; _i < array_length(enemies); _i++){
-	enemy_units[_i]= instance_create_depth(global.cam_top_x+207+((_i mod 3)*10)+((_i div 3)*25), global.cam_top_y+113+((_i mod 3)*20), depth-10, obj_battle_unit_enemy, enemies[_i])
+	enemy_units[_i]= instance_create_depth(global.cam_top_x+207-((_i mod 3)*30)+((_i div 3)*40), global.cam_top_y+(16*5), depth-10, obj_battle_unit_enemy, enemies[_i])
 	array_push(units, enemy_units[_i]);
 }
 
@@ -235,7 +235,7 @@ function battle_state_victor_check(){
 			//battle_end_messages[0] = "Victory!!";
 			dialogue(DISPLAY.OVERHEAD,{text: "Victory!",name:""});
 			audio_stop_all();
-			audio_play_sound(_065___Victorious__, 1, false);
+			//audio_play_sound(_065___Victorious__, 1, false);
 			for (var _i = 0; _i < array_length(enemy_units); _i++)
 			{
 				battle_xp_gained += enemy_units[_i].xp_value;
@@ -301,11 +301,13 @@ function battle_state_begin(){
 	transition_prog += 0.01;
 	if(transition_prog >= 1){
 		transition_prog = 1;
+		/*
 		dialogue(DISPLAY.OVERHEAD,{text:"Sea Snail Takeover!",name:"Shelly"});
 		dialogue(DISPLAY.OVERHEAD,{text:"HAHAHAHAHAHA AHH!",name:"Shelly"});
 		dialogue(DISPLAY.OVERHEAD,{text:"Step back before things get violent!",name:"Shelly"});
 		dialogue(DISPLAY.OVERHEAD,{text:"Get off Lyraka! You freaky snail!",name:"Baxter"});
 		dialogue(DISPLAY.OVERHEAD,{text:"This body is perfect! No one else can have it!",name:"Shelly"});
+		*/
 		battle_state = battle_state_select_action;
 	}
 }

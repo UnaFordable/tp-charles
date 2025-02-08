@@ -30,7 +30,7 @@ function char_stats(){
 			effect_sprite: spr_scratch,
 			effect_on_target: MODE.ALWAYS,
 			func: function(_user, _targets){
-				var _damage = ceil(2*(_user.attack)-1.5*(_targets[0].defense) + irandom_range(0,1));
+				var _damage = clamp(ceil((_user.attack)*1.5-(_targets[0].defense) + 1), 1, 9999);
 				battle_change_hp(_targets[0], -_damage+choose(0,1), 0);
 			}
 		},
@@ -76,7 +76,7 @@ function char_stats(){
 			effect_sprite: spr_scratch,
 			effect_on_target: MODE.ALWAYS,
 			func: function(_user, _targets){
-				var _damage = ceil(4*(_user.attack)-(2*_targets[0].defense) + irandom_range(0,1));
+				var _damage = clamp(ceil(4*(_user.attack)-(2*_targets[0].defense) + irandom_range(0,1)), 1,10);
 				battle_change_hp(_targets[0], -_damage, 0);
 				_user.ep -= ep_cost;
 			}
@@ -176,18 +176,21 @@ function char_stats(){
 		#region ITEMS
 		tulip:{
 			name: "Tulip",
+			info: "A sweet treat\n+20 HP",
+			
 			description: "{0} ate a tulip!",
 			sub_menu: "Items",
 			target_required: true,
 			target_enemy_by_default: false,
 			target_all: MODE.NEVER,
 			func : function(_user, _targets){
-				var _heal = 10;
+				var _heal = 20;
 				battle_change_hp(_targets[0], _heal);
 			}
 		},
 		milk:{
 			name: "Milk",
+			info: "A sweet drink\n+10 NRG",
 			description: "{0} drank milk!",
 			sub_menu: "Items",
 			target_required: true,
@@ -195,12 +198,13 @@ function char_stats(){
 			target_all: MODE.NEVER,
 			func : function(_user, _targets){
 				var _heal_ep = 10;
-				battle_change_hp(_targets[0], _heal_ep, true);
+				battle_change_ep(_targets[0], _heal_ep);
 			}
 		},
 		
 		potion:{
 			name : "Potion",
+			info: "Revitalizing!.\nRevives an ally",
 			description : "{0} uses a Potion!",
 			sub_menu : "Items",
 			target_enemy_by_default: false, //0: party/self, 1: enemy
@@ -226,7 +230,7 @@ function char_stats(){
 	{
 		
 		name: "Lyraka",
-		level:	    5,
+		level:	    6,
 		//BASE STATS
 		hp_max_BASE:	 95,
 		ep_max_BASE:     85,
@@ -235,7 +239,7 @@ function char_stats(){
 		special_BASE:    75,
 		spd_BASE:        56,
 		//ACTUAL STATS
-		hp:		    20,
+		hp:		    2,
 		hp_max:	    20,
 		ep:		    2,
 		ep_max:     2,
@@ -244,12 +248,12 @@ function char_stats(){
 		special:    4,
 		spd:        3,
 		experience: 0,
-		exp_max:    10,
+		exp_max:    100,
 		sprites :{walk: spr_lusaka_walk, idle: spr_Lyraka_bat_bak, knockout: spr_rip},
 		actions: [global.action_library.punch, global.action_library.spin_attack, global.action_library.fart_attack, global.action_library.run]
 	},{
 		name: "Baxter",
-		level:      5,
+		level:      6,
 		//BASE STATS
 		hp_max_BASE:	 76,
 		ep_max_BASE:     71,
@@ -267,7 +271,7 @@ function char_stats(){
 		special:    5,
 		spd:        3,
 		experience: 0,
-		exp_max:    10,
+		exp_max:    100,
 		sprites: {walk: spr_baxter_walk, idle: spr_bax_bat_bak, knockout: spr_rip},
 		actions: [global.action_library.punch, global.action_library.rub, global.action_library.run]
 	}/*,{
@@ -289,8 +293,8 @@ function char_stats(){
 		defense:    2,
 		special:    5,
 		spd:        2,
-		experience: 1,
-		exp_max:    10,
+		experience: 0,
+		exp_max:    3,
 		sprites :{walk: spr_baxter_walk, idle: spr_Dono_bat_back, attack: spr_donohue_idle, dodge: spr_donohue_idle, knockout: spr_rip, defend: spr_donohue_idle},
 		actions: [global.action_library.punch, global.action_library.manshot]
 	}/*,{
@@ -304,8 +308,8 @@ function char_stats(){
 		defense:    2,
 		special:    20,
 		spd:        2,
-		experience: 19,
-		exp_max:    20,
+		experience: 0,
+		exp_max:    3,
 		sprites :{walk: spr_baxter_walk, idle: spr_shel_bat_bak, attack: spr_shelly_idle, dodge: spr_shelly_idle, knockout: spr_rip, defend: spr_shelly_idle},
 		actions: [global.action_library.punch, global.action_library.slime_spit, global.action_library.run]
 	}*/]
@@ -315,15 +319,15 @@ function char_stats(){
 		#region Basic enemies
 		buck_o:{
 			name: "Buck O'",
-			hp: 12,
-			hp_max: 12,
-			attack: 4,
-			defense: 1,
+			hp: 20,
+			hp_max: 20,
+			attack: 10,
+			defense: 10,
 			spd: 2,
 			role: "COMMON",
 			sprites: {idle: spr_buck_o_idle, defend: spr_buck_o_idle},
 			actions: [global.action_library.punch],
-			xp_value:1,
+			xp_value: 16,
 			AIscript: function(){
 				var _action = actions[0];
 				var _possible_targets = array_filter(obj_battle.party_units, function(_unit, _index){return(_unit.hp > 0);});
@@ -331,17 +335,17 @@ function char_stats(){
 				return [_action, _target];
 			}
 		},
-		buck_o:{
+		buck_e:{
 			name: "Buck E'",
-			hp: 12,
-			hp_max: 12,
-			attack: 1,
-			defense: 1,
+			hp: 20,
+			hp_max: 20,
+			attack: 10,
+			defense: 10,
 			spd: 2,
 			role: "COMMON",
 			sprites: {idle: spr_buck_e_idle, defend: spr_buck_e_idle},
 			actions: [global.action_library.punch],
-			xp_value:1,
+			xp_value: 18,
 			AIscript: function(){
 				var _action = actions[0];
 				var _possible_targets = array_filter(obj_battle.party_units, function(_unit, _index){return(_unit.hp > 0);});
@@ -349,17 +353,17 @@ function char_stats(){
 				return [_action, _target];
 			}
 		},
-		buck_o:{
+		buck_l:{
 			name: "Buck L'",
-			hp: 12,
-			hp_max: 12,
-			attack: 3,
-			defense: 1,
+			hp: 20,
+			hp_max: 20,
+			attack: 15,
+			defense: 10,
 			spd: 2,
 			role: "COMMON",
-			sprites: {idle: spr_buck_r_idle, defend: spr_buck_r_idle},
+			sprites: {idle: spr_buck_l_idle, defend: spr_buck_l_idle},
 			actions: [global.action_library.punch],
-			xp_value:1,
+			xp_value: 20,
 			AIscript: function(){
 				var _action = actions[0];
 				var _possible_targets = array_filter(obj_battle.party_units, function(_unit, _index){return(_unit.hp > 0);});
@@ -404,6 +408,24 @@ function char_stats(){
 				var _target = _possible_targets[irandom(array_length(_possible_targets)-1)];
 				return [_action, _target];
 			}
+		},
+		bullzo:{
+			name: "Bullz O'",
+			hp: 100,
+			hp_max: 100,
+			attack: 15,
+			defense: 15,
+			spd: 2,
+			role: "BOSS",
+			sprites: {idle: spr_bullz_o},
+			actions: [global.action_library.punch, global.action_library.spin_attack],
+			xp_value:100,
+			AIscript: function(){
+				var _action = actions[0];
+				var _possible_targets = array_filter(obj_battle.party_units, function(_unit, _index){return(_unit.hp > 0);});
+				var _target = _possible_targets[irandom(array_length(_possible_targets)-1)];
+				return [_action, _target];
+			}
 		}
 		#endregion
 	}
@@ -442,8 +464,8 @@ function stats_update(){
 function level_up(_member, _hpm, _epm, _atk, _def, _sp, _spd){
 	while(_member.experience >= _member.exp_max){
 		_member.level += 1;
-		_member.experience -= _member.exp_max;
-		_member.exp_max += 10;
+		_member.experience -= (_member.exp_max);
+		_member.exp_max += _member.level^3;
 	}
 	stats_update();
 	
@@ -468,7 +490,11 @@ function remove_item_from_inventory(_item, _amount){
 	{
 		if (global.inventory[_i][0] == _item)
 		{
+			
 			global.inventory[_i][1] -= _amount;
+			if(global.inventory[_i][1] <= 0){
+				array_delete(global.inventory,_i,1);
+			}
 			break;
 		}
 	}

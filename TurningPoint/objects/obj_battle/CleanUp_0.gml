@@ -13,6 +13,8 @@ if (conclusion_type == 2){
 if (conclusion_type == 1){
 	with (creator){
 		dead = true;
-		visible = true;
+		visible = false;
+		instance_deactivate_object(id);
+		
 	}
 }
