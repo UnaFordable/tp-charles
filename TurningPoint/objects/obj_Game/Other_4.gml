@@ -13,6 +13,7 @@ if(room != rm_init and room != rm_main_menu){
 		for(var _i = 0; _i < 4; _i++){
 			instance_create_depth(global.cam_bottom_x + global.cam_width/2, global.cam_bottom_y + global.cam_height/2, -999, obj_move_button, {m_direction: _i})
 		}
+		instance_create_depth(global.cam_bottom_x+216, global.cam_bottom_y+144,-999, obj_action_button);
 	}
 	instance_deactivate_object(obj_menu_overworld);
 	instance_deactivate_object(obj_omcd_button_1);

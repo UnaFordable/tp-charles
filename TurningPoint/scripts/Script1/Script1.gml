@@ -431,9 +431,9 @@ function char_stats(){
 	}
 	#endregion
 	global.inventory = [
-	[global.action_library.tulip, 4],
-	[global.action_library.milk, 1],
-	[global.action_library.potion, 2]
+	//[global.action_library.tulip, 4],
+	//[global.action_library.milk, 1],
+	//[global.action_library.potion, 2]
 ]
 }
 

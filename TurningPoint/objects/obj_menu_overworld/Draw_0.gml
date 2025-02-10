@@ -43,9 +43,11 @@ switch(m_state){
 		text_display(2,global.cam_bottom_x + 247, global.cam_bottom_y +(48)+16,string(_ss.hp)+"/"+string(_ss.hp_max));
 		if(_ss.name!="Shelly")text_display(2,global.cam_bottom_x + 247, global.cam_bottom_y +(48)+32, string(_ss.ep) + "/" + string(_ss.ep_max));
 		draw_set_halign(fa_left);
-		var _item = global.inventory[m_item_seleted][0];
-		text_display(1,global.cam_bottom_x + 152, global.cam_bottom_y +(48)+48, string(_item.info));
-		
+		try{
+			var _item = global.inventory[m_item_seleted][0];
+			text_display(1,global.cam_bottom_x + 152, global.cam_bottom_y +(48)+48, string(_item.info));
+		}
+		catch(DoConv){}
 		break;
 	case MENU.PERKS:
 		background_img = 2;

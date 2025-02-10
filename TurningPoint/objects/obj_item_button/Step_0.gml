@@ -7,4 +7,4 @@ if(timing != 0){
 else{
 	image_index = 0;
 }
-if(array_length(global.inventory)< item_id) instance_destroy();
+//if(array_length(global.inventory)< item_id) instance_destroy();

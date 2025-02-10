@@ -24,6 +24,7 @@
     {"name":"Tile Spritesheets","order":21,"path":"folders/Sprites/Tile Spritesheets.yy",},
   ],
   "ResourceOrderSettings":[
+    {"name":"obj_action_button","order":11,"path":"objects/obj_action_button/obj_action_button.yy",},
     {"name":"obj_bsm_button_2","order":1,"path":"objects/obj_bsm_button_2/obj_bsm_button_2.yy",},
     {"name":"obj_bsm_button_3","order":2,"path":"objects/obj_bsm_button_3/obj_bsm_button_3.yy",},
     {"name":"obj_bsm_button_4","order":3,"path":"objects/obj_bsm_button_4/obj_bsm_button_4.yy",},
@@ -51,6 +52,7 @@
     {"name":"lemur_color_copy","order":1,"path":"sprites/lemur_color_copy/lemur_color_copy.yy",},
     {"name":"movement","order":4,"path":"sprites/movement/movement.yy",},
     {"name":"sp_floor_tileset","order":3,"path":"sprites/sp_floor_tileset/sp_floor_tileset.yy",},
+    {"name":"spr_action_button","order":4,"path":"sprites/spr_action_button/spr_action_button.yy",},
     {"name":"spr_backbutton","order":10,"path":"sprites/spr_backbutton/spr_backbutton.yy",},
     {"name":"spr_bax_bat_bak","order":2,"path":"sprites/spr_bax_bat_bak/spr_bax_bat_bak.yy",},
     {"name":"spr_baxter_walk","order":1,"path":"sprites/spr_baxter_walk/spr_baxter_walk.yy",},
@@ -77,7 +79,6 @@
     {"name":"spr_ICON","order":30,"path":"sprites/spr_ICON/spr_ICON.yy",},
     {"name":"spr_item_button","order":9,"path":"sprites/spr_item_button/spr_item_button.yy",},
     {"name":"spr_item_use_button","order":10,"path":"sprites/spr_item_use_button/spr_item_use_button.yy",},
-    {"name":"spr_lightAttack","order":4,"path":"sprites/spr_lightAttack/spr_lightAttack.yy",},
     {"name":"spr_lusaka_attack","order":4,"path":"sprites/spr_lusaka_attack/spr_lusaka_attack.yy",},
     {"name":"spr_lusaka_walk","order":5,"path":"sprites/spr_lusaka_walk/spr_lusaka_walk.yy",},
     {"name":"spr_LusakaIdle","order":6,"path":"sprites/spr_LusakaIdle/spr_LusakaIdle.yy",},

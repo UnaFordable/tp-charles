@@ -1,13 +1,16 @@
 {
   "$GMObject":"",
-  "%Name":"obj_lightAttack",
-  "eventList":[],
+  "%Name":"obj_action_button",
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":4,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":7,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
-  "name":"obj_lightAttack",
+  "name":"obj_action_button",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"overworld menu",
+    "path":"folders/Objects/overworld menu.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -28,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_lightAttack",
-    "path":"sprites/spr_lightAttack/spr_lightAttack.yy",
+    "name":"spr_action_button",
+    "path":"sprites/spr_action_button/spr_action_button.yy",
   },
   "spriteMaskId":null,
   "visible":true,
