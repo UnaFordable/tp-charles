@@ -432,7 +432,7 @@ function char_stats(){
 	#endregion
 	global.inventory = [
 	//[global.action_library.tulip, 4],
-	//[global.action_library.milk, 1],
+	///[global.action_library.milk, 1],
 	//[global.action_library.potion, 2]
 ]
 }
@@ -497,5 +497,21 @@ function remove_item_from_inventory(_item, _amount){
 			}
 			break;
 		}
+	}
+}
+
+function add_item_to_inventory(_item, _amount){
+	var _item_found = false;
+	for (var _i = 0; _i < array_length(global.inventory); _i++)
+	{
+		if (global.inventory[_i][0] == _item)
+		{
+			_item_found = true;
+			global.inventory[_i][1] += _amount;
+			break;
+		}
+	}
+	if(_item_found != true){
+		array_push(global.inventory,[_item, _amount]);
 	}
 }
