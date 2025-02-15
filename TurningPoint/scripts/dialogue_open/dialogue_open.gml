@@ -6,7 +6,7 @@ function dialogue(_dialogue_type, _text_set, _sequence, _scene_timer){
 			display_state = _dialogue_type;
 			if(!instance_exists(obj_battle)){
 				if(	display_state == DISPLAY.LEGEND){
-					audio_play_sound(_17__Snowfall, 1,true);
+					//audio_play_sound(_17__Snowfall, 1,true);
 					instance_create_depth(global.cam_top_x, global.cam_top_y+144,depth+1, obj_filmbackground, {angle: 0, size: spr_film_background});
 				}
 				else{

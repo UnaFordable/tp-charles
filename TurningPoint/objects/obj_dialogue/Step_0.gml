@@ -3,7 +3,7 @@
 
 if(display_delay < 0){
 	display_num +=1;
-	if(keyboard_check_pressed(ord("Z"))){
+	if(obj_player.key_action = true){
 		if(display_num < string_length(text_set.text)){
 			display_num = string_length(text_set.text);
 		}
