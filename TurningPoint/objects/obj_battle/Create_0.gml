@@ -6,8 +6,7 @@ randomize();
 transition_prog = 0;
 surf_transition = surface_create(surface_get_width(application_surface),surface_get_height(application_surface));
 surface_copy(surf_transition,0,0,application_surface);
-instance_deactivate_all(true);
-
+instance_deactivate_all(true)
 //instance_create_depth(global.cam_top_x, global.cam_top_y+128,depth-11, obj_filmbackground, {angle: 0});
 //instance_create_depth(global.cam_top_x+256, global.cam_top_y+16,depth-11, obj_filmbackground, {angle: 180});
 units = [];
@@ -67,7 +66,7 @@ refresh_render_order = function(){
 refresh_render_order();
 
 function battle_state_select_action(){
-	if(!instance_exists(obj_menu) and !instance_exists(obj_dialogue)){
+	if(!instance_exists(obj_battle_menu) and !instance_exists(obj_dialogue)){
 		var _unit = unit_turn_order[turn];
 		//Is the unit alive and able to act
 		if(instance_exists(_unit)) and (_unit.hp > 0){
@@ -122,7 +121,7 @@ function battle_state_select_action(){
 						if (_option[0] == "Fight") return 99;
 						if (_option[0] == "Skills") return 50;
 						if (_option[0] == "Items") return 30;
-						//if (_option[0] == "Flee") return -10;
+						if (_option[0] == "Flee") return -10;
 						return 0;
 					}
 					return _priority(_b) - _priority(_a);
@@ -287,6 +286,7 @@ function battle_state_ending(){
 		if (transition_prog <= 0.0)
 		{
 			instance_destroy();
+			
 			audio_stop_all();
 		}
 	}

@@ -1,7 +1,7 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function menu(_x, _y, _options, _description = -1, _width = undefined, _height = undefined){
-	with(instance_create_depth(_x, _y, -99999, obj_menu)){
+	with(instance_create_depth(_x, _y, -99999, obj_battle_menu)){
 		options = _options;
 		description = _description;
 		var _option_count = array_length(_options);
@@ -34,6 +34,9 @@ function menu(_x, _y, _options, _description = -1, _width = undefined, _height =
 				visible_options_max = (_height - ymargin * 2) div height_line;
 			}
 		}
+		for (var _i = 0; _i < array_length(_options); _i ++){
+			instance_create_depth(_x+(_i*36),_y-96,depth,obj_bm_button);
+		}
 	}
 }
 
@@ -51,7 +54,7 @@ function menu_go_back(){
 }
 
 function menu_select_action(_user, _action){
-	with(obj_menu){
+	with(obj_battle_menu){
 		active = false;
 	}
 	with(obj_battle){
@@ -78,7 +81,7 @@ function menu_select_action(_user, _action){
 			}
 		}
 		else{
-			with(obj_menu){
+			with(obj_battle_menu){
 				instance_destroy();
 			}
 			begin_action(_user, _action, -1);

@@ -68,7 +68,7 @@ if(cursor.active){
 				with(obj_battle){
 					begin_action(cursor.active_user, cursor.active_action, cursor.active_target);
 				}
-				with(obj_menu){
+				with(obj_battle_menu){
 					instance_destroy();
 				}
 				active = false;
@@ -76,7 +76,7 @@ if(cursor.active){
 			}
 		}
 		if(_key_cancel)and(!_key_confirm){
-			with(obj_menu){
+			with(obj_battle_menu){
 				active = true;
 			}
 			active = false;

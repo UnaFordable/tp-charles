@@ -1,5 +1,6 @@
 {
   "FolderOrderSettings":[
+    {"name":"Battle Menu & Buttons","order":1,"path":"folders/Objects/battle objects/Battle Menu & Buttons.yy",},
     {"name":"Dialogue","order":7,"path":"folders/Objects/Dialogue.yy",},
     {"name":"NPC","order":9,"path":"folders/Objects/NPC.yy",},
     {"name":"overworld menu","order":5,"path":"folders/Objects/overworld menu.yy",},
@@ -25,11 +26,13 @@
   ],
   "ResourceOrderSettings":[
     {"name":"obj_action_button","order":11,"path":"objects/obj_action_button/obj_action_button.yy",},
+    {"name":"obj_bm_button","order":1,"path":"objects/obj_bm_button/obj_bm_button.yy",},
     {"name":"obj_bsm_button_2","order":1,"path":"objects/obj_bsm_button_2/obj_bsm_button_2.yy",},
     {"name":"obj_bsm_button_3","order":2,"path":"objects/obj_bsm_button_3/obj_bsm_button_3.yy",},
     {"name":"obj_bsm_button_4","order":3,"path":"objects/obj_bsm_button_4/obj_bsm_button_4.yy",},
     {"name":"obj_enemy","order":3,"path":"objects/obj_enemy/obj_enemy.yy",},
     {"name":"obj_filmbackground","order":1,"path":"objects/obj_filmbackground/obj_filmbackground.yy",},
+    {"name":"obj_inn","order":4,"path":"objects/obj_inn/obj_inn.yy",},
     {"name":"obj_item_button","order":9,"path":"objects/obj_item_button/obj_item_button.yy",},
     {"name":"obj_item_use","order":10,"path":"objects/obj_item_use/obj_item_use.yy",},
     {"name":"obj_menu_toggle","order":7,"path":"objects/obj_menu_toggle/obj_menu_toggle.yy",},
@@ -102,6 +105,7 @@
     {"name":"spr_text_box_s","order":2,"path":"sprites/spr_text_box_s/spr_text_box_s.yy",},
     {"name":"spr_text_box","order":1,"path":"sprites/spr_text_box/spr_text_box.yy",},
     {"name":"spr_title_button","order":11,"path":"sprites/spr_title_button/spr_title_button.yy",},
+    {"name":"spr_top_down_view_inn_front","order":33,"path":"sprites/spr_top_down_view_inn_front/spr_top_down_view_inn_front.yy",},
     {"name":"spr_transition","order":5,"path":"sprites/spr_transition/spr_transition.yy",},
     {"name":"Sprite23","order":1,"path":"sprites/Sprite23/Sprite23.yy",},
     {"name":"Sprite90","order":1,"path":"sprites/Sprite90/Sprite90.yy",},

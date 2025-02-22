@@ -52,7 +52,7 @@ function char_stats(){
 		run: {
 			name:"Run",
 			description: "Ran away",
-			sub_menu: "Skills",
+			sub_menu: "Flee",
 			target_required: false,
 			func: function(){
 				if (random(1) < 0.8){
@@ -186,6 +186,7 @@ function char_stats(){
 			func : function(_user, _targets){
 				var _heal = 20;
 				battle_change_hp(_targets[0], _heal);
+				remove_item_from_inventory(global.action_library.tulip,1);
 			}
 		},
 		milk:{
@@ -230,7 +231,7 @@ function char_stats(){
 	{
 		
 		name: "Lyraka",
-		level:	    6,
+		level:	    5,
 		//BASE STATS
 		hp_max_BASE:	 95,
 		ep_max_BASE:     85,
@@ -239,9 +240,9 @@ function char_stats(){
 		special_BASE:    75,
 		spd_BASE:        56,
 		//ACTUAL STATS
-		hp:		    2,
-		hp_max:	    20,
-		ep:		    2,
+		hp:		    43,//43
+		hp_max:	    10, //19
+		ep:		    19,
 		ep_max:     2,
 		attack:     6,
 		defense:    6,
@@ -251,9 +252,10 @@ function char_stats(){
 		exp_max:    100,
 		sprites :{walk: spr_lusaka_walk, idle: spr_Lyraka_bat_bak, knockout: spr_rip},
 		actions: [global.action_library.punch, global.action_library.spin_attack, global.action_library.fart_attack, global.action_library.run]
-	},{
+	},
+	{
 		name: "Baxter",
-		level:      6,
+		level:      5,
 		//BASE STATS
 		hp_max_BASE:	 76,
 		ep_max_BASE:     71,
@@ -262,9 +264,9 @@ function char_stats(){
 		special_BASE:    104,
 		spd_BASE:        108,
 		//ACTUAL STATS
-		hp:         1,
-		hp_max:     20,
-		ep:         1,
+		hp:         41, //40
+		hp_max:     10, //18
+		ep:         18,
 		ep_max:     6,
 		attack:     5,
 		defense:    4,
@@ -274,7 +276,8 @@ function char_stats(){
 		exp_max:    100,
 		sprites: {walk: spr_baxter_walk, idle: spr_bax_bat_bak, knockout: spr_rip},
 		actions: [global.action_library.punch, global.action_library.rub, global.action_library.run]
-	}/*,{
+	}/*,
+	donohue:{
 		name: "Donohue",
 		level:      5,
 		//BASE STATS
@@ -297,7 +300,8 @@ function char_stats(){
 		exp_max:    3,
 		sprites :{walk: spr_baxter_walk, idle: spr_Dono_bat_back, attack: spr_donohue_idle, dodge: spr_donohue_idle, knockout: spr_rip, defend: spr_donohue_idle},
 		actions: [global.action_library.punch, global.action_library.manshot]
-	}/*,{
+	}/*,
+	shelly:{
 		name: "Shelly",
 		level:      1,
 		hp:         300,
@@ -312,7 +316,8 @@ function char_stats(){
 		exp_max:    3,
 		sprites :{walk: spr_baxter_walk, idle: spr_shel_bat_bak, attack: spr_shelly_idle, dodge: spr_shelly_idle, knockout: spr_rip, defend: spr_shelly_idle},
 		actions: [global.action_library.punch, global.action_library.slime_spit, global.action_library.run]
-	}*/]
+	}*/
+	]
 #endregion
 	#region ALL EMEMIES
 	global.enemies = {
@@ -430,11 +435,8 @@ function char_stats(){
 		#endregion
 	}
 	#endregion
-	global.inventory = [
-	//[global.action_library.tulip, 4],
-	///[global.action_library.milk, 1],
-	//[global.action_library.potion, 2]
-]
+	global.inventory = [];
+	
 }
 
 function recieve_exp(_xp){

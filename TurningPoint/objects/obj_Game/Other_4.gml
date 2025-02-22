@@ -29,7 +29,8 @@ switch(room){
 		instance_create_depth(global.cam_top_x+256, global.cam_top_y+16,-257, obj_filmbackground, {angle: 180, size: spr_film_background_s});
 		break;
 	case rm_buckotrail:
-	stats_update();
+		
+		
 	/*
 		for(var _i = 0; _i < array_length(global.party); _i++){
 			var _party = global.party[_i];

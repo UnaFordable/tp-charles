@@ -15,7 +15,7 @@ party_members[0] = 1;
 col = c_green;
 
 
-char_stats()
+char_stats();
 
 //Minigame variables
 minigame_scores = [[],[],[],[],[]];

@@ -1,17 +1,17 @@
 {
   "$GMObject":"",
-  "%Name":"obj_menu",
+  "%Name":"obj_battle_menu",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_menu",
+  "name":"obj_battle_menu",
   "overriddenProperties":[],
   "parent":{
-    "name":"battle objects",
-    "path":"folders/Objects/battle objects.yy",
+    "name":"Battle Menu & Buttons",
+    "path":"folders/Objects/battle objects/Battle Menu & Buttons.yy",
   },
   "parentObjectId":null,
   "persistent":false,

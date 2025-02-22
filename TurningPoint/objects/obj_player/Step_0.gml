@@ -52,11 +52,16 @@ else if(image_index >= 12 and image_index < 16){
 move_and_collide(_xinput*spd_walk, _yinput*spd_walk, obj_wall, 4, 0, 0, spd_walk, spd_walk);
 
 if(collision_line(x,y,x+_savedface_x,y+ _savedface_y, obj_npc, true, false) != noone){
-	if(instance_exists(obj_action_button)) obj_action_button.image_index = 1;
-	
+	if(instance_exists(obj_action_button))
+		if(instance_nearest(x,y, obj_npc).interacted = false) 
+			obj_action_button.image_index = 1;
+		else obj_action_button.image_index = 0;
 }
 else{
 	if(instance_exists(obj_action_button)) obj_action_button.image_index = 0;
+	with (instance_nearest(x,y, obj_npc)){
+			if(object_index = obj_inn and interacted == true){interacted = false};
+	}
 }
 
 switch (true){

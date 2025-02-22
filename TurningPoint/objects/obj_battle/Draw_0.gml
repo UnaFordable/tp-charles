@@ -76,8 +76,7 @@ for (var _i = 0; _i < array_length(party_units); _i++) {
 	if(_char.hp <= 0){
 		draw_set_color(c_red);
 	}
-	if(_char.name != "Managua")
-	draw_text(global.cam_top_x+10 + (_i*64), global.cam_top_y+ROW_EP, string(_char.ep)+"/"+string(_char.ep_max));
+	if(_char.name != "Shelly") draw_text(global.cam_top_x+10 + (_i*64), global.cam_top_y+ROW_EP, string(_char.ep)+"/"+string(_char.ep_max));
 	
 	draw_set_color(c_white);
 }
@@ -97,12 +96,4 @@ if(cursor.active){
 			}
 		}
 	}
-}
-
-if(battle_text != ""){
-	var _w = string_width(battle_text)+20;
-	draw_sprite_stretched(spr_text_box, 0, global.cam_top_x+128-(_w*.5), global.cam_top_y + 8,_w, 25);
-	draw_set_halign(fa_center);
-	draw_set_color(c_white);
-	draw_text(global.cam_top_x+128, global.cam_top_y+16, battle_text);
 }

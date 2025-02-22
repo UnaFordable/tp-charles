@@ -16,5 +16,8 @@ if(instance_exists(obj_player) and !instance_exists(obj_dialogue)){
 		case 3:
 			obj_player.key_right = true;
 			break;
+		default:
+			obj_player.key_action = false;
+			break;
 	}
 }

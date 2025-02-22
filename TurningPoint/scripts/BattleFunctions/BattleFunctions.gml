@@ -10,6 +10,7 @@ function new_encounter(_enemies, _bg){
 			//audio
 		}
 	}
+	
 	instance_create_depth(global.cam_top_x, global.cam_top_y, -9999, obj_battle, {enemies: _enemies, creator: id, battle_background: _bg});
 }
 
@@ -31,7 +32,7 @@ function battle_change_hp(_target, _amount, _alive_dead_or_either = 0){
 	}
 	if(instance_exists(obj_battle))instance_create_depth(_target.x, _target.y, _target.depth-1, obj_battle_floating_text, {font: fnt_ds, col: _col, text: string(_amount)});
 	if(!_failed){
-		_target.hp += clamp(_amount, 0, _target.hp_max);
+		_target.hp = clamp(_target.hp+_amount, 0, _target.hp_max);
 	}
 	
 }
@@ -54,7 +55,7 @@ function battle_change_ep(_target, _amount, _alive_dead_or_either = 0){
 	}
 	if(instance_exists(obj_battle))instance_create_depth(_target.x, _target.y, _target.depth-1, obj_battle_floating_text, {font: fnt_ds, col: _col, text: string(_amount)});
 	if(!_failed){
-		_target.ep += clamp(_amount, 0, _target.ep_max);
+		_target.ep = clamp(_target.ep+_amount, 0, _target.ep_max);
 	}
 }
 
