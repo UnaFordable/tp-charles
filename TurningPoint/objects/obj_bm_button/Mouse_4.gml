@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 if(instance_exists(obj_battle_menu)){
+	obj_battle_menu.hover = m_hover;
 	with(obj_battle_menu){
 		if(active = true){
 			if(array_length(options[hover]) > 1) and (options[hover][3]==true){
