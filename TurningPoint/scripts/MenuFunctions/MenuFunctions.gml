@@ -36,7 +36,9 @@ function menu(_x, _y, _options, _description = -1, _width = undefined, _height =
 		}
 		for (var _i = 0; _i < array_length(_options); _i ++){
 			instance_create_depth(_x+(_i*36),_y-96,depth,obj_bm_button, {m_hover : _i});
+			
 		}
+		instance_create_depth(_x,_y+32, depth,obj_menugoback)
 	}
 }
 
@@ -58,7 +60,12 @@ function menu_select_action(_user, _action){
 		active = false;
 	}
 	with(obj_battle){
-		if(_action.target_required){
+		if(_action.target_required){	
+		/*
+			for(){
+				instance_create_depth();
+			}
+		*/
 			with(cursor){
 				active_action = _action;
 				target_all = _action.target_all;
@@ -79,6 +86,7 @@ function menu_select_action(_user, _action){
 					target_index = array_find_index(obj_battle.party_units, _find_self);
 				}
 			}
+			
 		}
 		else{
 			with(obj_battle_menu){

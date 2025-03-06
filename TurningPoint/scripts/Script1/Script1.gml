@@ -276,8 +276,8 @@ function char_stats(){
 		exp_max:    100,
 		sprites: {walk: spr_baxter_walk, idle: spr_bax_bat_bak, knockout: spr_rip},
 		actions: [global.action_library.punch, global.action_library.rub, global.action_library.run]
-	}/*,
-	donohue:{
+	},
+	{
 		name: "Donohue",
 		level:      5,
 		//BASE STATS
@@ -300,8 +300,8 @@ function char_stats(){
 		exp_max:    3,
 		sprites :{walk: spr_baxter_walk, idle: spr_Dono_bat_back, attack: spr_donohue_idle, dodge: spr_donohue_idle, knockout: spr_rip, defend: spr_donohue_idle},
 		actions: [global.action_library.punch, global.action_library.manshot]
-	}/*,
-	shelly:{
+	},
+	{
 		name: "Shelly",
 		level:      1,
 		hp:         300,
@@ -316,7 +316,7 @@ function char_stats(){
 		exp_max:    3,
 		sprites :{walk: spr_baxter_walk, idle: spr_shel_bat_bak, attack: spr_shelly_idle, dodge: spr_shelly_idle, knockout: spr_rip, defend: spr_shelly_idle},
 		actions: [global.action_library.punch, global.action_library.slime_spit, global.action_library.run]
-	}*/
+	}
 	]
 #endregion
 	#region ALL EMEMIES

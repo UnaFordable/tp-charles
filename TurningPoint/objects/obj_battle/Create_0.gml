@@ -46,13 +46,13 @@ cursor = {
 
 //Make enemies
 for (var _i = 0; _i < array_length(enemies); _i++){
-	enemy_units[_i]= instance_create_depth(global.cam_top_x+207-((_i mod 3)*30)+((_i div 3)*40), global.cam_top_y+(16*5), depth-10, obj_battle_unit_enemy, enemies[_i])
+	enemy_units[_i]= instance_create_depth(global.cam_top_x+207-((_i mod 3)*30)+((_i div 3)*40), global.cam_top_y+(16*6), depth-10, obj_battle_unit_enemy, enemies[_i])
 	array_push(units, enemy_units[_i]);
 }
 
 //Make party
 for (var _i = 0; _i < array_length(global.party); _i++){
-	party_units[_i]= instance_create_depth(global.cam_top_x+40+((_i mod 4)*40), global.cam_top_y+148, depth-10, obj_battle_unit_pc, global.party[_i])
+	party_units[_i]= instance_create_depth(global.cam_top_x+40+((_i mod 4)*(16*2.5)), global.cam_top_y+(16*9), depth-10, obj_battle_unit_pc, global.party[_i])
 	array_push(units, party_units[_i]);
 }
 
@@ -111,7 +111,7 @@ function battle_state_select_action(){
 				}
 				var _sub_menu_array = variable_struct_get_names(_sub_menus);
 				for(var _i = 0; _i < array_length(_sub_menu_array); _i++){
-					array_push(_sub_menus[$ _sub_menu_array[_i]], ["Back", menu_go_back, -1, true]);
+					//array_push(_sub_menus[$ _sub_menu_array[_i]], ["Back", menu_go_back, -1, true]);
 					array_push(_menu_options, [_sub_menu_array[_i], sub_menu, [_sub_menus[$ _sub_menu_array[_i]]], true]);
 				}
 				
