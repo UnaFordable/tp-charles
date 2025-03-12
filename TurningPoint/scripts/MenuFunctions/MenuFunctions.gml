@@ -62,10 +62,10 @@ function menu_select_action(_user, _action){
 	with(obj_battle){
 		if(_action.target_required){	
 			for(var _i = 0; _i < array_length(enemy_units); _i++){
-				instance_create_depth(global.cam_width/2+16,global.cam_bottom_y+32+(16*_i),depth-1,obj_target_select, {char_index: _i});
+				instance_create_depth(global.cam_width/2+16,global.cam_bottom_y+32+(16*_i),depth-1,obj_target_select, {char_index: _i, m_target_side : object_index.enemy_units});
 			}
 			for(var _i = 0; _i < array_length(party_units); _i++){
-				instance_create_depth(global.cam_bottom_x+16,global.cam_bottom_y+32+(16*_i),depth-1,obj_target_select, {char_index: _i});
+				instance_create_depth(global.cam_bottom_x+16,global.cam_bottom_y+32+(16*_i),depth-1,obj_target_select, {char_index: _i, m_target_side : object_index.party_units});
 			}
 			with(cursor){
 				active_action = _action;
