@@ -38,6 +38,7 @@
     {"name":"obj_menu_toggle","order":7,"path":"objects/obj_menu_toggle/obj_menu_toggle.yy",},
     {"name":"obj_menugoback","order":2,"path":"objects/obj_menugoback/obj_menugoback.yy",},
     {"name":"obj_move_button","order":8,"path":"objects/obj_move_button/obj_move_button.yy",},
+    {"name":"obj_next_button","order":4,"path":"objects/obj_next_button/obj_next_button.yy",},
     {"name":"obj_npc","order":1,"path":"objects/obj_npc/obj_npc.yy",},
     {"name":"obj_save_file_button","order":1,"path":"objects/obj_save_file_button/obj_save_file_button.yy",},
     {"name":"obj_save","order":10,"path":"objects/obj_save/obj_save.yy",},
