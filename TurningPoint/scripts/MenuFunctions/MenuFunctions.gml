@@ -38,7 +38,8 @@ function menu(_x, _y, _options, _description = -1, _width = undefined, _height =
 			instance_create_depth(_x+(_i*36),_y-96,depth,obj_bm_button, {m_hover : _i});
 			
 		}
-		instance_create_depth(_x,_y+32, depth,obj_menugoback)
+		instance_create_depth(_x,_y+32, depth,obj_menugoback);
+		instance_create_depth(_x+32, _y+32, depth, obj_next_button);
 	}
 }
 

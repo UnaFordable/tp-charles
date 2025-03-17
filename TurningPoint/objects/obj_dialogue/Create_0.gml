@@ -15,3 +15,5 @@ enum DISPLAY{
 	OVERHEAD
 }
 display_state = noone;
+
+next_step = false;
