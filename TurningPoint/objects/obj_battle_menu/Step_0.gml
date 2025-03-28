@@ -1,6 +1,7 @@
-/// @description Insert description here
+ /// @description Insert description here
 // You can write your code in this editor
 if(active){
+	/*
 	hover += keyboard_check_pressed(vk_right) - keyboard_check_pressed(vk_left);
 	if(hover > array_length(options)-1){
 		hover = 0;
@@ -26,6 +27,7 @@ if(active){
 			menu_go_back();
 		}
 	}
+	*/
 }
 
 

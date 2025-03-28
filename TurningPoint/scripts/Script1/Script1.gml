@@ -51,7 +51,7 @@ function char_stats(){
 		},
 		run: {
 			name:"Run",
-			description: "Ran away",
+			description: "Ran away!!",
 			sub_menu: "Flee",
 			target_required: false,
 			func: function(){

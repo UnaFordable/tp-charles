@@ -11,3 +11,6 @@ with(obj_menugoback){
 with(obj_target_select){
 	instance_destroy();
 }
+with(obj_next_button){
+	instance_destroy();
+}

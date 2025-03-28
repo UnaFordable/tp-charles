@@ -2,7 +2,7 @@
 // You can write your code in this editor
 battle_state();
 
-
+/*
 if(cursor.active){
 	with(cursor){
 		var _key_up = keyboard_check_pressed(vk_up);
@@ -63,6 +63,7 @@ if(cursor.active){
 				target_all = 0;
 			}
 		}
+		
 		if(!active_error){
 			if(_key_confirm){
 				with(obj_battle){
@@ -82,9 +83,9 @@ if(cursor.active){
 			active = false;
 			confirm_delay = 0;
 		}
+		
 	}
 	
 }
-
-
+*/
 

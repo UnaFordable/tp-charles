@@ -80,7 +80,7 @@ for (var _i = 0; _i < array_length(party_units); _i++) {
 	
 	draw_set_color(c_white);
 }
-
+/*
 if(cursor.active){
 	with(cursor){
 		if(active_target != noone){

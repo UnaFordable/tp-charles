@@ -95,12 +95,14 @@ function battle_state_select_action(){
 				//Add item count to option name
 					var _name_and_count = _action.name;
 					if(_action.sub_menu == "Items"){
-						_name_and_count += string(" x{0}", _action.count);
+						_name_and_count += string(" {0}", _action.count);
 					}
+					// if the option is the primary option, push first to the menu_options
 					if(_action.sub_menu == -1){
 						array_push(_menu_options, [_name_and_count, menu_select_action, [_unit, _action], _available]);
 					}
 					else{
+						// push the sub menus to options_arrays
 						if(is_undefined(_sub_menus[$ _action.sub_menu])){
 							variable_struct_set(_sub_menus, _action.sub_menu, [[_name_and_count, menu_select_action, [_unit, _action], _available]]);
 						}
@@ -126,6 +128,7 @@ function battle_state_select_action(){
 					}
 					return _priority(_b) - _priority(_a);
 				});
+				// Finally display the menu with options
 				menu(global.cam_bottom_x + 10, global.cam_bottom_y +110, _menu_options, ,60,60);
 			}
 			else{
@@ -150,6 +153,7 @@ function begin_action(_user, _action, _targets){
 		current_targets = [current_targets];
 	}
 	//battle_text = string_ext(_action.description, [_user.name]);
+	if(!instance_exists(obj_next_button))instance_create_depth(global.cam_bottom_x+42, global.cam_bottom_y+142, depth-1, obj_next_button);
 	dialogue(DISPLAY.OVERHEAD,{text: string_ext(_action.description, [_user.name]),name:""});
 	battle_wait_time_remaining = battle_wait_time_frames;
 	with(_user){
@@ -310,6 +314,7 @@ function battle_state_begin(){
 		*/
 		battle_state = battle_state_select_action;
 	}
+	instance_create_depth(global.cam_bottom_x+42, global.cam_bottom_y+142, -99999, obj_next_button);
 }
 
 battle_state = battle_state_begin;
