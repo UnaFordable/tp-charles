@@ -1,9 +1,5 @@
 /// @description Insert description here
 // You can write your code in this editor
-
-if(y > global.cam_top_y+global.cam_height) or(instance_exists(obj_bm_button)){
+if(obj_battle_menu.sub_menu_level < 1){
 	instance_destroy();
 }
-
-
-

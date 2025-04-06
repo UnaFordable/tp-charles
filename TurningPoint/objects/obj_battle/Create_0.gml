@@ -79,35 +79,41 @@ function battle_state_select_action(){
 				var _sub_menus = {};
 				//add inventory to actions list
 				var _inventory_actions = [];
+				//for every item in the inventory
 				for (var _i = 0; _i < array_length(global.inventory); _i++)
 				{
-					//if we have any of this item left we want to add the to the action list
+				//if we have any of this item left we want to add the to the action list
 					if (global.inventory[_i][1] > 0){
 						var _item_action = global.inventory[_i][0];
 						_item_action.count = global.inventory[_i][1];
 						array_push(_inventory_actions, _item_action); 
 					}
 				}
+				
 				var _action_list = array_union(_unit.actions, _inventory_actions);
 				for(var _i = 0; _i < array_length(_action_list); _i++){
 					var _action = _action_list[_i];
 					var _available = is_action_available(_unit, _action);
 				//Add item count to option name
-					var _name_and_count = _action.name;
+					var _name = _action.name;
+					var _count = 0;
 					if(_action.sub_menu == "Items"){
-						_name_and_count += string(" {0}", _action.count);
+						_count = _action.count;
+					}
+					else if(_action.sub_menu == "Skills"){
+						_count = _action.ep_cost;
 					}
 					// if the option is the primary option, push first to the menu_options
 					if(_action.sub_menu == -1){
-						array_push(_menu_options, [_name_and_count, menu_select_action, [_unit, _action], _available]);
+						array_push(_menu_options, [_name, _count, menu_select_action, [_unit, _action], _available]);
 					}
 					else{
 						// push the sub menus to options_arrays
 						if(is_undefined(_sub_menus[$ _action.sub_menu])){
-							variable_struct_set(_sub_menus, _action.sub_menu, [[_name_and_count, menu_select_action, [_unit, _action], _available]]);
+							variable_struct_set(_sub_menus, _action.sub_menu, [[_name, _count, menu_select_action, [_unit, _action], _available]]);
 						}
 						else{
-							array_push(_sub_menus[$ _action.sub_menu], [_name_and_count, menu_select_action, [_unit, _action], _available]);
+							array_push(_sub_menus[$ _action.sub_menu], [_name, _count, menu_select_action, [_unit, _action], _available]);
 						}
 					}
 				}
@@ -281,9 +287,6 @@ function battle_state_turn_progression(){
 	battle_state = battle_state_select_action;
 }
 function battle_state_ending(){
-	if (keyboard_check_pressed(ord("Z"))){
-		battle_end_message_prog++;
-	}
 	if(!instance_exists(obj_dialogue))//if (battle_end_message_prog >= array_length(battle_end_messages))
 	{
 		transition_prog -= 0.01;

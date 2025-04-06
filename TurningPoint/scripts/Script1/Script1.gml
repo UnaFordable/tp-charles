@@ -85,7 +85,7 @@ function char_stats(){
 			name: "Fart Atk",
 			description: "{0} farts towards the enemy",
 			sub_menu: "Skills",
-			ep_cost: 1,
+			ep_cost: 2,
 			target_required: true,
 			target_enemy_by_default: true,
 			target_all: MODE.ALWAYS,
@@ -104,7 +104,7 @@ function char_stats(){
 			name: "Heal Rub",
 			description: "{0} gives rubs!",
 			sub_menu: "Skills",
-			ep_cost: 1,
+			ep_cost: 3,
 			target_required: true,
 			target_enemy_by_default: false,
 			target_all: MODE.NEVER,
@@ -277,7 +277,7 @@ function char_stats(){
 		sprites: {walk: spr_baxter_walk, idle: spr_bax_bat_bak, knockout: spr_rip},
 		actions: [global.action_library.punch, global.action_library.rub, global.action_library.run]
 	},
-	{
+	/*{
 		name: "Donohue",
 		level:      5,
 		//BASE STATS
@@ -316,7 +316,7 @@ function char_stats(){
 		exp_max:    3,
 		sprites :{walk: spr_baxter_walk, idle: spr_shel_bat_bak, attack: spr_shelly_idle, dodge: spr_shelly_idle, knockout: spr_rip, defend: spr_shelly_idle},
 		actions: [global.action_library.punch, global.action_library.slime_spit, global.action_library.run]
-	}
+	}*/
 	]
 #endregion
 	#region ALL EMEMIES

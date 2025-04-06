@@ -10,8 +10,10 @@ if(instance_exists(obj_battle_menu) and obj_battle_menu.sub_menu_level = 0){
 					if(options[hover][2] != -1){
 						script_execute_ext(_func, options[hover][2]);
 						/// Create new options for moves
-						for(var _i = 0; _i < array_length(options); _i ++){
-							instance_create_depth(x,y,depth, obj_move_select)
+						if(!instance_exists(obj_move_select)){
+							for(var _i = 0; _i < array_length(options); _i ++){
+								instance_create_depth(global.cam_bottom_x+8,global.cam_bottom_y+64+(_i*18),depth, obj_move_select, {m_hover : _i, button_name: options[_i][0], m_count: options[_i][1]})
+							}
 						}
 						///
 					}

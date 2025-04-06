@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 with(obj_battle_menu) instance_destroy();
+with(obj_bm_button){instance_destroy();}
 for (var _i = 0; _i < array_length(global.party); _i++){
 	global.party[_i].hp = party_units[_i].hp;
 	global.party[_i].ep = party_units[_i].ep;
@@ -9,7 +10,7 @@ with (obj_battle_unit) instance_destroy();
 with (obj_filmbackground) instance_destroy();
 
 instance_activate_all();
-
+obj_player.key_action = false;
 
 if (conclusion_type == 2){
 	with (creator){
