@@ -62,6 +62,7 @@
     {"name":"spr_action_button","order":4,"path":"sprites/spr_action_button/spr_action_button.yy",},
     {"name":"spr_backbutton","order":10,"path":"sprites/spr_backbutton/spr_backbutton.yy",},
     {"name":"spr_battle_button","order":2,"path":"sprites/spr_battle_button/spr_battle_button.yy",},
+    {"name":"spr_battle_sub_button","order":4,"path":"sprites/spr_battle_sub_button/spr_battle_sub_button.yy",},
     {"name":"spr_bax_bat_bak","order":2,"path":"sprites/spr_bax_bat_bak/spr_bax_bat_bak.yy",},
     {"name":"spr_baxter_walk","order":1,"path":"sprites/spr_baxter_walk/spr_baxter_walk.yy",},
     {"name":"spr_bsm_ref","order":1,"path":"sprites/spr_bsm_ref/spr_bsm_ref.yy",},

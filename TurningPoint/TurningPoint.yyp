@@ -168,6 +168,7 @@
     {"id":{"name":"spr_backbutton","path":"sprites/spr_backbutton/spr_backbutton.yy",},},
     {"id":{"name":"spr_battle_background_ui","path":"sprites/spr_battle_background_ui/spr_battle_background_ui.yy",},},
     {"id":{"name":"spr_battle_button","path":"sprites/spr_battle_button/spr_battle_button.yy",},},
+    {"id":{"name":"spr_battle_sub_button","path":"sprites/spr_battle_sub_button/spr_battle_sub_button.yy",},},
     {"id":{"name":"spr_bax_bat_bak","path":"sprites/spr_bax_bat_bak/spr_bax_bat_bak.yy",},},
     {"id":{"name":"spr_baxter_idle","path":"sprites/spr_baxter_idle/spr_baxter_idle.yy",},},
     {"id":{"name":"spr_baxter_walk","path":"sprites/spr_baxter_walk/spr_baxter_walk.yy",},},

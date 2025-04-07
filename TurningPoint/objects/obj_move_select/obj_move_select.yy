@@ -36,8 +36,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_item_button",
-    "path":"sprites/spr_item_button/spr_item_button.yy",
+    "name":"spr_battle_sub_button",
+    "path":"sprites/spr_battle_sub_button/spr_battle_sub_button.yy",
   },
   "spriteMaskId":null,
   "visible":true,

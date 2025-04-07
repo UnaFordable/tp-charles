@@ -30,6 +30,7 @@
   "properties":[
     {"$GMObjectProperty":"v1","%Name":"m_hover","filters":[],"listItems":[],"multiselect":false,"name":"m_hover","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"button_name","filters":[],"listItems":[],"multiselect":false,"name":"button_name","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"\"\"","varType":2,},
+    {"$GMObjectProperty":"v1","%Name":"icon","filters":[],"listItems":[],"multiselect":false,"name":"icon","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

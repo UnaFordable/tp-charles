@@ -120,15 +120,15 @@ function battle_state_select_action(){
 				var _sub_menu_array = variable_struct_get_names(_sub_menus);
 				for(var _i = 0; _i < array_length(_sub_menu_array); _i++){
 					//array_push(_sub_menus[$ _sub_menu_array[_i]], ["Back", menu_go_back, -1, true]);
-					array_push(_menu_options, [_sub_menu_array[_i], sub_menu, [_sub_menus[$ _sub_menu_array[_i]]], true]);
+					array_push(_menu_options, [_sub_menu_array[_i], 0, sub_menu, [_sub_menus[$ _sub_menu_array[_i]]], true]);
 				}
 				
 				array_sort(_menu_options, function(_a, _b){
 					var _priority = function(_option)
 					{
-						if (_option[0] == "Fight") return 99;
-						if (_option[0] == "Skills") return 50;
-						if (_option[0] == "Items") return 30;
+						if (_option[0] == "Fight") return -7;
+						if (_option[0] == "Skills") return -8;
+						if (_option[0] == "Items") return -9;
 						if (_option[0] == "Flee") return -10;
 						return 0;
 					}
