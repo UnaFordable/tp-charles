@@ -43,6 +43,14 @@ cursor = {
 	confirm_delay: 0,
 	active: false
 }
+// stashe the ccurrent enemies and user's inventory
+stashed_enemies = enemies;
+stashed_inventory = [];
+//
+
+stashed_hp = [];
+stashed_ep = [];
+
 
 //Make enemies
 for (var _i = 0; _i < array_length(enemies); _i++){
@@ -54,6 +62,11 @@ for (var _i = 0; _i < array_length(enemies); _i++){
 for (var _i = 0; _i < array_length(global.party); _i++){
 	party_units[_i]= instance_create_depth(global.cam_top_x+40+((_i mod 4)*(16*2.5)), global.cam_top_y+(16*9), depth-10, obj_battle_unit_pc, global.party[_i])
 	array_push(units, party_units[_i]);
+}
+//Stash party HP and EP
+for (var _i = 0; _i < array_length(party_units); _i++){
+	stashed_hp[_i] = party_units[_i].hp;
+	stashed_ep[_i] = party_units[_i].ep;
 }
 
 unit_turn_order = array_shuffle(units);
@@ -230,7 +243,8 @@ function battle_state_victor_check(){
 		//battle_end_messages[0] = "All party members defeated!";
 		//battle_end_messages[1] = "Game over...";
 		dialogue(DISPLAY.OVERHEAD,{text: "All party members defeated!",name:""});
-		dialogue(DISPLAY.OVERHEAD,{text: "Game over...",name:""});
+		dialogue(DISPLAY.OVERHEAD,{text: "...",name:""});
+		//instance_create_depth(x,y,depth-10, obj_game_over);
 		
 	}
 	else
@@ -286,6 +300,7 @@ function battle_state_turn_progression(){
 	}
 	battle_state = battle_state_select_action;
 }
+	
 function battle_state_ending(){
 	if(!instance_exists(obj_dialogue))//if (battle_end_message_prog >= array_length(battle_end_messages))
 	{
@@ -303,6 +318,7 @@ function battle_state_ending(){
 		
 	}
 }
+	
 function battle_state_begin(){
 	//battle_text = "Ka...";
 	transition_prog += 0.01;

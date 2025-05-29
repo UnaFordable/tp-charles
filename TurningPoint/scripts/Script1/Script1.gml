@@ -231,7 +231,7 @@ function char_stats(){
 	{
 		
 		name: "Lyraka",
-		level:	    5,
+		level:	    7,
 		//BASE STATS
 		hp_max_BASE:	 95,
 		ep_max_BASE:     85,
@@ -255,7 +255,7 @@ function char_stats(){
 	},
 	{
 		name: "Baxter",
-		level:      5,
+		level:      7,
 		//BASE STATS
 		hp_max_BASE:	 76,
 		ep_max_BASE:     71,
@@ -264,7 +264,7 @@ function char_stats(){
 		special_BASE:    104,
 		spd_BASE:        108,
 		//ACTUAL STATS
-		hp:         41, //40
+		hp:         40, //40
 		hp_max:     10, //18
 		ep:         18,
 		ep_max:     6,
@@ -426,6 +426,24 @@ function char_stats(){
 			actions: [global.action_library.punch, global.action_library.spin_attack],
 			xp_value:100,
 			AIscript: function(){
+				var _action = choose(actions[0], action[1]);
+				var _possible_targets = array_filter(obj_battle.party_units, function(_unit, _index){return(_unit.hp > 0);});
+				var _target = _possible_targets[irandom(array_length(_possible_targets)-1)];
+				return [_action, _target];
+			}
+		},
+		ninja:{
+			name: "Dark Assassin",
+			hp: 80,
+			hp_max: 80,
+			attack: 25,
+			defense: 15,
+			spd: 2,
+			role: "BOSS",
+			sprites: {idle: spr_ninja_idle},
+			actions: [global.action_library.punch],
+			xp_value: 70,
+			AIscript: function(){
 				var _action = actions[0];
 				var _possible_targets = array_filter(obj_battle.party_units, function(_unit, _index){return(_unit.hp > 0);});
 				var _target = _possible_targets[irandom(array_length(_possible_targets)-1)];
@@ -438,7 +456,7 @@ function char_stats(){
 	global.inventory = [];
 	
 }
-
+#region leveling management
 function recieve_exp(_xp){
 	for(var _i = 0; _i < array_length(global.party); _i++){
 		var _party = global.party[_i];
@@ -486,14 +504,18 @@ function level_up(_member, _hpm, _epm, _atk, _def, _sp, _spd){
 	if(_sp_diff != 0) dialogue(DISPLAY.OVERHEAD,{text: _name+"'s special increased by "+ string(_sp_diff),name:""});
 	if(_spd_diff != 0) dialogue(DISPLAY.OVERHEAD,{text: _name+"'s speed increased by "+ string(_spd_diff),name:""});
 }
-
+#endregion
+#region Item Management
 function remove_item_from_inventory(_item, _amount){
 	for (var _i = 0; _i < array_length(global.inventory); _i++)
 	{
 		if (global.inventory[_i][0] == _item)
 		{
-			
 			global.inventory[_i][1] -= _amount;
+			if(instance_exists(obj_battle)){
+				array_push(obj_battle.stashed_inventory, _item)
+				//obj_battle.stashed_inventory;
+			}
 			if(global.inventory[_i][1] <= 0){
 				array_delete(global.inventory,_i,1);
 			}
@@ -517,3 +539,4 @@ function add_item_to_inventory(_item, _amount){
 		array_push(global.inventory,[_item, _amount]);
 	}
 }
+#endregion

@@ -12,10 +12,18 @@ if(!instance_exists(obj_dialogue)){
 //key_action = keyboard_check_pressed(ord("Z"));
 //key_back = keyboard_check_pressed(ord("X"));
 
+if(instance_exists(obj_CUTSCENE)){
+	key_up = false;
+	key_down = false;
+	key_left = false;
+	key_right = false;
+}
+
 var _xinput = key_right - key_left;
 var _yinput = key_down - key_up;
 var _dinput = point_direction(0,0,_xinput,_yinput);
 var _minput = point_distance(0,0,_xinput,_yinput);
+
 
 if (_minput != 0)
 {

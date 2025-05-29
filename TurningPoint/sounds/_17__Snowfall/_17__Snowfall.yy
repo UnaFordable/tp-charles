@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":104.069336,
+  "duration":104.06401,
   "name":"_17__Snowfall",
   "parent":{
     "name":"Sounds",

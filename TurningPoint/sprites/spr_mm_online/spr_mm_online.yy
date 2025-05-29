@@ -19,7 +19,7 @@
   "height":72,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"957e3464-a609-48a4-b49b-e843e3c2dc9f","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"957e3464-a609-48a4-b49b-e843e3c2dc9f","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"957e3464-a609-48a4-b49b-e843e3c2dc9f","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"957e3464-a609-48a4-b49b-e843e3c2dc9f","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":false,},
     {"$GMImageLayer":"","%Name":"52bd0ed3-2275-43a3-8bf1-a6ad2946c732","blendMode":0,"displayName":"default","isLocked":false,"name":"52bd0ed3-2275-43a3-8bf1-a6ad2946c732","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_mm_online",
@@ -33,7 +33,7 @@
   "resourceType":"GMSprite",
   "resourceVersion":"2.0",
   "sequence":{
-    "$GMSequence":"",
+    "$GMSequence":"v1",
     "%Name":"spr_mm_online",
     "autoRecord":true,
     "backdropHeight":768,
@@ -64,6 +64,8 @@
     "playbackSpeedType":0,
     "resourceType":"GMSequence",
     "resourceVersion":"2.0",
+    "seqHeight":72.0,
+    "seqWidth":128.0,
     "showBackdrop":true,
     "showBackdropImage":false,
     "timeUnits":1,

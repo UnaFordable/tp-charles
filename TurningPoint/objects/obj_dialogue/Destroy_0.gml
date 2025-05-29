@@ -3,4 +3,4 @@
 with (obj_filmbackground){
 	instance_destroy();
 }
-//instance_activate_all();
+instance_activate_object(obj_CUTSCENE)

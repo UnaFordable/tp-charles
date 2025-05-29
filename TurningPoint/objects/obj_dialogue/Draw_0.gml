@@ -12,9 +12,9 @@ switch(display_state){
 		if(text_set.name != ""){
 			var _v = string_width(text_set.name)+10
 			//draw_set_color(c_yellow)
-			draw_sprite_stretched(spr_text_box_s, 0, global.cam_top_x+10, global.cam_top_y + 140,_v, 18);
+			draw_sprite_stretched(spr_text_box_s, 0, global.cam_top_x+10, global.cam_top_y + 138,_v, 18);
 			draw_set_color(c_black);
-			draw_text(global.cam_top_x+14, global.cam_top_y+142, text_set.name);
+			draw_text(global.cam_top_x+14, global.cam_top_y+140, text_set.name);
 		}
 		if(all_text_displayed = true){
 			draw_sprite(spr_pointer, 0, global.cam_top_x+global.cam_width - 16, global.cam_top_y+global.cam_height - 16);
@@ -45,6 +45,7 @@ switch(display_state){
 		}
 		break;
 	case DISPLAY.PLAIN:
+		draw_text(global.cam_top_x+14, global.cam_top_y+156, string_copy(text_set.text,1,display_num));
 		break;
 }
 

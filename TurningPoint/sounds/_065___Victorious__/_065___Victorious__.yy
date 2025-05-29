@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":22.491428,
+  "duration":22.445011,
   "name":"_065___Victorious__",
   "parent":{
     "name":"Sounds",

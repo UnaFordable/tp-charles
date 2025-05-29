@@ -1,16 +1,23 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function new_encounter(_enemies, _bg){
+function new_encounter(_enemies, _bg/*, _inventory = noone, _party = noone*/){
 	//audio_play_sound(_1_24__Tough_Enemy__vs__Boss____King_Dedede_s_Theme__from_Kirby_s_Dream_Land_, 1, true);
 	for(var _i = 0; _i < array_length(_enemies); _i++){
 		if(_enemies[_i].role == "BOSS"){
-			//audio
+			audio_play_sound(_94__Strongest_Sword, 1 ,true)
 		}
 		else{
 			//audio
 		}
 	}
-	
+	/*
+	if(_inventory != noone){
+		global.inventory = _inventory;
+	}
+	if(_party != noone){
+		global.party = _party
+	}
+	*/
 	instance_create_depth(global.cam_top_x, global.cam_top_y, -9999, obj_battle, {enemies: _enemies, creator: id, battle_background: _bg});
 }
 

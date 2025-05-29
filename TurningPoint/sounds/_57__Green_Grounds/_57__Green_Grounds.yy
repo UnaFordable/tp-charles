@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":65.0449,
+  "duration":65.0,
   "name":"_57__Green_Grounds",
   "parent":{
     "name":"Sounds",

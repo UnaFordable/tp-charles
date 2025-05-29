@@ -2,7 +2,7 @@
 // You can write your code in this editor
 image_index = 0;
 pressed = false;
-if(instance_exists(obj_player) and !instance_exists(obj_dialogue)){
+if(instance_exists(obj_player) and !instance_exists(obj_CUTSCENE) and !instance_exists(obj_dialogue)){
 	switch(m_direction){
 		case 0:
 			obj_player.key_up = false;
