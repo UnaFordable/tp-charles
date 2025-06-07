@@ -68,7 +68,7 @@ function cutscene_instance_destroy_nearest(_x, _y, _object){
 	cutscene_instance_destroy(_inst);
 }
 
-function move_character(_obj, _x, _y, _relative, _spd){
+function move_character(_obj, _x, _y, _relative, _spd, _animate = true){
 
 	if(x_dest == -1){
 		if(_relative){
@@ -80,11 +80,41 @@ function move_character(_obj, _x, _y, _relative, _spd){
 	var _xx = x_dest;
 	var _yy = y_dest;
 	
-	if (instance_exists(_obj))with (_obj){
+	if (instance_exists(_obj)) with (_obj){
+		if(point_distance(x,y,_xx,_yy) != 0 and _animate = true){
+			direction = point_direction(x,y,_xx,_yy);	
+			image_speed = 1;
+		}
+		else
+		{
+			image_speed = 0;
+			anim_index = 0;
+		}
+			
+		four_direction_animate();
+			
+		if(image_index >= 0 and image_index < 4){
+			_savedface_x = 16;
+			_savedface_y = 0;
+		}
+		else if(image_index >= 4 and image_index < 8){
+			_savedface_x = 0;
+			_savedface_y = -16;
+		}
+		else if(image_index >= 8 and image_index < 12){
+			_savedface_x = -16;
+			_savedface_y = 0;
+		}
+		else if(image_index >= 12 and image_index < 16){
+			_savedface_x = 0;
+			_savedface_y = 16;
+		}
 		if(point_distance(x,y,_xx,_yy) >= _spd){
 			var _dir = point_direction(x,y, _xx, _yy);
 			var _ldirx = lengthdir_x(_spd, _dir);
 			var _ldiry = lengthdir_y(_spd, _dir);
+			
+
 			x += _ldirx;
 			y += _ldiry;
 		}
@@ -99,3 +129,5 @@ function move_character(_obj, _x, _y, _relative, _spd){
 		}
 	}
 }
+	
+function 
