@@ -130,4 +130,15 @@ function move_character(_obj, _x, _y, _relative, _spd, _animate = true){
 	}
 }
 	
-function 
+function cutscene_object_change_sprite(_obj, _sprite, _frame = 0){
+	with (_obj){
+		sprite_index = _sprite;
+		image_index = _frame;
+	}
+	cutscene_end_action();
+}
+	
+function cutscene_expression(_obj, _expression){
+	var _fx = instance_create_depth(_obj.x, _obj.y - 32, -y, obj_fx_expression, {sprite_index: _expression});
+	return _fx
+}

@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-if(!instance_exists(obj_dialogue)){
+if(!instance_exists(obj_CUTSCENE)) and !instance_exists(obj_dialogue){
 	if(image_index = 1){
 		image_index = 0;
 		instance_deactivate_object(obj_menu_overworld);

@@ -65,8 +65,8 @@ function char_stats(){
 		},
 		#region LUSAKA MOVESET
 		spin_attack:{
-			name: "Spin Slam",
-			description: "{0} makes a deadly spin!",
+			name: "Head Slash",
+			description: "{0} makes a lethal bow!",
 			sub_menu: "Skills",
 			ep_cost: 1,
 			target_required: true,
@@ -251,7 +251,7 @@ function char_stats(){
 		experience: 0,
 		exp_max:    100,
 		sprites :{walk: spr_lusaka_walk, idle: spr_Lyraka_bat_bak, knockout: spr_rip},
-		actions: [global.action_library.punch, global.action_library.spin_attack, global.action_library.fart_attack, global.action_library.run]
+		actions: [global.action_library.punch, global.action_library.spin_attack, global.action_library.run]
 	},
 	{
 		name: "Baxter",
@@ -436,7 +436,7 @@ function char_stats(){
 			name: "Dark Assassin",
 			hp: 80,
 			hp_max: 80,
-			attack: 25,
+			attack: 15,
 			defense: 15,
 			spd: 2,
 			role: "BOSS",
@@ -453,7 +453,7 @@ function char_stats(){
 		#endregion
 	}
 	#endregion
-	global.inventory = [];
+	global.inventory = [[global.action_library.tulip,5]];
 	
 }
 #region leveling management
