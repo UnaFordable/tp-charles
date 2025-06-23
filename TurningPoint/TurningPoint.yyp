@@ -289,6 +289,7 @@
     {"id":{"name":"Sprite23","path":"sprites/Sprite23/Sprite23.yy",},},
     {"id":{"name":"Sprite90","path":"sprites/Sprite90/Sprite90.yy",},},
     {"id":{"name":"tpCodices","path":"sprites/tpCodices/tpCodices.yy",},},
+    {"id":{"name":"Woods","path":"sprites/Woods/Woods.yy",},},
     {"id":{"name":"TileSet1","path":"tilesets/TileSet1/TileSet1.yy",},},
     {"id":{"name":"TileSet2","path":"tilesets/TileSet2/TileSet2.yy",},},
     {"id":{"name":"TileSet3","path":"tilesets/TileSet3/TileSet3.yy",},},
