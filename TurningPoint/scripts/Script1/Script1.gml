@@ -231,7 +231,7 @@ function char_stats(){
 	{
 		
 		name: "Lyraka",
-		level:	    7,
+		level:	    8,
 		//BASE STATS
 		hp_max_BASE:	 95,
 		ep_max_BASE:     85,
