@@ -142,3 +142,7 @@ function cutscene_expression(_obj, _expression){
 	var _fx = instance_create_depth(_obj.x, _obj.y - 32, -y, obj_fx_expression, {sprite_index: _expression});
 	return _fx
 }
+
+function cutscene_choice(_statement1, _statement2, _outcome1, _outcome2){
+	
+}

@@ -179,6 +179,7 @@ function char_stats(){
 			info: "A sweet treat\n+20 HP",
 			
 			description: "{0} ate a tulip!",
+			price: 10,
 			sub_menu: "Items",
 			target_required: true,
 			target_enemy_by_default: false,
@@ -193,6 +194,7 @@ function char_stats(){
 			name: "Milk",
 			info: "A sweet drink\n+10 NRG",
 			description: "{0} drank milk!",
+			price: 20,
 			sub_menu: "Items",
 			target_required: true,
 			target_enemy_by_default: false,
