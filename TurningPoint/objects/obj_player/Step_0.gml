@@ -69,6 +69,7 @@ else{
 	if(instance_exists(obj_action_button)) obj_action_button.image_index = 0;
 	with (instance_nearest(x,y, obj_npc)){
 			if(object_index = obj_inn and interacted == true){interacted = false};
+			if(object_index = obj_shop_npc and interacted == true){interacted = false};
 	}
 }
 

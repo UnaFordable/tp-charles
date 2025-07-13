@@ -6,12 +6,17 @@
   ],
   "managed":true,
   "name":"obj_shop_item_button",
-  "overriddenProperties":[],
+  "overriddenProperties":[
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_shop_button","path":"objects/obj_shop_button/obj_shop_button.yy",},"propertyId":{"name":"name","path":"objects/obj_shop_button/obj_shop_button.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"",},
+  ],
   "parent":{
     "name":"Shop Objects",
     "path":"folders/Objects/Shop Objects.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_shop_button",
+    "path":"objects/obj_shop_button/obj_shop_button.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -26,7 +31,6 @@
   "physicsShapePoints":[],
   "physicsStartAwake":true,
   "properties":[
-    {"$GMObjectProperty":"v1","%Name":"item_name","filters":[],"listItems":[],"multiselect":false,"name":"item_name","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"","varType":2,},
     {"$GMObjectProperty":"v1","%Name":"item_price","filters":[],"listItems":[],"multiselect":false,"name":"item_price","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
   ],
   "resourceType":"GMObject",
