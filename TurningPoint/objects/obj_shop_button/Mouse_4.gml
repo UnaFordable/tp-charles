@@ -1,5 +1,15 @@
 /// @description Insert description here
 // You can write your code in this editor
-if(obj_shop_menu.menu_level = level_def){
-	script_execute(button_func);
+
+switch(name){
+	case "Buy":
+		obj_SHOP.shop_state = SHOPSTATE.BUY; 
+		obj_SHOP.test++;
+		break;
+	case "Sell":
+		obj_SHOP.shop_state = SHOPSTATE.SELL; 
+		obj_SHOP.test++;
+		break;
 }
+
+//script_execute(button_func);
