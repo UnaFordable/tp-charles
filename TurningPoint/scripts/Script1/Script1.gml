@@ -20,6 +20,7 @@ function char_stats(){
 		#region PHYSICAL ATTACKS
 		punch: {
 			name: "Attack",
+			info: "",
 			description: "{0} throws a punch!",
 			sub_menu: -1,
 			ep_cost: 0,
@@ -40,6 +41,7 @@ function char_stats(){
 		#region SKILLS
 		block:{
 			name: "Block",
+			info: "",
 			description: "{0} blocks!",
 			sub_menu: "Skills",
 			ep_cost: 1,
@@ -51,6 +53,7 @@ function char_stats(){
 		},
 		run: {
 			name:"Run",
+			info: "Chance to end battle with no exp earned",
 			description: "Ran away!!",
 			sub_menu: "Flee",
 			target_required: false,
@@ -66,6 +69,7 @@ function char_stats(){
 		#region LUSAKA MOVESET
 		spin_attack:{
 			name: "Head Slash",
+			info: "Throw head with sharp edge attached",
 			description: "{0} makes a lethal bow!",
 			sub_menu: "Skills",
 			ep_cost: 1,
@@ -83,6 +87,7 @@ function char_stats(){
 		},
 		fart_attack:{
 			name: "Fart Atk",
+			info: "Bast of gas",
 			description: "{0} farts towards the enemy",
 			sub_menu: "Skills",
 			ep_cost: 2,
@@ -102,6 +107,7 @@ function char_stats(){
 		#region BAXTER MOVESET
 		rub: {
 			name: "Heal Rub",
+			info: "Touch technique to treat wounds",
 			description: "{0} gives rubs!",
 			sub_menu: "Skills",
 			ep_cost: 3,
@@ -118,6 +124,7 @@ function char_stats(){
 		#region DONOHUE MOVESET
 		manshot: {
 			name: "Wing Whip",
+			info: "Use your wing to deal damage.",
 			description: "{0} whips its wing!",
 			sub_menu: "Skills",
 			ep_cost: 2,
@@ -137,6 +144,7 @@ function char_stats(){
 		#region MANAGUA MOVESET
 		slime_spit:{
 			name: "Slime Spit",
+			info: "Use bits of yourself to deal damage.",
 			description: "{0} spits slime!",
 			sub_menu: "Skills",
 			ep_cost: 0,
@@ -156,6 +164,7 @@ function char_stats(){
 		#region REGULANA MOVESET
 		heartburn: {
 			name: "Heart Burn",
+			info: "",
 			description:"{0} casts heart burn!",
 			sub_menu: -1,
 			ep_cost: 0,
@@ -177,7 +186,6 @@ function char_stats(){
 		tulip:{
 			name: "Tulip",
 			info: "A sweet treat\n+20 HP",
-			
 			description: "{0} ate a tulip!",
 			price: 10,
 			sub_menu: "Items",
@@ -209,6 +217,7 @@ function char_stats(){
 			name : "Potion",
 			info: "Revitalizing!.\nRevives an ally",
 			description : "{0} uses a Potion!",
+			price: 20,
 			sub_menu : "Items",
 			target_enemy_by_default: false, //0: party/self, 1: enemy
 			target_all: MODE.NEVER,
