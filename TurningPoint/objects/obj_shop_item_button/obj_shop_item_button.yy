@@ -7,9 +7,7 @@
   ],
   "managed":true,
   "name":"obj_shop_item_button",
-  "overriddenProperties":[
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_shop_button","path":"objects/obj_shop_button/obj_shop_button.yy",},"propertyId":{"name":"name","path":"objects/obj_shop_button/obj_shop_button.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"",},
-  ],
+  "overriddenProperties":[],
   "parent":{
     "name":"Shop Objects",
     "path":"folders/Objects/Shop Objects.yy",
@@ -32,8 +30,7 @@
   "physicsShapePoints":[],
   "physicsStartAwake":true,
   "properties":[
-    {"$GMObjectProperty":"v1","%Name":"item_price","filters":[],"listItems":[],"multiselect":false,"name":"item_price","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
-    {"$GMObjectProperty":"v1","%Name":"item_ID","filters":[],"listItems":[],"multiselect":false,"name":"item_ID","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
+    {"$GMObjectProperty":"v1","%Name":"item_ID","filters":[],"listItems":[],"multiselect":false,"name":"item_ID","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"noone","varType":4,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
