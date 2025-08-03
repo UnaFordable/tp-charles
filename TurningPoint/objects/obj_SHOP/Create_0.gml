@@ -23,8 +23,10 @@ instance_create_depth(global.cam_bottom_x + 104, global.cam_bottom_y+8, -9999, o
 instance_create_depth(global.cam_bottom_x + 184, global.cam_bottom_y+152, -9999, obj_shop_button, 
 	{image_xscale: 3.5, image_yscale:1.5, name: "Confirm", 
 			button_func : function(){
-				if(global.currency.count > shop_item_selected.price * quantity)
-				add_item_to_inventory(obj_SHOP.shop_item_selected, obj_SHOP.quantity); obj_SHOP.quantity = 0;}
+				if(global.currency.count > obj_SHOP.shop_item_selected.price * obj_SHOP.quantity){
+					add_item_to_inventory(obj_SHOP.shop_item_selected, obj_SHOP.quantity); obj_SHOP.quantity = 0;}
+					global.currency.count -= (obj_SHOP.shop_item_selected * obj_SHOP.quantity);
+				}
 			});
 instance_create_depth(global.cam_bottom_x + 4, global.cam_bottom_y+4, -9999, obj_shop_button, 
 	{image_xscale: 1, image_yscale:1, name: "X", button_func : function(){ with obj_SHOP instance_destroy();}});
