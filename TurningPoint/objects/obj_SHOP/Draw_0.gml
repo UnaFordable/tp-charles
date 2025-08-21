@@ -12,13 +12,13 @@ text_display(2, global.cam_bottom_x + 180,global.cam_bottom_y +16,string(global.
 //}
 //catch(DoConv){}
 
-switch shop_state {
-	case SHOPSTATE.BUY:
+//switch shop_state {
+	//case SHOPSTATE.BUY:
 		var _item = shop_item_selected;
 		text_display(1,global.cam_bottom_x + 196, global.cam_bottom_y + 60, string(_item.info));
-		break;
-	case SHOPSTATE.SELL:
+	//	break;
+	//case SHOPSTATE.SELL:
 		//text_display(1, 80, 64, "Goodbye");
-		break;
-}
+	//	break;
+//}
 //draw_text(x,y,test);
