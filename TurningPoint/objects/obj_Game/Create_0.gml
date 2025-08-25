@@ -19,6 +19,7 @@ col = c_green;
 
 
 char_stats();
+troop_dictionary();
 
 //Minigame variables
 minigame_scores = [[],[],[],[],[]];

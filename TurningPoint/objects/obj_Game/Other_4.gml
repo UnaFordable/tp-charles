@@ -39,6 +39,8 @@ switch(room){
 		}
 		*/
 		break;
+	case rm_brig:
+		break;
 }
 
 

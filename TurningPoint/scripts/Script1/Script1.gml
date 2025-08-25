@@ -467,6 +467,18 @@ function char_stats(){
 	global.inventory = [[global.action_library.tulip,5]];
 	
 }
+
+function troop_dictionary(){
+	global.troops = [
+#region PROLOGUE CAVERNS
+		[global.enemies.buck_o],
+		[global.enemies.buck_o, global.enemies.buck_o],
+		[global.enemies.buck_e, global.enemies.buck_o],
+		[global.enemies.buck_l, global.enemies.buck_o],
+#endregion
+	]
+}
+
 #region leveling management
 function recieve_exp(_xp){
 	for(var _i = 0; _i < array_length(global.party); _i++){
@@ -516,6 +528,7 @@ function level_up(_member, _hpm, _epm, _atk, _def, _sp, _spd){
 	if(_spd_diff != 0) dialogue(DISPLAY.OVERHEAD,{text: _name+"'s speed increased by "+ string(_spd_diff),name:""});
 }
 #endregion
+
 #region Item Management
 function remove_item_from_inventory(_item, _amount){
 	for (var _i = 0; _i < array_length(global.inventory); _i++)

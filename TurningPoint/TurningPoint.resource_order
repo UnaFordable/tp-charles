@@ -33,7 +33,7 @@
   ],
   "ResourceOrderSettings":[
     {"name":"obj_action_button","order":11,"path":"objects/obj_action_button/obj_action_button.yy",},
-    {"name":"obj_amush","order":10,"path":"objects/obj_amush/obj_amush.yy",},
+    {"name":"obj_ambush","order":10,"path":"objects/obj_ambush/obj_ambush.yy",},
     {"name":"obj_baxter","order":7,"path":"objects/obj_baxter/obj_baxter.yy",},
     {"name":"obj_bm_button","order":1,"path":"objects/obj_bm_button/obj_bm_button.yy",},
     {"name":"obj_bsm_button_2","order":1,"path":"objects/obj_bsm_button_2/obj_bsm_button_2.yy",},
@@ -44,7 +44,7 @@
     {"name":"obj_cutscene_char","order":6,"path":"objects/obj_cutscene_char/obj_cutscene_char.yy",},
     {"name":"obj_CUTSCENE","order":11,"path":"objects/obj_CUTSCENE/obj_CUTSCENE.yy",},
     {"name":"obj_enemy","order":2,"path":"objects/obj_enemy/obj_enemy.yy",},
-    {"name":"obj_EVENT","order":12,"path":"objects/obj_EVENT/obj_EVENT.yy",},
+    {"name":"obj_EVENT","order":11,"path":"objects/obj_EVENT/obj_EVENT.yy",},
     {"name":"obj_eye","order":6,"path":"objects/obj_eye/obj_eye.yy",},
     {"name":"obj_filmbackground","order":1,"path":"objects/obj_filmbackground/obj_filmbackground.yy",},
     {"name":"obj_fx_expression","order":9,"path":"objects/obj_fx_expression/obj_fx_expression.yy",},

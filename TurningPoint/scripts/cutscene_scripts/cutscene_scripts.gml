@@ -146,3 +146,13 @@ function cutscene_expression(_obj, _expression){
 function cutscene_choice(_statement1, _statement2, _outcome1, _outcome2){
 	
 }
+	
+function cutscene_random_encounter(_enemy){
+	randomize();
+	var _x = choose(40, 0, -40);
+	if(instance_exists(obj_player)){
+		var _inst = instance_create_layer(obj_player.x + _x, obj_player.y + _x, "Instances", obj_ambush, {enemy_forms: _enemy});
+	}
+	cutscene_end_action();
+	return _inst;
+}

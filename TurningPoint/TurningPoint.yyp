@@ -88,7 +88,7 @@
     {"id":{"name":"fnt_ds","path":"fonts/fnt_ds/fnt_ds.yy",},},
     {"id":{"name":"obj_3DWORLD","path":"objects/obj_3DWORLD/obj_3DWORLD.yy",},},
     {"id":{"name":"obj_action_button","path":"objects/obj_action_button/obj_action_button.yy",},},
-    {"id":{"name":"obj_amush","path":"objects/obj_amush/obj_amush.yy",},},
+    {"id":{"name":"obj_ambush","path":"objects/obj_ambush/obj_ambush.yy",},},
     {"id":{"name":"obj_back_button","path":"objects/obj_back_button/obj_back_button.yy",},},
     {"id":{"name":"obj_battle_effect","path":"objects/obj_battle_effect/obj_battle_effect.yy",},},
     {"id":{"name":"obj_battle_floating_text","path":"objects/obj_battle_floating_text/obj_battle_floating_text.yy",},},
