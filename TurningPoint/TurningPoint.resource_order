@@ -72,6 +72,7 @@
     {"name":"obj_tween","order":2,"path":"objects/obj_tween/obj_tween.yy",},
     {"name":"rm_brig","order":1,"path":"rooms/rm_brig/rm_brig.yy",},
     {"name":"rm_buckotrail","order":3,"path":"rooms/rm_buckotrail/rm_buckotrail.yy",},
+    {"name":"rm_hawkwah_camp","order":5,"path":"rooms/rm_hawkwah_camp/rm_hawkwah_camp.yy",},
     {"name":"rm_main_menu","order":2,"path":"rooms/rm_main_menu/rm_main_menu.yy",},
     {"name":"rm_shoolum","order":4,"path":"rooms/rm_shoolum/rm_shoolum.yy",},
     {"name":"shop_processing","order":5,"path":"scripts/shop_processing/shop_processing.yy",},

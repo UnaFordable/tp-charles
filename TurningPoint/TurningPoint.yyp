@@ -165,6 +165,7 @@
     {"id":{"name":"rm_brig","path":"rooms/rm_brig/rm_brig.yy",},},
     {"id":{"name":"rm_buckotrail","path":"rooms/rm_buckotrail/rm_buckotrail.yy",},},
     {"id":{"name":"rm_cowbage_pasture","path":"rooms/rm_cowbage_pasture/rm_cowbage_pasture.yy",},},
+    {"id":{"name":"rm_hawkwah_camp","path":"rooms/rm_hawkwah_camp/rm_hawkwah_camp.yy",},},
     {"id":{"name":"rm_init","path":"rooms/rm_init/rm_init.yy",},},
     {"id":{"name":"rm_main_menu","path":"rooms/rm_main_menu/rm_main_menu.yy",},},
     {"id":{"name":"rm_minigame_hub","path":"rooms/rm_minigame_hub/rm_minigame_hub.yy",},},
@@ -333,6 +334,7 @@
     {"roomId":{"name":"rm_main_menu","path":"rooms/rm_main_menu/rm_main_menu.yy",},},
     {"roomId":{"name":"rm_buckotrail","path":"rooms/rm_buckotrail/rm_buckotrail.yy",},},
     {"roomId":{"name":"rm_shoolum","path":"rooms/rm_shoolum/rm_shoolum.yy",},},
+    {"roomId":{"name":"rm_hawkwah_camp","path":"rooms/rm_hawkwah_camp/rm_hawkwah_camp.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[
