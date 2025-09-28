@@ -6,15 +6,7 @@ function char_stats(){
 		ALWAYS = 1,
 		VARIES = 2,
 	}
-	enum ROLE{
-		SUPPORT,
-		COMMON,
-		BOSS
-	}
-	enum EQUIPTYPE{
-		ARMOR,
-		WEAPON,
-	}
+
 	
 	global.action_library = {
 		#region PHYSICAL ATTACKS
@@ -229,14 +221,23 @@ function char_stats(){
 		}
 		#endregion
 	};
-	global.equipment = {
-		tunic: {
-			name: "Leather Tunic",
-			type: EQUIPTYPE.ARMOR,
-			desc: "Made from fresh cow hide.\n+2 defense",
-			bonus: 2
-		}
-	}
+		
+	global.perks_index = [
+	{
+		
+		index: 1,
+		name: "HP up",
+		desc: "+10 hp",
+		assigned_character: noone,
+		func: function(_user){_user.hp_max += 10;}
+	},
+	{
+		index: 2,
+		name: "ATK up",
+		desc: "+3 attack",
+		assigned_character: noone,
+		func: function(_user){_user.attack += 3;}
+	}]
 	#region MAIN PARTY
 	global.party = [
 	{
@@ -259,10 +260,12 @@ function char_stats(){
 		defense:    6,
 		special:    4,
 		spd:        3,
-		experience: 0,
+		experience: 99,
 		exp_max:    100,
 		sprites :{walk: spr_lusaka_walk, idle: spr_Lyraka_bat_bak, knockout: spr_rip},
-		actions: [global.action_library.punch, global.action_library.spin_attack, global.action_library.run]
+		actions: [global.action_library.punch, global.action_library.spin_attack, global.action_library.run],
+		perks: [],
+		max_perks: 2
 	},
 	{
 		name: "Baxter",
@@ -286,7 +289,9 @@ function char_stats(){
 		experience: 0,
 		exp_max:    100,
 		sprites: {walk: spr_baxter_walk, idle: spr_bax_bat_bak, knockout: spr_rip},
-		actions: [global.action_library.punch, global.action_library.rub, global.action_library.run]
+		actions: [global.action_library.punch, global.action_library.rub, global.action_library.run],
+		perks: [],
+		max_perks: 3
 	},
 	/*{
 		name: "Donohue",
@@ -310,7 +315,8 @@ function char_stats(){
 		experience: 0,
 		exp_max:    3,
 		sprites :{walk: spr_baxter_walk, idle: spr_Dono_bat_back, attack: spr_donohue_idle, dodge: spr_donohue_idle, knockout: spr_rip, defend: spr_donohue_idle},
-		actions: [global.action_library.punch, global.action_library.manshot]
+		actions: [global.action_library.punch, global.action_library.manshot],
+		perks:[]
 	},
 	{
 		name: "Shelly",
@@ -326,10 +332,14 @@ function char_stats(){
 		experience: 0,
 		exp_max:    3,
 		sprites :{walk: spr_baxter_walk, idle: spr_shel_bat_bak, attack: spr_shelly_idle, dodge: spr_shelly_idle, knockout: spr_rip, defend: spr_shelly_idle},
-		actions: [global.action_library.punch, global.action_library.slime_spit, global.action_library.run]
+		actions: [global.action_library.punch, global.action_library.slime_spit, global.action_library.run],
+		perks: []
 	}*/
 	]
 #endregion
+
+
+
 	#region ALL EMEMIES
 	global.enemies = {
 		#region Basic enemies
@@ -500,6 +510,11 @@ function stats_update(){
 			_party.defense = round((_party.defense_BASE*2*_party.level)/100)+1;
 			_party.special = round((_party.special_BASE*2*_party.level)/100)+1;
 			_party.spd = round((_party.spd_BASE*2*_party.level)/100)+2;
+		}
+		if(array_length(_party.perks) > 0){
+			for(var _i = 0; _i < array_length(_party.perks); _i++){
+				script_execute(_party.perks[_i].func, _party);
+			}
 		}
 	}
 }

@@ -51,6 +51,7 @@ switch(m_state){
 		break;
 	case MENU.PERKS:
 		background_img = 2;
+		//var _ss = global.party[m_character_selected];
 		break;
 	case MENU.OPTIONS:
 		background_img = 3;

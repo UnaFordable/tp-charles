@@ -7,6 +7,10 @@ if(m_state == MENU.ITEMS){
 		}
 		instance_create_depth(global.cam_bottom_x + 176, global.cam_bottom_y +144, depth-1, obj_item_use);
 	}
+	if(!instance_exists(obj_perks_button)){
+		
+	}
+	
 	/*
 	if(instance_exists(obj_item_button)){
 		instance_activate_object(obj_item_button);
