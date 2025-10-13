@@ -1,9 +1,9 @@
 try{
 	if(instance_exists(obj_menu_overworld)){
-		//array_insert();
+		obj_menu_overworld.m_item_seleted = item_id;
 	}
+	timing = 5;
 }
 catch(DoConv){
 	
 }
-timing = 5;

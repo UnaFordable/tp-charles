@@ -7,7 +7,9 @@
   ],
   "managed":true,
   "name":"obj_perks_button",
-  "overriddenProperties":[],
+  "overriddenProperties":[
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_item_button","path":"objects/obj_item_button/obj_item_button.yy",},"propertyId":{"name":"item_id","path":"objects/obj_item_button/obj_item_button.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"0",},
+  ],
   "parent":{
     "name":"overworld menu",
     "path":"folders/Objects/overworld menu.yy",
