@@ -6,7 +6,7 @@ global.cam_bottom_x = camera_get_view_x(view_camera[1]);
 global.cam_bottom_y = camera_get_view_y(view_camera[1]);
 
 audio_stop_all();
-if(room != rm_init and room != rm_main_menu and room != rm_pet_sim){
+if(room != rm_init and room != rm_main_menu and room != rm_pet_sim and room != rm_contest){
 	if(!instance_exists(obj_menu_overworld)){
 		instance_create_depth(global.cam_bottom_x, global.cam_bottom_y,-999, obj_menu_toggle);
 		instance_create_depth(global.cam_bottom_x, global.cam_bottom_y, -999,obj_menu_overworld)
@@ -40,6 +40,9 @@ switch(room){
 		*/
 		break;
 	case rm_brig:
+		break;
+	case rm_contest:
+		instance_create_depth(x,y, depth,obj_CONTEST);
 		break;
 }
 

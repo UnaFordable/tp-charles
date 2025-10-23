@@ -26,7 +26,7 @@
   "physicsShapePoints":[],
   "physicsStartAwake":true,
   "properties":[
-    {"$GMObjectProperty":"v1","%Name":"the_room","filters":[],"listItems":[],"multiselect":false,"name":"the_room","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"rm_topscreen","path":"rooms/rm_topscreen/rm_topscreen.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"rm_topscreen","varType":5,},
+    {"$GMObjectProperty":"v1","%Name":"the_room","filters":[],"listItems":[],"multiselect":false,"name":"the_room","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"rm_contest","path":"rooms/rm_contest/rm_contest.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"rm_contest","varType":5,},
     {"$GMObjectProperty":"v1","%Name":"new_x","filters":[],"listItems":[],"multiselect":false,"name":"new_x","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"24","varType":1,},
     {"$GMObjectProperty":"v1","%Name":"new_y","filters":[],"listItems":[],"multiselect":false,"name":"new_y","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"24","varType":1,},
   ],
