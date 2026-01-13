@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_healmove",
   "bboxMode":0,
   "bbox_bottom":0,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"40f05bfa-5b27-47ee-b2b2-c86304a18a2e","name":"40f05bfa-5b27-47ee-b2b2-c86304a18a2e","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"40f05bfa-5b27-47ee-b2b2-c86304a18a2e","name":"40f05bfa-5b27-47ee-b2b2-c86304a18a2e","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Sprites",
-    "path":"folders/Sprites.yy",
+    "name":"spriteEffects",
+    "path":"folders/Sprites/spriteEffects.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

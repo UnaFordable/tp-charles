@@ -6,6 +6,37 @@ function char_stats(){
 		ALWAYS = 1,
 		VARIES = 2,
 	}
+	global.status_effects = {
+		poison: {
+			name: "Poison",
+			status_ID: 1,
+			remove_by_end_battle: false,
+			duration_min: 0,
+			duration_max: 0,
+			status_message: "{0} is poisoned!",
+			func: function(_target){
+				var _poison_damage = -2;
+				battle_change_hp(_target, _poison_damage);
+				dialogue(DISPLAY.OVERHEAD, {text: string_ext("{0} still poisoned!", _target.name), name:""})
+			}
+		},
+		dizzy: {
+			name: "Dizzy",
+			status_ID: 2,
+			remove_by_end_battle: true,
+			duration_min: 2,
+			duration_max: 5,
+			status_message: "{0} is burned."
+		},
+		strengthen:{
+			name: "Strengthen",
+			status_ID: 3,
+			remove_at_end_of_battle: true,
+			duration_min: 0,
+			duration_max: 0,
+			status_message: "{0} is Strengthened!"
+		}
+	}
 
 	
 	global.action_library = {
@@ -55,6 +86,33 @@ function char_stats(){
 				}
 				else{
 					dialogue(DISPLAY.OVERHEAD,{text:"It didn't work...",name:""});
+				}
+			}
+		},
+		poison:{
+			name: "Poison",
+			info: "Chance to poison the foe",
+			description: "{0} casts Pioson!",
+			sub_menu: "Skills",
+			ep_cost: 4,
+			target_required: true,
+			target_enemy_by_default: true,
+			target_all: MODE.NEVER,
+			user_animation: "attack",
+			effect_sprite: spr_scratch,
+			effect_on_target: MODE.ALWAYS,
+			func: function(_user, _targets){
+				if(!array_contains(_targets[0].status, global.status_effects.poison)){
+					if(random(1) < 0.6){
+						//dialogue(DISPLAY.OVERHEAD, {text: string_ext("{0} was poisoned", _targets[0].name), name:""});
+						battle_apply_status(_targets[0], global.status_effects.poison);
+					}
+					else{
+						dialogue(DISPLAY.OVERHEAD,{text:"It didn't work...",name:""});
+					}
+				}
+				else{
+					dialogue(DISPLAY.OVERHEAD,{text: string_ext("{0} is already poisoned", [_targets[0].name]),name:""});
 				}
 			}
 		},
@@ -153,6 +211,22 @@ function char_stats(){
 			}
 		},
 		#endregion
+		#region RADIO TOWER MOVESET
+		nothing: {
+			name: "Nothing",
+			info: "Do nothing.",
+			description: "{0} still stands.",
+			sub_menu: -1,
+			ep_cost: 0,
+			target_required: true,
+			target_enemy_by_default: false,
+			target_all: MODE.NEVER,
+			user_animation: noone,
+			effect_sprite: noone,
+			effect_on_target: MODE.ALWAYS,
+			func: function(){},
+		},
+		#endregion
 		#region REGULANA MOVESET
 		heartburn: {
 			name: "Heart Burn",
@@ -187,7 +261,7 @@ function char_stats(){
 			func : function(_user, _targets){
 				var _heal = 20;
 				battle_change_hp(_targets[0], _heal);
-				remove_item_from_inventory(global.action_library.tulip,1);
+				remove_item_from_inventory(global.action_library.tulip, 1);
 			}
 		},
 		milk:{
@@ -202,6 +276,7 @@ function char_stats(){
 			func : function(_user, _targets){
 				var _heal_ep = 10;
 				battle_change_ep(_targets[0], _heal_ep);
+				remove_item_from_inventory(global.action_library.milk, 1);
 			}
 		},
 		
@@ -217,6 +292,7 @@ function char_stats(){
 			func : function(_user, _targets){
 				var _heal = 20;
 				battle_change_hp(_targets[0], _heal, 1);
+				remove_item_from_inventory(global.action_library.potion, 1);
 			}	
 		}
 		#endregion
@@ -241,8 +317,8 @@ function char_stats(){
 	#region MAIN PARTY
 	global.party = [
 	{
-		
 		name: "Lyraka",
+		perk_iconID: 1,
 		level:	    8,
 		//BASE STATS
 		hp_max_BASE:	 95,
@@ -264,11 +340,13 @@ function char_stats(){
 		exp_max:    100,
 		sprites :{walk: spr_lusaka_walk, idle: spr_Lyraka_bat_bak, knockout: spr_rip},
 		actions: [global.action_library.punch, global.action_library.spin_attack, global.action_library.run],
+		status: [],
 		perks: [],
 		max_perks: 2
 	},
 	{
 		name: "Baxter",
+		perk_iconID: 2,
 		level:      7,
 		//BASE STATS
 		hp_max_BASE:	 76,
@@ -290,11 +368,13 @@ function char_stats(){
 		exp_max:    100,
 		sprites: {walk: spr_baxter_walk, idle: spr_bax_bat_bak, knockout: spr_rip},
 		actions: [global.action_library.punch, global.action_library.rub, global.action_library.run],
+		status: [],
 		perks: [],
 		max_perks: 3
 	},
 	/*{
 		name: "Donohue",
+		perk_iconID: 3,
 		level:      5,
 		//BASE STATS
 		hp_max_BASE:	 84,
@@ -316,10 +396,12 @@ function char_stats(){
 		exp_max:    3,
 		sprites :{walk: spr_baxter_walk, idle: spr_Dono_bat_back, attack: spr_donohue_idle, dodge: spr_donohue_idle, knockout: spr_rip, defend: spr_donohue_idle},
 		actions: [global.action_library.punch, global.action_library.manshot],
+		status: 0,
 		perks:[]
 	},
 	{
 		name: "Shelly",
+		perk_iconID: 4,
 		level:      1,
 		hp:         300,
 		hp_max:     300,
@@ -333,6 +415,7 @@ function char_stats(){
 		exp_max:    3,
 		sprites :{walk: spr_baxter_walk, idle: spr_shel_bat_bak, attack: spr_shelly_idle, dodge: spr_shelly_idle, knockout: spr_rip, defend: spr_shelly_idle},
 		actions: [global.action_library.punch, global.action_library.slime_spit, global.action_library.run],
+		status: 0,
 		perks: []
 	}*/
 	]
@@ -345,14 +428,15 @@ function char_stats(){
 		#region Basic enemies
 		buck_o:{
 			name: "Buck O'",
-			hp: 20,
-			hp_max: 20,
+			hp: 999,
+			hp_max: 999,
 			attack: 10,
 			defense: 10,
 			spd: 2,
 			role: "COMMON",
 			sprites: {idle: spr_buck_o_idle, defend: spr_buck_o_idle},
-			actions: [global.action_library.punch],
+			actions: [global.action_library.poison],
+			status: [],
 			xp_value: 16,
 			AIscript: function(){
 				var _action = actions[0];
@@ -370,7 +454,8 @@ function char_stats(){
 			spd: 2,
 			role: "COMMON",
 			sprites: {idle: spr_buck_e_idle, defend: spr_buck_e_idle},
-			actions: [global.action_library.punch],
+			actions: [global.action_library.poison],
+			status: [],
 			xp_value: 18,
 			AIscript: function(){
 				var _action = actions[0];
@@ -389,6 +474,7 @@ function char_stats(){
 			role: "COMMON",
 			sprites: {idle: spr_buck_l_idle, defend: spr_buck_l_idle},
 			actions: [global.action_library.punch],
+			status: [],
 			xp_value: 20,
 			AIscript: function(){
 				var _action = actions[0];
@@ -470,24 +556,119 @@ function char_stats(){
 				var _target = _possible_targets[irandom(array_length(_possible_targets)-1)];
 				return [_action, _target];
 			}
+		},
+		ace_bot:{
+			name: "A.C.E. Bot",
+			hp: 300,
+			hp_max: 300,
+			attack: 20,
+			defense: 20,
+			spd: 2,
+			role: "SUPPORT",
+			sprites: {idle: spr_acebot},
+			actions: [/*global.action_library.punch,*/ global.action_library.poison],
+			status: [],
+			xp_value: 140,
+			AIscript: function(){
+				var _action = actions[0];
+				var _possible_targets = array_filter(obj_battle.party_units, function(_unit, _index){return(_unit.hp > 0);});
+				var _target = _possible_targets[irandom(array_length(_possible_targets)-1)];
+				return [_action, _target];
+			}
+		},
+		radio_tower:{
+			name: "Radio Tower",
+			hp: 100,
+			hp_max: 100,
+			attack: 0,
+			defense: 20,
+			spd: 1,
+			role: "BOSS",
+			sprites: {idle: spr_radiotower},
+			actions: [global.action_library.nothing],
+			status:[],
+			xp_value: 100,
+			AIscript: function(){
+				var _action = actions[0];
+				var _possible_targets = array_filter(obj_battle.party_units, function(_unit, _index){return(_unit.hp > 0);});
+				var _target = _possible_targets[irandom(array_length(_possible_targets)-1)];
+				return [_action, _target];
+			}
 		}
 		#endregion
 	}
 	#endregion
-	global.inventory = [[global.action_library.tulip,5]];
+	
+	// After defining all items in the dictionary, define the player's item inventory
+	global.inventory = [[global.action_library.tulip, 5],
+						[global.action_library.milk, 3],
+						[global.action_library.potion, 1]];
+	
+	#region FASHION ACCESSORIES
+	accessories_dictionary = {
+		fluff_orange : {
+			name: "Orange fluff",
+			sprite: spr_fluff_lg,
+			frame: 1,
+			section: 0
+		},
+		fluff_white : {
+			name: "White fluff",
+			sprite: spr_fluff_lg,
+			frame: 2,
+			section: 0
+		},
+		fluff_brown : {
+			name: "Brown fluff",
+			sprite: spr_fluff_lg,
+			frame: 0
+		},
+		orange_gem:{
+			name: "Orange gem",
+			sprite: spr_rock3,
+			frame: 0,
+			section: 1
+		},
+		red_gem:{
+			name: "Red gem",
+			sprite: spr_rock2,
+			frame: 0,
+			section: 1
+		}
+	}
+	
+	global.fashion_case = [accessories_dictionary.fluff_orange, accessories_dictionary.fluff_white, accessories_dictionary.fluff_white, accessories_dictionary.fluff_brown,
+	accessories_dictionary.orange_gem, accessories_dictionary.red_gem, accessories_dictionary.red_gem];
+	#endregion
+}
+
+function status_effects(){
 	
 }
 
 function troop_dictionary(){
 	global.troops = [
-#region PROLOGUE CAVERNS
+		#region PROLOGUE CAVERNS
+		//0
 		[global.enemies.buck_o],
+		//1
 		[global.enemies.buck_o, global.enemies.buck_o],
+		//2
 		[global.enemies.buck_e, global.enemies.buck_o],
+		//3
 		[global.enemies.buck_l, global.enemies.buck_o],
-#endregion
+		#endregion
+		#region CHAPTER 1
+		//4  CHAPTER 1 END BOSS
+		[global.enemies.radio_tower, global.enemies.ace_bot],
+		#endregion
+		#region CHAPTER X
+		//5 CHAPTER X END BOSS
+		[global.enemies.regulana]
 	]
 }
+
+
 
 #region leveling management
 function recieve_exp(_xp){

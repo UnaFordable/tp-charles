@@ -1,5 +1,5 @@
-// Script assets have changed for v2.3.0 see
-// https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
+
+// INITIALIZE THE EVENT
 function cutscene_begin(_info){
 	
 	if(!instance_exists(obj_CUTSCENE)){
@@ -13,7 +13,7 @@ function cutscene_begin(_info){
 	}
 	
 }
-
+// PAUSE IN BETWEEN SCENES
 function cutscene_wait(_seconds){
 	timer++;
 	if(timer >= _seconds*room_speed){
@@ -22,6 +22,7 @@ function cutscene_wait(_seconds){
 	}
 }
 
+//END CURRENT SCENE AND TRANSITION TO NEXT SCENE
 function cutscene_end_action(){
 	scene ++;
 	if(scene > array_length(scene_info)-1){
@@ -36,6 +37,7 @@ function create_house_at_mouse(){
 	}
 }
 
+//PLAY MUSIC FOR CUTSCENE
 function cutscene_play_music(_music){
 	if(_music == undefined){
 		audio_stop_all();
@@ -45,11 +47,12 @@ function cutscene_play_music(_music){
 	}
 	cutscene_end_action();
 }
+//PLAY A SOUND EFFECT FOR CUTSCENE
 function cutscene_play_soundeffect(_se){
 	audio_play_sound(_se, 2, false);
 	cutscene_end_action();
 }
-
+//CREATE AN OBJECT DURING THE CUTSCENE
 function cutscene_instance_create(_x, _y, _object){
 	var _inst = instance_create_layer(_x, _y, "Instances", _object);
 	cutscene_end_action();
@@ -67,7 +70,7 @@ function cutscene_instance_destroy_nearest(_x, _y, _object){
 	var _inst = instance_nearest(_x, _y, _object)
 	cutscene_instance_destroy(_inst);
 }
-
+// MOVE AN OBJECT DURING CUTSCENE
 function move_character(_obj, _x, _y, _relative, _spd, _animate = true){
 
 	if(x_dest == -1){
@@ -155,4 +158,12 @@ function cutscene_random_encounter(_enemy){
 	}
 	cutscene_end_action();
 	return _inst;
+}
+
+function cutscene_room_transition(_new_room, _new_x, _new_y){
+	var _transition = instance_create_layer(0, 0, "Instances", obj_transition_pixelate);
+	_transition.target_room = _new_room;
+	obj_player.x = _new_x;
+	obj_player.y= _new_y;
+	cutscene_end_action();
 }

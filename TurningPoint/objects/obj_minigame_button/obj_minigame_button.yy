@@ -29,12 +29,12 @@
   "physicsShapePoints":[],
   "physicsStartAwake":true,
   "properties":[
-    {"$GMObjectProperty":"v1","%Name":"button_profile_pic","filters":[],"listItems":[],"multiselect":false,"name":"button_profile_pic","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":1,},
-    {"$GMObjectProperty":"v1","%Name":"mingame_rules","filters":[],"listItems":[],"multiselect":false,"name":"mingame_rules","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"a","varType":2,},
-    {"$GMObjectProperty":"v1","%Name":"minigame_scoreID","filters":[],"listItems":[
+    {"$GMObjectProperty":"v2","%Name":"button_profile_pic","filters":[],"listItems":[],"multiselect":false,"name":"button_profile_pic","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":1,},
+    {"$GMObjectProperty":"v2","%Name":"mingame_rules","filters":[],"listItems":[],"multiselect":false,"name":"mingame_rules","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"a","varType":2,},
+    {"$GMObjectProperty":"v2","%Name":"minigame_scoreID","filters":[],"listItems":[
         "\"Item 0\"",
       ],"multiselect":false,"name":"minigame_scoreID","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":1,},
-    {"$GMObjectProperty":"v1","%Name":"game_room","filters":[],"listItems":[],"multiselect":false,"name":"game_room","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":5,},
+    {"$GMObjectProperty":"v2","%Name":"game_room","filters":[],"listItems":[],"multiselect":false,"name":"game_room","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":5,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

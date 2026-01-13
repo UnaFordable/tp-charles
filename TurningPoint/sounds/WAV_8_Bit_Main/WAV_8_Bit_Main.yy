@@ -1,15 +1,17 @@
 {
-  "$GMSound":"",
+  "$GMSound":"v2",
   "%Name":"WAV_8_Bit_Main",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
   },
   "bitDepth":1,
-  "bitRate":128,
+  "channelFormat":0,
   "compression":0,
+  "compressionQuality":4,
   "conversionMode":0,
   "duration":114.418594,
+  "exportDir":"",
   "name":"WAV_8_Bit_Main",
   "parent":{
     "name":"TurningPoint",
@@ -20,6 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"WAV_8_Bit_Main.wav",
-  "type":0,
   "volume":1.0,
 }

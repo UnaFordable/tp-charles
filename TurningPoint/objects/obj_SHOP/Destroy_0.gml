@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 instance_activate_all();
-with(obj_shop_button){
+with(obj_button_universal){
 	instance_destroy()
 }
 with(obj_shop_item_button){

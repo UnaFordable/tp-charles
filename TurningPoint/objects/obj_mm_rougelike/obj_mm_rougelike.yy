@@ -1,19 +1,22 @@
 {
   "$GMObject":"",
   "%Name":"obj_mm_rougelike",
-  "eventList":[],
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
   "name":"obj_mm_rougelike",
   "overriddenProperties":[
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_save_file_button","path":"objects/obj_save_file_button/obj_save_file_button.yy",},"propertyId":{"name":"file_num","path":"objects/obj_save_file_button/obj_save_file_button.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"2",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_mm_story","path":"objects/obj_mm_story/obj_mm_story.yy",},"propertyId":{"name":"saved_room","path":"objects/obj_mm_story/obj_mm_story.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"rm_rougelike",},
   ],
   "parent":{
     "name":"Main Menu Buttons",
     "path":"folders/Objects/Main Menu Buttons.yy",
   },
   "parentObjectId":{
-    "name":"obj_save_file_button",
-    "path":"objects/obj_save_file_button/obj_save_file_button.yy",
+    "name":"obj_mm_story",
+    "path":"objects/obj_mm_story/obj_mm_story.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

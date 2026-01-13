@@ -151,6 +151,7 @@ function battle_state_select_action(){
 				menu(global.cam_bottom_x + 10, global.cam_bottom_y +110, _menu_options, ,60,60);
 			}
 			else{
+				//Perform enemy action
 				var _enemy_action = _unit.AIscript();
 				if(_enemy_action != -1){
 					begin_action(_unit.id, _enemy_action[0], _enemy_action[1]);
@@ -173,6 +174,7 @@ function begin_action(_user, _action, _targets){
 	}
 	//battle_text = string_ext(_action.description, [_user.name]);
 	if(!instance_exists(obj_next_button))instance_create_depth(global.cam_bottom_x+42, global.cam_bottom_y+142, depth-1, obj_next_button);
+	//Use the text display object to display the action
 	dialogue(DISPLAY.OVERHEAD,{text: string_ext(_action.description, [_user.name]),name:""});
 	battle_wait_time_remaining = battle_wait_time_frames;
 	with(_user){
@@ -282,8 +284,22 @@ function battle_state_victor_check(){
 		dialogue(DISPLAY.OVERHEAD,{text:"No experenced gained.",name:""});
 		
 	}
-
-	battle_state = _end_the_battle ? battle_state_ending : battle_state_turn_progression;
+	switch (_end_the_battle){
+		case true:
+			battle_state = battle_state_ending;
+			break;
+		case false:
+			var _unit = unit_turn_order[turn];
+			if(array_length(_unit.status) = 0){///
+				for(var _i = 0; _i < array_length(_unit.status); _i++){
+					script_execute(_unit.status[_i].func);
+				}
+			}
+			battle_state =  battle_state_turn_progression;
+			break;
+	}
+	
+	//battle_state = _end_the_battle ? battle_state_ending : battle_state_turn_progression;
 }
 
 function battle_state_turn_progression(){

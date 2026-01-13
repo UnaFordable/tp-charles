@@ -26,7 +26,7 @@
   "physicsShapePoints":[],
   "physicsStartAwake":true,
   "properties":[
-    {"$GMObjectProperty":"v1","%Name":"life_time","filters":[],"listItems":[],"multiselect":false,"name":"life_time","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"45","varType":0,},
+    {"$GMObjectProperty":"v2","%Name":"life_time","filters":[],"listItems":[],"multiselect":false,"name":"life_time","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"45","varType":0,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

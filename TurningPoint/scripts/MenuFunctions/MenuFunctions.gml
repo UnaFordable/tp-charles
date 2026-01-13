@@ -98,3 +98,8 @@ function menu_select_action(_user, _action){
 		}
 	}
 }
+/*
+function perks_change_assigned_char(){
+	
+}
+*/

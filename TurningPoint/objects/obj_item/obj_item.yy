@@ -27,8 +27,8 @@
   "physicsShapePoints":[],
   "physicsStartAwake":true,
   "properties":[
-    {"$GMObjectProperty":"v1","%Name":"chest_item","filters":[],"listItems":[],"multiselect":false,"name":"chest_item","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"global.action_library.tulip","varType":4,},
-    {"$GMObjectProperty":"v1","%Name":"item_count","filters":[],"listItems":[],"multiselect":false,"name":"item_count","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"1","varType":0,},
+    {"$GMObjectProperty":"v2","%Name":"chest_item","filters":[],"listItems":[],"multiselect":false,"name":"chest_item","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"global.action_library.tulip","varType":4,},
+    {"$GMObjectProperty":"v2","%Name":"item_count","filters":[],"listItems":[],"multiselect":false,"name":"item_count","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"1","varType":0,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

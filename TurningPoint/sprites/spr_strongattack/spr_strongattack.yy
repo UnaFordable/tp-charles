@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_strongattack",
   "bboxMode":0,
   "bbox_bottom":31,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"718dec0c-53c9-4d95-b0ef-5229f02200ef","name":"718dec0c-53c9-4d95-b0ef-5229f02200ef","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"718dec0c-53c9-4d95-b0ef-5229f02200ef","name":"718dec0c-53c9-4d95-b0ef-5229f02200ef","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
@@ -26,8 +26,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Sprites",
-    "path":"folders/Sprites.yy",
+    "name":"Move Icons",
+    "path":"folders/Sprites/Move Icons.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

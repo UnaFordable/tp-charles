@@ -4,7 +4,7 @@ function new_encounter(_enemies, _bg/*, _inventory = noone, _party = noone*/){
 	//audio_play_sound(_1_24__Tough_Enemy__vs__Boss____King_Dedede_s_Theme__from_Kirby_s_Dream_Land_, 1, true);
 	for(var _i = 0; _i < array_length(_enemies); _i++){
 		if(_enemies[_i].role == "BOSS"){
-			audio_play_sound(_94__Strongest_Sword, 1 ,true)
+			//audio_play_sound(_94__Strongest_Sword, 1 ,true)
 		}
 		else{
 			//audio
@@ -41,7 +41,6 @@ function battle_change_hp(_target, _amount, _alive_dead_or_either = 0){
 	if(!_failed){
 		_target.hp = clamp(_target.hp+_amount, 0, _target.hp_max);
 	}
-	
 }
 
 function battle_change_ep(_target, _amount, _alive_dead_or_either = 0){
@@ -74,6 +73,12 @@ function battle_add_block(_target, _amount, _alive_dead_or_either = 0){
 	if(_alive_dead_or_either == 1) and (_target.hp > 0){
 		_failed = true;
 	}
+}
+	
+function battle_apply_status(_target, _status_effect){
+	//Use the dialoge object to inform the player that someone now has a status effect
+	dialogue(DISPLAY.OVERHEAD, {text: string_ext(_status_effect.status_message, [_target.name]), name:""});
+	array_push(_target.status, _status_effect);
 }
 
 function is_action_available(_unit, _action){

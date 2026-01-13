@@ -11,10 +11,14 @@ try{
 			_item.func(_party,[_party]);
 			break;
 		case MENU.PERKS:
-			if(array_contains(_party.perks, _perks))
+			if(!array_contains(_party.perks, _perks)){
+				_perks.assigned_character = _party.perk_iconID;
 				array_push(_party.perks, _perks);
-			else
+			}
+			else{
+				_perks.assigned_character = noone;
 				array_delete(_party.perks, array_get_index(_party.perks, _perks), 1);
+			}
 			break;
 	}
 }

@@ -14,8 +14,8 @@
     "path":"folders/Objects/Shop Objects.yy",
   },
   "parentObjectId":{
-    "name":"obj_shop_button",
-    "path":"objects/obj_shop_button/obj_shop_button.yy",
+    "name":"obj_button_universal",
+    "path":"objects/obj_button_universal/obj_button_universal.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -31,9 +31,9 @@
   "physicsShapePoints":[],
   "physicsStartAwake":true,
   "properties":[
-    {"$GMObjectProperty":"v1","%Name":"item_ID","filters":[],"listItems":[],"multiselect":false,"name":"item_ID","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"noone","varType":4,},
-    {"$GMObjectProperty":"v1","%Name":"assigned_state","filters":[],"listItems":[],"multiselect":false,"name":"assigned_state","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"noone","varType":4,},
-    {"$GMObjectProperty":"v1","%Name":"inv_count","filters":[],"listItems":[],"multiselect":false,"name":"inv_count","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"noone","varType":4,},
+    {"$GMObjectProperty":"v2","%Name":"item_ID","filters":[],"listItems":[],"multiselect":false,"name":"item_ID","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"noone","varType":4,},
+    {"$GMObjectProperty":"v2","%Name":"assigned_state","filters":[],"listItems":[],"multiselect":false,"name":"assigned_state","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"noone","varType":4,},
+    {"$GMObjectProperty":"v2","%Name":"inv_count","filters":[],"listItems":[],"multiselect":false,"name":"inv_count","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"noone","varType":4,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
