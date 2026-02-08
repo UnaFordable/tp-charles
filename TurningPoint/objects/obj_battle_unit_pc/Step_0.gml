@@ -13,6 +13,10 @@ else{
 	}
 }
 
-
-
-
+//SHOW CHARACTER ANIMATING UP AND DOWN WHEN IT'S THERE TURN
+if(instance_exists(obj_battle) && turn_ready == true){
+	if(bobbing_speed = 0){ bobbing_speed = 10 } else bobbing_speed --;
+	if(bob_up == true && bobbing_speed == 0){ y--;} 
+	else if(bob_up == false && bobbing_speed == 0){ y++;}
+	if(y = anim_bot){ bob_up = true} else if(y = anim_top){ bob_up = false;}
+}

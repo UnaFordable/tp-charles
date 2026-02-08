@@ -17,7 +17,7 @@ function char_stats(){
 			func: function(_target){
 				var _poison_damage = -2;
 				battle_change_hp(_target, _poison_damage);
-				dialogue(DISPLAY.OVERHEAD, {text: string_ext("{0} still poisoned!", _target.name), name:""})
+				dialogue(DISPLAY.OVERHEAD, {text: string_ext("{0} is still poisoned!", [_target.name]), name:""})
 			}
 		},
 		dizzy: {
@@ -336,7 +336,7 @@ function char_stats(){
 		defense:    6,
 		special:    4,
 		spd:        3,
-		experience: 99,
+		experience: 0,
 		exp_max:    100,
 		sprites :{walk: spr_lusaka_walk, idle: spr_Lyraka_bat_bak, knockout: spr_rip},
 		actions: [global.action_library.punch, global.action_library.spin_attack, global.action_library.run],
@@ -428,14 +428,14 @@ function char_stats(){
 		#region Basic enemies
 		buck_o:{
 			name: "Buck O'",
-			hp: 999,
-			hp_max: 999,
+			hp: 20,
+			hp_max: 20,
 			attack: 10,
 			defense: 10,
 			spd: 2,
 			role: "COMMON",
 			sprites: {idle: spr_buck_o_idle, defend: spr_buck_o_idle},
-			actions: [global.action_library.poison],
+			actions: [global.action_library.punch],
 			status: [],
 			xp_value: 16,
 			AIscript: function(){

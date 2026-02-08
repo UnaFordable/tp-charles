@@ -220,6 +220,7 @@ function battle_state_perform_action(){
 			current_action.func(current_user, current_targets);
 		}
 	}
+	/*
 	else{
 		if(!instance_exists(obj_battle_effect)){
 			battle_wait_time_remaining --;
@@ -228,6 +229,7 @@ function battle_state_perform_action(){
 			}
 		}
 	}
+	*/
 }
 
 function battle_state_victor_check(){
@@ -268,6 +270,7 @@ function battle_state_victor_check(){
 			//battle_end_messages[1] = string("Gained {0} experience points", battle_xp_gained);
 			dialogue(DISPLAY.OVERHEAD,{text: string("Gained {0} experience points", battle_xp_gained),name:""});
 			recieve_exp(battle_xp_gained);
+			
 			//distribute exp
 			
 		}
@@ -284,15 +287,16 @@ function battle_state_victor_check(){
 		dialogue(DISPLAY.OVERHEAD,{text:"No experenced gained.",name:""});
 		
 	}
+	
 	switch (_end_the_battle){
 		case true:
 			battle_state = battle_state_ending;
 			break;
 		case false:
 			var _unit = unit_turn_order[turn];
-			if(array_length(_unit.status) = 0){///
+			if(array_length(_unit.status) != 0){///
 				for(var _i = 0; _i < array_length(_unit.status); _i++){
-					script_execute(_unit.status[_i].func);
+					script_execute(_unit.status[_i].func, _unit);
 				}
 			}
 			battle_state =  battle_state_turn_progression;

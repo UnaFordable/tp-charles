@@ -1,11 +1,13 @@
-/// @description Insert description here
-// You can write your code in this editor
+//Define Movement Speed
 spd_walk = 2;
+//Define Animation Frame
 anim_index = 0;
-
+//
 _savedface_x = 0;
 _savedface_y = 0;
 
+tile_map = layer_tilemap_get_id("Tiles_col");
+//Keyboard bindings
 key_left = keyboard_check(vk_left);
 key_right = keyboard_check(vk_right);
 key_up = keyboard_check(vk_up);

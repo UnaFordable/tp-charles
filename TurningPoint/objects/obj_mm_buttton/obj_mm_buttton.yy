@@ -27,7 +27,7 @@
   "physicsShapePoints":[],
   "physicsStartAwake":true,
   "properties":[
-    {"$GMObjectProperty":"v2","%Name":"action","filters":[],"listItems":[],"multiselect":false,"name":"action","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"rm_minigame_hub","path":"rooms/rm_minigame_hub/rm_minigame_hub.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"rm_minigame_hub","varType":5,},
+    {"$GMObjectProperty":"v2","%Name":"action","filters":[],"listItems":[],"multiselect":false,"name":"action","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"rm_minigame_hub","varType":5,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

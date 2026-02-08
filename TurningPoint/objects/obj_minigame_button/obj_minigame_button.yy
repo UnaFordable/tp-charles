@@ -5,7 +5,7 @@
   "managed":true,
   "name":"obj_minigame_button",
   "overriddenProperties":[
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_button_parent","path":"objects/obj_button_parent/obj_button_parent.yy",},"propertyId":{"name":"room_back","path":"objects/obj_button_parent/obj_button_parent.yy",},"resource":{"name":"rm_minigame_hub","path":"rooms/rm_minigame_hub/rm_minigame_hub.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"rm_minigame_hub",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_button_parent","path":"objects/obj_button_parent/obj_button_parent.yy",},"propertyId":{"name":"room_back","path":"objects/obj_button_parent/obj_button_parent.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"rm_minigame_hub",},
   ],
   "parent":{
     "name":"minigame_buttons",

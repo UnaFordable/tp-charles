@@ -7,9 +7,7 @@
   ],
   "managed":true,
   "name":"obj_mm_rougelike",
-  "overriddenProperties":[
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_mm_story","path":"objects/obj_mm_story/obj_mm_story.yy",},"propertyId":{"name":"saved_room","path":"objects/obj_mm_story/obj_mm_story.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"rm_rougelike",},
-  ],
+  "overriddenProperties":[],
   "parent":{
     "name":"Main Menu Buttons",
     "path":"folders/Objects/Main Menu Buttons.yy",

@@ -89,3 +89,21 @@ if(cursor.active){
 }
 */
 
+//ANIMATE THE ACTIVE PLAYER WHEN IT'S THEIR TURN
+if(conclusion_type == -1){
+	for (var _i = 0; _i < array_length(party_units); _i++){
+		var _unit_with_current_turn = unit_turn_order[turn].id;
+		var _char = party_units[_i];
+		if(_char.id == _unit_with_current_turn){
+			with(_char){
+				turn_ready = true;
+			}
+		}
+		else{
+			with(_char){
+				turn_ready = false;
+			}
+		}
+	}
+}
+

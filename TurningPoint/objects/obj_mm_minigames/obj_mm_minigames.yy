@@ -4,9 +4,7 @@
   "eventList":[],
   "managed":true,
   "name":"obj_mm_minigames",
-  "overriddenProperties":[
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_save_file_button","path":"objects/obj_save_file_button/obj_save_file_button.yy",},"propertyId":{"name":"file_num","path":"objects/obj_save_file_button/obj_save_file_button.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"3",},
-  ],
+  "overriddenProperties":[],
   "parent":{
     "name":"Main Menu Buttons",
     "path":"folders/Objects/Main Menu Buttons.yy",

@@ -13,9 +13,11 @@ with (obj_filmbackground) instance_destroy();
 
 switch conclusion_type {
 	case 0:
+		//The player looses and shows game over screen
 		instance_create_depth(x,y,depth-10, obj_game_over, {s_enemies: stashed_enemies, bg: battle_background, s_inventory: stashed_inventory, s_hp: stashed_hp, s_ep: stashed_ep});
 		break;
 	case 1:
+		//The player wins and disables the oenemy
 		instance_activate_all();
 		obj_player.key_action = false;
 		// with the enemy NPC who started the battle to begin with

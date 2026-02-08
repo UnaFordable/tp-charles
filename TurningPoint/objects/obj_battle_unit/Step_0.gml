@@ -9,3 +9,4 @@ if(hp <=0){
 if(defending){
 	sprite_index = sprites.defend;
 }
+
