@@ -204,7 +204,6 @@
     {"name":"spr_transition","order":5,"path":"sprites/spr_transition/spr_transition.yy",},
     {"name":"Sprite123","order":37,"path":"sprites/Sprite123/Sprite123.yy",},
     {"name":"Sprite125","order":5,"path":"sprites/Sprite125/Sprite125.yy",},
-    {"name":"Sprite23","order":1,"path":"sprites/Sprite23/Sprite23.yy",},
     {"name":"Sprite90","order":1,"path":"sprites/Sprite90/Sprite90.yy",},
     {"name":"tpCodices","order":21,"path":"sprites/tpCodices/tpCodices.yy",},
     {"name":"Woods","order":34,"path":"sprites/Woods/Woods.yy",},

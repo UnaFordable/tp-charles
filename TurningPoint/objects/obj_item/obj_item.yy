@@ -34,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_npc_s",
-    "path":"sprites/spr_npc_s/spr_npc_s.yy",
+    "name":"spr_chest",
+    "path":"sprites/spr_chest/spr_chest.yy",
   },
   "spriteMaskId":null,
   "visible":true,
