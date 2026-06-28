@@ -151,13 +151,9 @@ function cutscene_choice(_statement1, _statement2, _outcome1, _outcome2){
 }
 
 	
-function cutscene_random_encounter(_enemy){
-	var _x = choose(40, 0, -40);
-	if(instance_exists(obj_player)){
-		var _inst = instance_create_layer(obj_player.x + _x, obj_player.y + _x, "Instances", obj_enemy_parent, {enemy_forms: _enemy});
-	}
+function scripted_encounter (_enemy, _if_win){
+	new_encounter(_enemy, spr_battle_background_ui, id, _if_win);
 	cutscene_end_action();
-	return _inst;
 }
 
 function cutscene_room_transition(_new_room, _new_x, _new_y){

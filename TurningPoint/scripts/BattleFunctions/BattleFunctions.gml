@@ -1,6 +1,6 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function new_encounter(_enemies, _bg, _creator = id){
+function new_encounter(_enemies, _bg, _creator = id, _if_win = noone){
 	//audio_play_sound(_1_24__Tough_Enemy__vs__Boss____King_Dedede_s_Theme__from_Kirby_s_Dream_Land_, 1, true);
 	for(var _i = 0; _i < array_length(_enemies); _i++){
 		if(_enemies[_i].role == "BOSS"){
@@ -18,7 +18,7 @@ function new_encounter(_enemies, _bg, _creator = id){
 		global.party = _party
 	}
 	*/
-	instance_create_depth(global.cam_top_x, global.cam_top_y, -9999, obj_battle, {enemies: _enemies, creator: _creator, battle_background: _bg});
+	instance_create_depth(global.cam_top_x, global.cam_top_y, -9999, obj_battle, {enemies: _enemies, creator: _creator, battle_background: _bg, win_condition: _if_win});
 }
 
 function battle_change_hp(_target, _amount, _alive_dead_or_either = 0){

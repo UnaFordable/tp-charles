@@ -3,7 +3,11 @@
 
 shader_set(Shader1);
 shader_set_uniform_f_array(_uniColor, _color);
-draw_self();
+
+var _x = x + random_range(shake, -shake);
+var _y = y + random_range(shake, -shake);
+
+draw_sprite(sprite_index, image_index, _x, _y);
 shader_reset();
 
 

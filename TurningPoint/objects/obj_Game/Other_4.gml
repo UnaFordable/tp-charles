@@ -25,7 +25,7 @@ switch(room){
 		instance_create_depth(global.cam_top_x, global.cam_top_y+176,-257, obj_filmbackground, {angle: 0, size: spr_film_background_s});
 		instance_create_depth(global.cam_top_x+256, global.cam_top_y+16,-257, obj_filmbackground, {angle: 180, size: spr_film_background_s});
 		break;
-	case rm_buckotrail:
+	case rm_0_2:
 		
 		
 	/*
@@ -36,7 +36,7 @@ switch(room){
 		}
 		*/
 		break;
-	case rm_brig:
+	case rm_1_1:
 		break;
 	case rm_contest:
 		instance_create_depth(x,y, depth,obj_CONTEST);

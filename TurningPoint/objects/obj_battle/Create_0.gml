@@ -54,7 +54,7 @@ stashed_ep = [];
 
 //Make enemies
 for (var _i = 0; _i < array_length(enemies); _i++){
-	enemy_units[_i]= instance_create_depth(global.cam_top_x+207-((_i mod 3)*30)+((_i div 3)*40), global.cam_top_y+(16*6), depth-10, obj_battle_unit_enemy, enemies[_i])
+	enemy_units[_i]= instance_create_depth(global.cam_top_x+207-((_i mod 3)*30)+((_i div 3)*40), global.cam_top_y+84, depth-10, obj_battle_unit_enemy, enemies[_i])
 	array_push(units, enemy_units[_i]);
 }
 
@@ -174,7 +174,7 @@ function begin_action(_user, _action, _targets){
 	}
 	//battle_text = string_ext(_action.description, [_user.name]);
 	if(!instance_exists(obj_next_button))instance_create_depth(global.cam_bottom_x+42, global.cam_bottom_y+142, depth-1, obj_next_button);
-	//Use the text display object to display the action
+	//Use the text display object to display the action: string ext('the move description',the name of the user in an array)
 	dialogue(DISPLAY.OVERHEAD,{text: string_ext(_action.description, [_user.name]),name:""});
 	battle_wait_time_remaining = battle_wait_time_frames;
 	with(_user){
@@ -187,6 +187,9 @@ function begin_action(_user, _action, _targets){
 			sprite_index = sprites[$ _action.user_animation];
 			image_index = 0;
 		}
+	}
+	with(_targets){
+		shake = 5;
 	}
 	battle_state = battle_state_perform_action;
 	

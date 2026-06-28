@@ -11,8 +11,8 @@ for(var _i = 0; _i < array_length(unit_render_order); _i++){
 
 draw_sprite(spr_battle_background_ui, 0, global.cam_bottom_x, global.cam_bottom_y);
 //draw_sprite(Sprite85, 0,global.cam_top_x +global.cam_width, global.cam_top_y+global.cam_height - 32);
-
-draw_sprite_stretched(spr_text_box, 0, global.cam_top_x, global.cam_top_y+16*9, 256, 16*3);
+draw_rectangle_colour(0, global.cam_top_y+(16*9),global.cam_top_x+ global.cam_width,global.cam_top_y+ global.cam_height, c_dkgray,c_dkgray,c_dkgray,c_dkgray, false);
+draw_sprite_stretched(spr_text_box, 2, global.cam_top_x+2, global.cam_top_y+(16*9)+2, 252, (16*3)-4);
 /*
 draw_sprite_stretched(spr_text_box, 0, global.cam_bottom_x+16, global.cam_bottom_y+16, 32, 32);
 draw_sprite_stretched(spr_text_box, 0, global.cam_bottom_x+16*5, global.cam_bottom_y+16, 32, 32);
@@ -44,8 +44,23 @@ for (var _i = 0; _i < array_length(enemy_units) and (_drawn < _draw_limit); _i++
 		draw_text(global.cam_top_x+COLLUMN_ENEMY, global.cam_top_y+150 + (_i*16), _char.name);
 	}
 }*/
-
-
+for (var _i = 0; _i < array_length(party_units); _i++){
+	var _char = party_units[_i];
+	draw_sprite(spr_healt_display,0,global.cam_top_x + global.cam_width, 86+global.cam_top_y+(29*_i));
+	draw_set_colour(c_black);
+	draw_set_valign(fa_top);
+	draw_set_halign(fa_left);
+	draw_text(global.cam_top_x + global.cam_width-104, 90 + global.cam_top_y+(29*_i), _char.name);
+	draw_text(global.cam_top_x + global.cam_width-24, 90 + global.cam_top_y+(29*_i), _char.level);
+	var _charhealth = _char.hp/_char.hp_max *100
+	draw_healthbar(global.cam_top_x + global.cam_width-58, 105 + global.cam_top_y+(29*_i),
+				   global.cam_top_x + global.cam_width-11, 108 + global.cam_top_y+(29*_i), 
+				   _charhealth,c_dkgray,c_yellow,c_green,0,true,false);
+	
+}
+/////////////////////////////
+/*
+#region /// Numeric Health System ///
 for (var _i = 0; _i < array_length(party_units); _i++) {
 	   draw_set_halign(fa_left);
 	var _char = party_units[_i];
@@ -80,7 +95,7 @@ for (var _i = 0; _i < array_length(party_units); _i++) {
 	
 	draw_set_color(c_white);
 }
-
+#endregion
 /*
 if(cursor.active){
 	with(cursor){

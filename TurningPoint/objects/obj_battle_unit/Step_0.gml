@@ -10,3 +10,6 @@ if(defending){
 	sprite_index = sprites.defend;
 }
 
+if(shake > 0){
+	shake = lerp(shake, 0, .1);
+}

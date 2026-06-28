@@ -1,5 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
+
 draw_sprite(spr_bsm_background, background_img, global.cam_bottom_x, global.cam_bottom_y);
 
 draw_set_font(fnt_ds);
@@ -51,6 +52,10 @@ switch(m_state){
 		break;
 	case MENU.PERKS:
 		background_img = 2;
+		try{
+			var _perk = global.perks_index[m_item_seleted];
+			text_display(1,global.cam_bottom_x + 152, global.cam_bottom_y +(48)+48, string(_perk.desc));
+		}catch(DoConv){}
 		//var _ss = global.party[m_character_selected];
 		break;
 	case MENU.OPTIONS:

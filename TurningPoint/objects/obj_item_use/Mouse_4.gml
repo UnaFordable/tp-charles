@@ -2,7 +2,6 @@
 // You can write your code in this editor
 
 try{
-	timing = 5;
 	var _party = global.party[obj_menu_overworld.m_character_selected];
 	var _item = global.inventory[obj_menu_overworld.m_item_seleted][0];
 	var _perks = global.perks_index[obj_menu_overworld.m_item_seleted];
@@ -25,3 +24,4 @@ try{
 catch(DoConv){
 	
 }
+timing = 5;

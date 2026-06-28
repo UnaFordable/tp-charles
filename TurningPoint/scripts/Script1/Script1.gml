@@ -249,6 +249,7 @@ function char_stats(){
 		#endregion
 		
 		#region ITEMS
+		/// Healing Items ///
 		tulip:{
 			name: "Tulip",
 			info: "A sweet treat\n+20 HP",
@@ -294,10 +295,23 @@ function char_stats(){
 				battle_change_hp(_targets[0], _heal, 1);
 				remove_item_from_inventory(global.action_library.potion, 1);
 			}	
+		},
+		////////////////////
+		/// Attack Items ///
+		spike_ball:{},
+		#endregion
+		#region KEY ITEMS
+		glasses:{
+			name: "Glasses",
+			info: "From Baxter.\nShould probably return.",
+			description: "",
+			price: 0,
+			sub_menu: "Items",
+			
 		}
 		#endregion
 	};
-		
+	// Perks are not actions. They are added variables to the stats during battle
 	global.perks_index = [
 	{
 		
@@ -317,9 +331,9 @@ function char_stats(){
 	#region MAIN PARTY
 	global.party = [
 	{
-		name: "Lyraka",
+		name: "???",
 		perk_iconID: 1,
-		level:	    8,
+		level:	    2,
 		//BASE STATS
 		hp_max_BASE:	 95,
 		ep_max_BASE:     85,
@@ -337,9 +351,9 @@ function char_stats(){
 		special:    4,
 		spd:        3,
 		experience: 0,
-		exp_max:    100,
+		exp_max:    18,
 		sprites :{walk: spr_lusaka_walk, idle: spr_Lyraka_bat_bak, knockout: spr_rip},
-		actions: [global.action_library.punch, global.action_library.spin_attack, global.action_library.run],
+		actions: [global.action_library.punch, global.action_library.run],
 		status: [],
 		perks: [],
 		max_perks: 2
@@ -347,7 +361,7 @@ function char_stats(){
 	{
 		name: "Baxter",
 		perk_iconID: 2,
-		level:      7,
+		level:      5,
 		//BASE STATS
 		hp_max_BASE:	 76,
 		ep_max_BASE:     71,
@@ -365,7 +379,7 @@ function char_stats(){
 		special:    5,
 		spd:        3,
 		experience: 0,
-		exp_max:    100,
+		exp_max:    234,
 		sprites: {walk: spr_baxter_walk, idle: spr_bax_bat_bak, knockout: spr_rip},
 		actions: [global.action_library.punch, global.action_library.rub, global.action_library.run],
 		status: [],
@@ -426,18 +440,38 @@ function char_stats(){
 	#region ALL EMEMIES
 	global.enemies = {
 		#region Basic enemies
-		buck_o:{
-			name: "Buck O'",
+		//LEVEL 1 - 1
+		skeeter:{
+			name: "Skeeter",
 			hp: 20,
 			hp_max: 20,
-			attack: 10,
-			defense: 10,
+			attack: 4,
+			defense: 2,
+			spd: 2,
+			role: "BOSS",
+			sprites: {idle: spr_skeeter_idle, defend: spr_skeeter_idle},
+			actions: [global.action_library.punch],
+			status: [],
+			xp_value: 10,
+			AIscript: function(){
+				var _action = actions[0];
+				var _possible_targets = array_filter(obj_battle.party_units, function(_unit, _index){return(_unit.hp > 0);});
+				var _target = _possible_targets[irandom(array_length(_possible_targets)-1)];
+				return [_action, _target];
+			}
+		},
+		buck_o:{
+			name: "Buck O'",
+			hp: 12,
+			hp_max: 12,
+			attack: 6,
+			defense: 2,
 			spd: 2,
 			role: "COMMON",
 			sprites: {idle: spr_buck_o_idle, defend: spr_buck_o_idle},
 			actions: [global.action_library.punch],
 			status: [],
-			xp_value: 16,
+			xp_value: 6,
 			AIscript: function(){
 				var _action = actions[0];
 				var _possible_targets = array_filter(obj_battle.party_units, function(_unit, _index){return(_unit.hp > 0);});
@@ -447,16 +481,16 @@ function char_stats(){
 		},
 		buck_e:{
 			name: "Buck E'",
-			hp: 20,
-			hp_max: 20,
-			attack: 10,
-			defense: 10,
+			hp: 12,
+			hp_max: 12,
+			attack: 6,
+			defense: 2,
 			spd: 2,
 			role: "COMMON",
 			sprites: {idle: spr_buck_e_idle, defend: spr_buck_e_idle},
 			actions: [global.action_library.poison],
 			status: [],
-			xp_value: 18,
+			xp_value: 6,
 			AIscript: function(){
 				var _action = actions[0];
 				var _possible_targets = array_filter(obj_battle.party_units, function(_unit, _index){return(_unit.hp > 0);});
@@ -466,16 +500,16 @@ function char_stats(){
 		},
 		buck_l:{
 			name: "Buck L'",
-			hp: 20,
-			hp_max: 20,
-			attack: 15,
-			defense: 10,
+			hp: 12,
+			hp_max: 12,
+			attack: 8,
+			defense: 2,
 			spd: 2,
 			role: "COMMON",
 			sprites: {idle: spr_buck_l_idle, defend: spr_buck_l_idle},
 			actions: [global.action_library.punch],
 			status: [],
-			xp_value: 20,
+			xp_value: 6,
 			AIscript: function(){
 				var _action = actions[0];
 				var _possible_targets = array_filter(obj_battle.party_units, function(_unit, _index){return(_unit.hp > 0);});
@@ -483,6 +517,8 @@ function char_stats(){
 				return [_action, _target];
 			}
 		},
+		//LEVEL 2 - 1
+		
 		#endregion
 		#region BOSSES
 		regulana:{
@@ -600,9 +636,9 @@ function char_stats(){
 	#endregion
 	
 	// After defining all items in the dictionary, define the player's item inventory
-	global.inventory = [[global.action_library.tulip, 5],
+	global.inventory = [/*[global.action_library.tulip, 5],
 						[global.action_library.milk, 3],
-						[global.action_library.potion, 1]];
+						[global.action_library.potion, 1]*/];
 	
 	#region FASHION ACCESSORIES
 	accessories_dictionary = {
@@ -659,11 +695,11 @@ function troop_dictionary(){
 		[global.enemies.buck_l, global.enemies.buck_o],
 		#endregion
 		#region CHAPTER 1
-		//4  CHAPTER 1 END BOSS
+		//6  CHAPTER 1 END BOSS
 		[global.enemies.radio_tower, global.enemies.ace_bot],
 		#endregion
 		#region CHAPTER X
-		//5 CHAPTER X END BOSS
+		//7 CHAPTER X END BOSS
 		[global.enemies.regulana]
 	]
 }

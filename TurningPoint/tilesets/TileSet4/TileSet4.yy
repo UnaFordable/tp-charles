@@ -1,0 +1,41 @@
+{
+  "$GMTileSet":"v1",
+  "%Name":"TileSet4",
+  "autoTileSets":[
+    {"$GMAutoTileSet":"","%Name":"autotile_1","closed_edge":false,"name":"autotile_1","resourceType":"GMAutoTileSet","resourceVersion":"2.0","tiles":[1,2,3,23,10,19,12,39,5,6,28,41,32,46,43,53,],},
+  ],
+  "macroPageTiles":{
+    "SerialiseHeight":22,
+    "SerialiseWidth":22,
+    "TileCompressedData":[-22,0,7,39,23,41,39,23,0,14,-15,0,7,46,32,43,19,5,0,4,-433,0,],
+    "TileDataFormat":1,
+  },
+  "name":"TileSet4",
+  "out_columns":7,
+  "out_tilehborder":2,
+  "out_tilevborder":2,
+  "parent":{
+    "name":"Tile Sets",
+    "path":"folders/Tile Sets.yy",
+  },
+  "resourceType":"GMTileSet",
+  "resourceVersion":"2.0",
+  "spriteId":{
+    "name":"Pixel_Top_Down_Ice_Land",
+    "path":"sprites/Pixel_Top_Down_Ice_Land/Pixel_Top_Down_Ice_Land.yy",
+  },
+  "spriteNoExport":false,
+  "textureGroupId":{
+    "name":"Default",
+    "path":"texturegroups/Default",
+  },
+  "tileAnimationFrames":[],
+  "tileAnimationSpeed":15.0,
+  "tileHeight":32,
+  "tilehsep":0,
+  "tilevsep":0,
+  "tileWidth":32,
+  "tilexoff":0,
+  "tileyoff":0,
+  "tile_count":54,
+}

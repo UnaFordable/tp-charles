@@ -3,10 +3,13 @@
 if(!instance_exists(obj_CUTSCENE)) and !instance_exists(obj_dialogue){
 	if(image_index = 1){
 		image_index = 0;
+		instance_deactivate_object(obj_item_use);
 		instance_deactivate_object(obj_menu_overworld);
 		instance_deactivate_object(obj_omcd_button_1);
 		instance_deactivate_object(obj_bsm_button_1);
 		instance_deactivate_object(obj_item_button);
+		
+		instance_deactivate_object(obj_perks_button);
 	
 		instance_activate_object(obj_move_button);
 		instance_activate_object(obj_action_button);

@@ -17,11 +17,14 @@ switch conclusion_type {
 		instance_create_depth(x,y,depth-10, obj_game_over, {s_enemies: stashed_enemies, bg: battle_background, s_inventory: stashed_inventory, s_hp: stashed_hp, s_ep: stashed_ep});
 		break;
 	case 1:
-		//The player wins and disables the oenemy
+		//The player wins and disables the enemy object
 		instance_activate_all();
 		obj_player.key_action = false;
 		// with the enemy NPC who started the battle to begin with
-		with (creator){ 
+		if(win_condition != noone){
+			cutscene_begin(win_condition);
+		}
+		else with (creator){ 
 			// disable the enemy NPC
 			dead = true;
 			// don't make the enemy NPC visible
@@ -29,6 +32,7 @@ switch conclusion_type {
 			// deactivate the enemy NPC
 			instance_deactivate_object(id);
 		}
+		
 		break;
 	case 2:
 		

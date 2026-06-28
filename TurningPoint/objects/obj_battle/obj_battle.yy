@@ -33,6 +33,7 @@
     {"$GMObjectProperty":"v2","%Name":"enemies","filters":[],"listItems":[],"multiselect":false,"name":"enemies","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
     {"$GMObjectProperty":"v2","%Name":"creator","filters":[],"listItems":[],"multiselect":false,"name":"creator","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
     {"$GMObjectProperty":"v2","%Name":"battle_background","filters":[],"listItems":[],"multiselect":false,"name":"battle_background","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
+    {"$GMObjectProperty":"v2","%Name":"win_condition","filters":[],"listItems":[],"multiselect":false,"name":"win_condition","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"noone","varType":4,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

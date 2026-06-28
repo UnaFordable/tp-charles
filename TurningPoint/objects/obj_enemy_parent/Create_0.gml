@@ -12,6 +12,7 @@ tile_map = layer_tilemap_get_id("Tiles_col");
 activated = false;
 dead = false;
 scene_info = [	
-	[new_encounter, enemy_forms, spr_battle_background_ui, id]
+	[cutscene_wait, .25],
+	[new_encounter, enemy_forms,spr_battle_background_ui, id]
 ];
 

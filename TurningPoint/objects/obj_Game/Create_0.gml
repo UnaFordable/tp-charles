@@ -21,6 +21,11 @@ col = c_green;
 char_stats();
 troop_dictionary();
 
+//PARALAX BACKGROUND HANDLER
+background_map = ds_map_create();
+background_map[? layer_get_id("Background")] = 0;
+
+
 //Minigame variables
 minigame_scores = [[],[],[],[],[]];
 for (var _i = 0; _i < array_length(minigame_scores); _i++){
