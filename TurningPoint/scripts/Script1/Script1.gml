@@ -58,7 +58,23 @@ function char_stats(){
 				battle_change_hp(_targets[0], -_damage+choose(0,1), 0);
 			}
 		},
-		roll: {},
+		big_punch:{
+			name: "Head Slash",
+			info: "Throw head with sharp edge attached",
+			description: "{0} makes a lethal bow!",
+			sub_menu: "Skills",
+			ep_cost: 1,
+			target_required: true,
+			target_enemy_by_default: true,
+			target_all: MODE.ALWAYS,
+			user_animation: "attack",
+			effect_sprite: spr_big_punch,
+			effect_on_target: MODE.ALWAYS,
+			func: function(_user, _targets){
+				var _damage = clamp(ceil(2*(_user.attack)-(2*_targets[0].defense) + irandom_range(0,1)), 1,10);
+				battle_change_hp(_targets[0], -_damage, 0);
+			}
+		},
 		#endregion
 		
 		#region SKILLS
@@ -298,7 +314,22 @@ function char_stats(){
 		},
 		////////////////////
 		/// Attack Items ///
-		spike_ball:{},
+		poison_bomb:{
+			name: "Toxic Spike-Bomb",
+			info: "An explosion\nDamages and Poisons enemies",
+			description: "{0} throws a Toxic Spike-Bomb!",
+			price: 10,
+			sub_menu: "Items",
+			target_enemy_by_default: true, //0: party/self, 1: enemy
+			target_all: MODE.ALWAYS,
+			target_required: true,
+			func : function(_user, _targets){
+				for(var _i=0; _i < _targets; _i = 0){
+					battle_change_hp(_targets[0], 50, 1);
+				}
+				remove_item_from_inventory(global.action_library.poison_bomb, 1);
+			}
+		},
 		#endregion
 		#region KEY ITEMS
 		glasses:{
@@ -333,7 +364,7 @@ function char_stats(){
 	{
 		name: "???",
 		perk_iconID: 1,
-		level:	    2,
+		level:	    5,
 		//BASE STATS
 		hp_max_BASE:	 95,
 		ep_max_BASE:     85,
@@ -342,7 +373,7 @@ function char_stats(){
 		special_BASE:    75,
 		spd_BASE:        56,
 		//ACTUAL STATS
-		hp:		    43,//43
+		hp:		    40,//37
 		hp_max:	    10, //19
 		ep:		    19,
 		ep_max:     2,
@@ -351,7 +382,7 @@ function char_stats(){
 		special:    4,
 		spd:        3,
 		experience: 0,
-		exp_max:    18,
+		exp_max:    45,
 		sprites :{walk: spr_lusaka_walk, idle: spr_Lyraka_bat_bak, knockout: spr_rip},
 		actions: [global.action_library.punch, global.action_library.run],
 		status: [],
@@ -361,7 +392,7 @@ function char_stats(){
 	{
 		name: "Baxter",
 		perk_iconID: 2,
-		level:      5,
+		level:      5, //5
 		//BASE STATS
 		hp_max_BASE:	 76,
 		ep_max_BASE:     71,
@@ -370,7 +401,7 @@ function char_stats(){
 		special_BASE:    104,
 		spd_BASE:        108,
 		//ACTUAL STATS
-		hp:         40, //40
+		hp:         38, //40
 		hp_max:     10, //18
 		ep:         18,
 		ep_max:     6,
@@ -502,7 +533,7 @@ function char_stats(){
 			name: "Buck L'",
 			hp: 12,
 			hp_max: 12,
-			attack: 8,
+			attack: 10,
 			defense: 2,
 			spd: 2,
 			role: "COMMON",
@@ -559,17 +590,18 @@ function char_stats(){
 		},
 		bullzo:{
 			name: "Bullz O'",
-			hp: 100,
-			hp_max: 100,
-			attack: 15,
-			defense: 15,
+			hp: 60,
+			hp_max: 60,
+			attack: 12,
+			defense: 10,
 			spd: 2,
 			role: "BOSS",
 			sprites: {idle: spr_bullz_o},
-			actions: [global.action_library.punch, global.action_library.spin_attack],
+			actions: [global.action_library.punch, global.action_library.big_punch],
+			status:[],
 			xp_value:100,
 			AIscript: function(){
-				var _action = choose(actions[0], action[1]);
+				var _action = choose(actions[0], actions[1]);
 				var _possible_targets = array_filter(obj_battle.party_units, function(_unit, _index){return(_unit.hp > 0);});
 				var _target = _possible_targets[irandom(array_length(_possible_targets)-1)];
 				return [_action, _target];
@@ -686,13 +718,17 @@ function troop_dictionary(){
 	global.troops = [
 		#region PROLOGUE CAVERNS
 		//0
-		[global.enemies.buck_o],
-		//1
 		[global.enemies.buck_o, global.enemies.buck_o],
-		//2
+		//1
 		[global.enemies.buck_e, global.enemies.buck_o],
-		//3
+		//2
 		[global.enemies.buck_l, global.enemies.buck_o],
+		//3
+		[global.enemies.buck_l, global.enemies.buck_e],
+		//4
+		[global.enemies.buck_o, global.enemies.buck_o,global.enemies.buck_o, global.enemies.buck_o,global.enemies.buck_o, global.enemies.buck_o],
+		//5 
+		[global.enemies.buck_o, global.enemies.buck_o, global.enemies.bullzo, global.enemies.buck_o, global.enemies.buck_o],
 		#endregion
 		#region CHAPTER 1
 		//6  CHAPTER 1 END BOSS
