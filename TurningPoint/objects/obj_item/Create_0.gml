@@ -6,6 +6,7 @@
 function scene_play(){
 	cutscene_begin(
 	[[cutscene_instance_destroy, id],
-	[dialogue, DISPLAY.NORMAL, {text: string_ext("You found {0} {1}", [string(item_count), chest_item.name]), name:""}]]
-	)
+	[dialogue, DISPLAY.NORMAL, {text: string_ext("You found {0} {1}", [string(item_count), chest_item.name]), name:""}],
+	[add_item_to_inventory, chest_item, item_count]
+	])
 }

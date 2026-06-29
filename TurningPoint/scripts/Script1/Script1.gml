@@ -281,6 +281,21 @@ function char_stats(){
 				remove_item_from_inventory(global.action_library.tulip, 1);
 			}
 		},
+		big_tulip: {
+			name: "Big Tulip",
+			info: "A sweeter treat\n+50 HP",
+			description: "{0} ate a big tulip!",
+			price: 20,
+			sub_menu: "Items",
+			target_required: true,
+			target_enemy_by_default: false,
+			target_all: MODE.NEVER,
+			func : function(_user, _targets){
+				var _heal = 50;
+				battle_change_hp(_targets[0], _heal);
+				remove_item_from_inventory(global.action_library.tulip, 1);
+			}
+		},
 		milk:{
 			name: "Milk",
 			info: "A sweet drink\n+10 NRG",
@@ -814,6 +829,7 @@ function remove_item_from_inventory(_item, _amount){
 			break;
 		}
 	}
+	if(instance_exists(obj_CUTSCENE)){cutscene_end_action();}
 }
 
 function add_item_to_inventory(_item, _amount){
@@ -830,5 +846,6 @@ function add_item_to_inventory(_item, _amount){
 	if(_item_found != true){
 		array_push(global.inventory,[_item, _amount]);
 	}
+	if(instance_exists(obj_CUTSCENE)){cutscene_end_action();}
 }
 #endregion
