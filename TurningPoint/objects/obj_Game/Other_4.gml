@@ -43,4 +43,6 @@ switch(room){
 		break;
 }
 
-
+if(instance_exists(obj_player)){
+	stats_update();
+}

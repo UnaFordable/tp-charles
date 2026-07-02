@@ -54,7 +54,7 @@ function char_stats(){
 			effect_sprite: spr_scratch,
 			effect_on_target: MODE.ALWAYS,
 			func: function(_user, _targets){
-				var _damage = clamp(ceil((_user.attack)*1.5-(_targets[0].defense) + 1), 1, 9999);
+				var _damage = clamp(ceil(1.5*(_user.attack)-(_targets[0].defense))+1, 1, 9999);
 				battle_change_hp(_targets[0], -_damage+choose(0,1), 0);
 			}
 		},
@@ -71,7 +71,7 @@ function char_stats(){
 			effect_sprite: spr_big_punch,
 			effect_on_target: MODE.ALWAYS,
 			func: function(_user, _targets){
-				var _damage = clamp(ceil(2*(_user.attack)-(2*_targets[0].defense) + irandom_range(0,1)), 1,10);
+				var _damage = clamp(ceil(2*(_user.attack)-(_targets[0].defense) + irandom_range(0,1)), 1,10);
 				battle_change_hp(_targets[0], -_damage, 0);
 			}
 		},
@@ -379,7 +379,7 @@ function char_stats(){
 	{
 		name: "???",
 		perk_iconID: 1,
-		level:	    5,
+		level:	    3,
 		//BASE STATS
 		hp_max_BASE:	 95,
 		ep_max_BASE:     85,
@@ -427,7 +427,7 @@ function char_stats(){
 		experience: 0,
 		exp_max:    234,
 		sprites: {walk: spr_baxter_walk, idle: spr_bax_bat_bak, knockout: spr_rip},
-		actions: [global.action_library.punch, global.action_library.rub, global.action_library.run],
+		actions: [global.action_library.punch/*, global.action_library.rub*/, global.action_library.run],
 		status: [],
 		perks: [],
 		max_perks: 3
@@ -511,8 +511,8 @@ function char_stats(){
 			hp: 12,
 			hp_max: 12,
 			attack: 6,
-			defense: 2,
-			spd: 2,
+			defense: 4,
+			spd: 4,
 			role: "COMMON",
 			sprites: {idle: spr_buck_o_idle, defend: spr_buck_o_idle},
 			actions: [global.action_library.punch],
@@ -530,11 +530,11 @@ function char_stats(){
 			hp: 12,
 			hp_max: 12,
 			attack: 6,
-			defense: 2,
+			defense: 6,
 			spd: 2,
 			role: "COMMON",
 			sprites: {idle: spr_buck_e_idle, defend: spr_buck_e_idle},
-			actions: [global.action_library.poison],
+			actions: [global.action_library.punch],
 			status: [],
 			xp_value: 6,
 			AIscript: function(){
@@ -548,8 +548,8 @@ function char_stats(){
 			name: "Buck L'",
 			hp: 12,
 			hp_max: 12,
-			attack: 10,
-			defense: 2,
+			attack: 8,
+			defense: 6,
 			spd: 2,
 			role: "COMMON",
 			sprites: {idle: spr_buck_l_idle, defend: spr_buck_l_idle},
@@ -572,7 +572,7 @@ function char_stats(){
 			hp: 80,
 			hp_max: 80,
 			attack: 10,
-			defense: 5,
+			defense: 4,
 			spd: 2,
 			role: "BOSS",
 			sprites: {idle: spr_regulana_idle, defend: spr_regulana_idle},
@@ -795,6 +795,7 @@ function level_up(_member, _hpm, _epm, _atk, _def, _sp, _spd){
 	}
 	stats_update();
 	
+	_member.hp = _member.hp_max;
 	var _name = _member.name
 	var _hpm_diff = _member.hp_max - _hpm;
 	var _epm_diff = _member.ep_max - _epm;
