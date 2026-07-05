@@ -795,7 +795,7 @@ function level_up(_member, _hpm, _epm, _atk, _def, _sp, _spd){
 	}
 	stats_update();
 	
-	_member.hp = _member.hp_max;
+	//_member.hp = _member.hp_max;
 	var _name = _member.name
 	var _hpm_diff = _member.hp_max - _hpm;
 	var _epm_diff = _member.ep_max - _epm;
