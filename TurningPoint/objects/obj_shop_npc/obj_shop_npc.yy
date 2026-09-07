@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_top_down_view_shop_01_front",
-    "path":"sprites/spr_top_down_view_shop_01_front/spr_top_down_view_shop_01_front.yy",
+    "name":"spr_npc_s",
+    "path":"sprites/spr_npc_s/spr_npc_s.yy",
   },
   "spriteMaskId":null,
   "visible":true,

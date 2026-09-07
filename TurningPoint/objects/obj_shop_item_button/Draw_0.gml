@@ -17,6 +17,6 @@ switch obj_SHOP.shop_state{
 		draw_set_valign(fa_top);
 		text_display(1, x + 2, y+2, item_ID.name);
 		draw_set_halign(fa_right);
-		text_display(1, x+sprite_width-2, y+2, string(inv_count));
+		text_display(1, x+sprite_width-2, y+2, round(item_ID.price*.75));
 		break;
 }

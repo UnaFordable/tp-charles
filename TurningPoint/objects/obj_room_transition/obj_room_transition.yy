@@ -3,6 +3,7 @@
   "%Name":"obj_room_transition",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_room_transition",
@@ -12,8 +13,8 @@
     "path":"folders/Objects/Room Transitions.yy",
   },
   "parentObjectId":{
-    "name":"obj_npc",
-    "path":"objects/obj_npc/obj_npc.yy",
+    "name":"obj_EVENT",
+    "path":"objects/obj_EVENT/obj_EVENT.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

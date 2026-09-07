@@ -1,0 +1,1 @@
+enemy_forms = global.troops[0];

@@ -6,6 +6,7 @@ function char_stats(){
 		ALWAYS = 1,
 		VARIES = 2,
 	}
+	
 	global.status_effects = {
 		poison: {
 			name: "Poison",
@@ -54,7 +55,7 @@ function char_stats(){
 			effect_sprite: spr_scratch,
 			effect_on_target: MODE.ALWAYS,
 			func: function(_user, _targets){
-				var _damage = clamp(ceil(1.5*(_user.attack)-(_targets[0].defense))+1, 1, 9999);
+				var _damage = clamp(ceil((_user.attack*_user.level)/(_targets[0].defense))+1, 1, 9999);
 				battle_change_hp(_targets[0], -_damage+choose(0,1), 0);
 			}
 		},
@@ -153,7 +154,7 @@ function char_stats(){
 		},
 		fart_attack:{
 			name: "Fart Atk",
-			info: "Bast of gas",
+			info: "Blast of gas",
 			description: "{0} farts towards the enemy",
 			sub_menu: "Skills",
 			ep_cost: 2,
@@ -374,12 +375,13 @@ function char_stats(){
 		assigned_character: noone,
 		func: function(_user){_user.attack += 3;}
 	}]
-	#region MAIN PARTY
+	#region MAIN PARTY   //   1  2  3  4  5   6   7   8   9  10   11   12   13   14   15   16   17   18   19   20   21   22
+	global.exp_milestone = [0,5,15,35,75,135,215,315,455,635,875,1175,1535,1955,2455,3055,3755,4555,5555,6755,8155,9755,11755]
 	global.party = [
 	{
 		name: "???",
 		perk_iconID: 1,
-		level:	    3,
+		level:	    5,
 		//BASE STATS
 		hp_max_BASE:	 95,
 		ep_max_BASE:     85,
@@ -388,7 +390,7 @@ function char_stats(){
 		special_BASE:    75,
 		spd_BASE:        56,
 		//ACTUAL STATS
-		hp:		    40,//37
+		hp:		    37,//31
 		hp_max:	    10, //19
 		ep:		    19,
 		ep_max:     2,
@@ -397,7 +399,6 @@ function char_stats(){
 		special:    4,
 		spd:        3,
 		experience: 0,
-		exp_max:    45,
 		sprites :{walk: spr_lusaka_walk, idle: spr_Lyraka_bat_bak, knockout: spr_rip},
 		actions: [global.action_library.punch, global.action_library.run],
 		status: [],
@@ -407,7 +408,7 @@ function char_stats(){
 	{
 		name: "Baxter",
 		perk_iconID: 2,
-		level:      5, //5
+		level:      6, //5
 		//BASE STATS
 		hp_max_BASE:	 76,
 		ep_max_BASE:     71,
@@ -425,7 +426,6 @@ function char_stats(){
 		special:    5,
 		spd:        3,
 		experience: 0,
-		exp_max:    234,
 		sprites: {walk: spr_baxter_walk, idle: spr_bax_bat_bak, knockout: spr_rip},
 		actions: [global.action_library.punch/*, global.action_library.rub*/, global.action_library.run],
 		status: [],
@@ -489,16 +489,20 @@ function char_stats(){
 		//LEVEL 1 - 1
 		skeeter:{
 			name: "Skeeter",
-			hp: 20,
-			hp_max: 20,
-			attack: 4,
+			level: 1,
+			hp: 10,
+			hp_max: 10,
+			attack: 5,
 			defense: 2,
 			spd: 2,
 			role: "BOSS",
 			sprites: {idle: spr_skeeter_idle, defend: spr_skeeter_idle},
 			actions: [global.action_library.punch],
 			status: [],
-			xp_value: 10,
+			xp_value: 5,
+			gold_value: 1,
+			item_drop: global.action_library.tulip,
+			drop_rate: 100,
 			AIscript: function(){
 				var _action = actions[0];
 				var _possible_targets = array_filter(obj_battle.party_units, function(_unit, _index){return(_unit.hp > 0);});
@@ -508,16 +512,17 @@ function char_stats(){
 		},
 		buck_o:{
 			name: "Buck O'",
+			level: 1,
 			hp: 12,
 			hp_max: 12,
 			attack: 6,
-			defense: 4,
+			defense: 2,
 			spd: 4,
 			role: "COMMON",
 			sprites: {idle: spr_buck_o_idle, defend: spr_buck_o_idle},
 			actions: [global.action_library.punch],
 			status: [],
-			xp_value: 6,
+			xp_value: 4,
 			AIscript: function(){
 				var _action = actions[0];
 				var _possible_targets = array_filter(obj_battle.party_units, function(_unit, _index){return(_unit.hp > 0);});
@@ -527,8 +532,9 @@ function char_stats(){
 		},
 		buck_e:{
 			name: "Buck E'",
-			hp: 12,
-			hp_max: 12,
+			level: 2,
+			hp: 13,
+			hp_max: 13,
 			attack: 6,
 			defense: 6,
 			spd: 2,
@@ -536,7 +542,7 @@ function char_stats(){
 			sprites: {idle: spr_buck_e_idle, defend: spr_buck_e_idle},
 			actions: [global.action_library.punch],
 			status: [],
-			xp_value: 6,
+			xp_value: 4,
 			AIscript: function(){
 				var _action = actions[0];
 				var _possible_targets = array_filter(obj_battle.party_units, function(_unit, _index){return(_unit.hp > 0);});
@@ -546,16 +552,17 @@ function char_stats(){
 		},
 		buck_l:{
 			name: "Buck L'",
+			level: 2,
 			hp: 12,
 			hp_max: 12,
-			attack: 8,
-			defense: 6,
+			attack: 6,
+			defense: 4,
 			spd: 2,
 			role: "COMMON",
 			sprites: {idle: spr_buck_l_idle, defend: spr_buck_l_idle},
 			actions: [global.action_library.punch],
 			status: [],
-			xp_value: 6,
+			xp_value: 4,
 			AIscript: function(){
 				var _action = actions[0];
 				var _possible_targets = array_filter(obj_battle.party_units, function(_unit, _index){return(_unit.hp > 0);});
@@ -564,7 +571,26 @@ function char_stats(){
 			}
 		},
 		//LEVEL 2 - 1
-		
+		climber:{
+			name: "Climber",
+			level: 5,
+			hp: 30,
+			hp_max: 30,
+			attack: 10,
+			defense: 8,
+			spd: 2,
+			role: "COMMON",
+			sprites: {idle: spr_climber, defend: spr_climber},
+			actions: [global.action_library.punch],
+			status: [],
+			xp_value: 4,
+			AIscript: function(){
+				var _action = actions[0];
+				var _possible_targets = array_filter(obj_battle.party_units, function(_unit, _index){return(_unit.hp > 0);});
+				var _target = _possible_targets[irandom(array_length(_possible_targets)-1)];
+				return [_action, _target];
+			}
+		},
 		#endregion
 		#region BOSSES
 		regulana:{
@@ -605,10 +631,11 @@ function char_stats(){
 		},
 		bullzo:{
 			name: "Bullz O'",
+			level: 5,
 			hp: 60,
 			hp_max: 60,
-			attack: 12,
-			defense: 10,
+			attack: 10,
+			defense: 8,
 			spd: 2,
 			role: "BOSS",
 			sprites: {idle: spr_bullz_o},
@@ -624,6 +651,7 @@ function char_stats(){
 		},
 		ninja:{
 			name: "Dark Assassin",
+			level: 9,
 			hp: 80,
 			hp_max: 80,
 			attack: 15,
@@ -683,7 +711,7 @@ function char_stats(){
 	#endregion
 	
 	// After defining all items in the dictionary, define the player's item inventory
-	global.inventory = [/*[global.action_library.tulip, 5],
+	global.inventory = [[global.action_library.tulip, 5]/*,
 						[global.action_library.milk, 3],
 						[global.action_library.potion, 1]*/];
 	
@@ -746,11 +774,13 @@ function troop_dictionary(){
 		[global.enemies.buck_o, global.enemies.buck_o, global.enemies.bullzo, global.enemies.buck_o, global.enemies.buck_o],
 		#endregion
 		#region CHAPTER 1
-		//6  CHAPTER 1 END BOSS
+		//6
+		[global.enemies.climber, choose(global.enemies.buck_o,global.enemies.buck_l,global.enemies.buck_e), choose(noone, noone, noone, global.enemies.buck_o,global.enemies.buck_l,global.enemies.buck_e)],
+		//7  CHAPTER 1 END BOSS
 		[global.enemies.radio_tower, global.enemies.ace_bot],
 		#endregion
 		#region CHAPTER X
-		//7 CHAPTER X END BOSS
+		//8 CHAPTER X END BOSS
 		[global.enemies.regulana]
 	]
 }
@@ -762,7 +792,7 @@ function recieve_exp(_xp){
 	for(var _i = 0; _i < array_length(global.party); _i++){
 		var _party = global.party[_i];
 		if(_party.hp > 0) _party.experience += _xp;
-		if (_party.experience >= _party.exp_max) {
+		if (_party.experience >= global.exp_milestone[_party.level]) {
 			level_up(_party, _party.hp_max, _party.ep_max, _party.attack, _party.defense, _party.special, _party.spd);
 		}
 	}
@@ -788,10 +818,9 @@ function stats_update(){
 }
 
 function level_up(_member, _hpm, _epm, _atk, _def, _sp, _spd){
-	while(_member.experience >= _member.exp_max){
+	while(_member.experience >= global.exp_milestone[_member.level]){
+		_member.experience -= global.exp_milestone[_member.level];
 		_member.level += 1;
-		_member.experience -= (_member.exp_max);
-		_member.exp_max += _member.level^3;
 	}
 	stats_update();
 	

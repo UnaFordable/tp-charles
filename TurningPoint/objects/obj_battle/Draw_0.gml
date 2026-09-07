@@ -44,6 +44,7 @@ for (var _i = 0; _i < array_length(enemy_units) and (_drawn < _draw_limit); _i++
 		draw_text(global.cam_top_x+COLLUMN_ENEMY, global.cam_top_y+150 + (_i*16), _char.name);
 	}
 }*/
+/* /// Reference Health Bar
 for (var _i = 0; _i < array_length(party_units); _i++){
 	var _char = party_units[_i];
 	draw_sprite(spr_healt_display,0,global.cam_top_x + global.cam_width, 86+global.cam_top_y+(29*_i));
@@ -58,8 +59,9 @@ for (var _i = 0; _i < array_length(party_units); _i++){
 				   _charhealth,c_dkgray,c_yellow,c_green,0,true,false);
 	
 }
+*/
 /////////////////////////////
-/*
+
 #region /// Numeric Health System ///
 for (var _i = 0; _i < array_length(party_units); _i++) {
 	   draw_set_halign(fa_left);

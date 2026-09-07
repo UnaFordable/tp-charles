@@ -9,8 +9,6 @@ global.cam_bottom_y = camera_get_view_y(view_camera[1]);
 
 global.currency = {name: "kp", count: 50};
 
-
-
 screen_width = 256
 screen_height = 192;
 

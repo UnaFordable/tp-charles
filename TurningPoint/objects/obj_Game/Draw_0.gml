@@ -9,3 +9,5 @@ draw_rectangle(global.cam_bottom_x, global.cam_bottom_y, global.cam_bottom_x+256
 //draw_set_font(fnt_ds);
 //draw_text_color(global.cam_bottom_x+(32),global.cam_bottom_y+(32),"EEEEEEEEEEEEEE",col,col,col,col,1);
 //draw_sprite(spr_player, 0, 32,160);
+draw_set_colour(c_yellow)
+if(instance_exists(obj_player)){draw_text(global.cam_top_x+2, global.cam_top_y+6, "("+string(obj_player.x)+", "+string(obj_player.y)+")")}

@@ -33,7 +33,7 @@ scene_info = [
 	[dialogue, DISPLAY.NORMAL, {text: "Hey! Leaver it alone! I found it first!", name: "Baxter"}],
 	[cutscene_play_music, undefined],
 	[cutscene_wait, 1],
-	[dialogue, DISPLAY.NORMAL, {text: "The Turning Point was never yours to \n begin with", name: "????"}],
+	[dialogue, DISPLAY.NORMAL, {text: "The Derecho was never yours to \n begin with", name: "????"}],
 	[cutscene_instance_destroy, obj_baxter],
 	[cutscene_instance_destroy, obj_ninja],
 	[new_encounter, [global.enemies.ninja]],

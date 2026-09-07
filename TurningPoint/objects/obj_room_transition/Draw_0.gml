@@ -1,0 +1,1 @@
+draw_text(x,y,"("+string(new_x)+", "+string(new_y)+")")

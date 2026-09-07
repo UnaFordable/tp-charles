@@ -3,8 +3,8 @@
 text_display( 2,global.cam_bottom_x + 212,global.cam_bottom_y +136,quantity);
 text_display( 1,global.cam_bottom_x + 212,global.cam_bottom_y +136,item_desc);
 text_display(1,global.cam_bottom_x + 180,global.cam_bottom_y +42, "In Bag:");
-text_display(1,global.cam_bottom_x + 240,global.cam_bottom_y +42,in_bag);
-text_display(2, global.cam_bottom_x + 180,global.cam_bottom_y +16,string(global.currency.count)+" "+global.currency.name);
+text_display(1,global.cam_bottom_x + 240,global.cam_bottom_y +42, string(in_bag));
+text_display(2, global.cam_bottom_x + 174, global.cam_bottom_y +16,global.currency.name +": "+string(global.currency.count));
 
 
 //try{

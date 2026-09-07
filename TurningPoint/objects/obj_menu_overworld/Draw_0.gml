@@ -26,7 +26,7 @@ switch(m_state){
 		text_display(2,global.cam_bottom_x + 135, global.cam_bottom_y +(48)+64, string(_ss.special));
 		text_display(2,global.cam_bottom_x + 135, global.cam_bottom_y +(48)+80, string(_ss.spd));
 		text_display(2,global.cam_bottom_x + 135, global.cam_bottom_y +(48)+96, string(_ss.experience));
-		text_display(2,global.cam_bottom_x + 135, global.cam_bottom_y +(48)+112, string(_ss.exp_max));
+		text_display(2,global.cam_bottom_x + 135, global.cam_bottom_y +(48)+112, string(global.exp_milestone[_ss.level]));
 		draw_set_halign(fa_left);
 		text_display(1,global.cam_bottom_x + 152, global.cam_bottom_y +(48)+16, "Hp: ");
 		if(_ss.name!="Shelly")text_display(1,global.cam_bottom_x + 152, global.cam_bottom_y +(48)+32, "NRG:");

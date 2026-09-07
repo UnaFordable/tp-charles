@@ -53,8 +53,8 @@ function cutscene_play_soundeffect(_se){
 	cutscene_end_action();
 }
 //CREATE AN OBJECT DURING THE CUTSCENE
-function cutscene_instance_create(_x, _y, _object){
-	var _inst = instance_create_layer(_x, _y, "Instances", _object);
+function cutscene_instance_create(_x, _y, _object, _param = noone){
+	var _inst = instance_create_layer(_x, _y, "Instances", _object, _param);
 	cutscene_end_action();
 	return _inst;
 }
@@ -77,6 +77,10 @@ function move_character(_obj, _x, _y, _relative, _spd, _animate = true){
 		if(_relative){
 			x_dest = _obj.x + _x;
 			y_dest = _obj.y + _y;
+		}
+		else{
+			x_dest = _x;
+			y_dest = _y;
 		}
 	}
 	
@@ -157,9 +161,7 @@ function scripted_encounter (_enemy, _if_win){
 }
 
 function cutscene_room_transition(_new_room, _new_x, _new_y){
-	var _transition = instance_create_layer(0, 0, "Instances", obj_transition_pixelate);
-	_transition.target_room = _new_room;
-	obj_player.x = _new_x;
-	obj_player.y= _new_y;
+	var _transition = instance_create_layer(0, 0, "Instances", obj_transition_pixelate, {target_room: _new_room, new_x: _new_x, new_y: _new_y});
+	//_transition.target_room = _new_room;
 	cutscene_end_action();
 }
