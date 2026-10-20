@@ -7,7 +7,7 @@ global.cam_bottom_y = camera_get_view_y(view_camera[1]);
 
 audio_stop_all();
 if(room != rm_init and room != rm_main_menu and room != rm_pet_sim and room != rm_contest){
-	if(!instance_exists(obj_menu_overworld)){
+	if(load_menu_overworld == true){
 		instance_create_depth(global.cam_bottom_x, global.cam_bottom_y,-999, obj_menu_toggle);
 		instance_create_depth(global.cam_bottom_x, global.cam_bottom_y, -999,obj_menu_overworld)
 		for(var _i = 0; _i < 4; _i++){
@@ -18,6 +18,7 @@ if(room != rm_init and room != rm_main_menu and room != rm_pet_sim and room != r
 	instance_deactivate_object(obj_menu_overworld);
 	instance_deactivate_object(obj_omcd_button_1);
 	instance_deactivate_object(obj_bsm_button_1);
+	load_menu_overworld = false;
 }
 switch(room){
 	case rm_main_menu:

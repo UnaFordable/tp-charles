@@ -9,8 +9,8 @@
   "name":"obj_wall",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Tangible Objects",
+    "path":"folders/Objects/Tangible Objects.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -10,8 +10,8 @@
   "name":"obj_cowbage",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Tangible Objects",
+    "path":"folders/Objects/Tangible Objects.yy",
   },
   "parentObjectId":{
     "name":"obj_wall",

@@ -8,7 +8,7 @@ switch(display_state){
 		
 		draw_sprite_stretched(spr_text_box, 0, global.cam_top_x+8, global.cam_top_y + 154,240, 34);
 		draw_set_color(c_white);
-		draw_text(global.cam_top_x+14, global.cam_top_y+156, string_copy(text_set.text,1,display_num));
+		draw_text_ext(global.cam_top_x+14, global.cam_top_y+156, string_copy(text_set.text,1,display_num), 12, 236);
 		if(text_set.name != ""){
 			var _v = string_width(text_set.name)+10
 			//draw_set_color(c_yellow)

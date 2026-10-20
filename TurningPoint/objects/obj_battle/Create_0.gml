@@ -4,7 +4,7 @@
 randomize();
 
 transition_prog = 0;
-surf_transition = surface_create(surface_get_width(application_surface),surface_get_height(application_surface));
+surf_transition = surface_create(surface_get_width(application_surface),surface_get_height(application_surface)/2);
 surface_copy(surf_transition,0,0,application_surface);
 instance_deactivate_all(true)
 //instance_create_depth(global.cam_top_x, global.cam_top_y+128,depth-11, obj_filmbackground, {angle: 0});
@@ -19,6 +19,7 @@ battle_text = "";
 battle_end_message = [];
 battle_end_message_prog = 0;
 battle_xp_gained = 0;
+battle_gold_gained = 0;
 conclusion_type = -1;
 escaped = false;
 
@@ -269,12 +270,14 @@ function battle_state_victor_check(){
 			for (var _i = 0; _i < array_length(enemy_units); _i++)
 			{
 				battle_xp_gained += enemy_units[_i].xp_value;
+				battle_gold_gained += enemy_units[_i].gold_value;
 			}
 			//battle_end_messages[1] = string("Gained {0} experience points", battle_xp_gained);
-			dialogue(DISPLAY.OVERHEAD,{text: string("Gained {0} experience points", battle_xp_gained),name:""});
+			dialogue(DISPLAY.OVERHEAD,{text: string("Gained {0} exp and {1} {2}!", battle_xp_gained, battle_gold_gained, global.currency.name),name:""});
+			//distribute exo to the party
 			recieve_exp(battle_xp_gained);
-			
-			//distribute exp
+			//add earned currency to pot
+			recieve_currency(battle_gold_gained);
 			
 		}
 	}

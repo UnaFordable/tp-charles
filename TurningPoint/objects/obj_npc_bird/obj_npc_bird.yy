@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"Spr_bird_idle",
-    "path":"sprites/Spr_bird_idle/Spr_bird_idle.yy",
+    "name":"spr_bird_idle",
+    "path":"sprites/spr_bird_idle/spr_bird_idle.yy",
   },
   "spriteMaskId":null,
   "visible":true,

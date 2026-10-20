@@ -1,5 +1,12 @@
 /// @description Insert description here
 // You can write your code in this editor
+if(surface_exists(surf_screenshot)){
+	var _c = view_camera[0];
+	draw_surface_stretched(surf_screenshot, camera_get_view_x(_c), camera_get_view_y(_c), camera_get_view_width(_c), camera_get_view_height(_c));
+	
+}
+
+draw_sprite(spr_shopmockup, 0,global.cam_bottom_x,global.cam_bottom_y);
 text_display( 2,global.cam_bottom_x + 212,global.cam_bottom_y +136,quantity);
 text_display( 1,global.cam_bottom_x + 212,global.cam_bottom_y +136,item_desc);
 text_display(1,global.cam_bottom_x + 180,global.cam_bottom_y +42, "In Bag:");

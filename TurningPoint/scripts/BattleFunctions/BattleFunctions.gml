@@ -2,6 +2,8 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function new_encounter(_enemies, _bg, _creator = id, _if_win = noone){
 	//audio_play_sound(_1_24__Tough_Enemy__vs__Boss____King_Dedede_s_Theme__from_Kirby_s_Dream_Land_, 1, true);
+	
+	/*
 	for(var _i = 0; _i < array_length(_enemies); _i++){
 		if(_enemies[_i].role == "BOSS"){
 			//audio_play_sound(_94__Strongest_Sword, 1 ,true)
@@ -10,6 +12,8 @@ function new_encounter(_enemies, _bg, _creator = id, _if_win = noone){
 			//audio
 		}
 	}
+	*/
+	
 	/*
 	if(_inventory != noone){
 		global.inventory = _inventory;

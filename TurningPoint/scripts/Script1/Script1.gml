@@ -189,8 +189,8 @@ function char_stats(){
 		},
 		#endregion
 		#region DONOHUE MOVESET
-		manshot: {
-			name: "Wing Whip",
+		quickshot: {
+			name: "Quick Shot",
 			info: "Use your wing to deal damage.",
 			description: "{0} whips its wing!",
 			sub_menu: "Skills",
@@ -381,7 +381,7 @@ function char_stats(){
 	{
 		name: "???",
 		perk_iconID: 1,
-		level:	    5,
+		level:	    3,
 		//BASE STATS
 		hp_max_BASE:	 95,
 		ep_max_BASE:     85,
@@ -408,7 +408,7 @@ function char_stats(){
 	{
 		name: "Baxter",
 		perk_iconID: 2,
-		level:      6, //5
+		level:      3,
 		//BASE STATS
 		hp_max_BASE:	 76,
 		ep_max_BASE:     71,
@@ -455,9 +455,10 @@ function char_stats(){
 		experience: 0,
 		exp_max:    3,
 		sprites :{walk: spr_baxter_walk, idle: spr_Dono_bat_back, attack: spr_donohue_idle, dodge: spr_donohue_idle, knockout: spr_rip, defend: spr_donohue_idle},
-		actions: [global.action_library.punch, global.action_library.manshot],
-		status: 0,
-		perks:[]
+		actions: [global.action_library.punch, global.action_library.quickshot],
+		status: [],
+		perks:[],
+		max_perks: 2
 	},
 	{
 		name: "Shelly",
@@ -513,8 +514,8 @@ function char_stats(){
 		buck_o:{
 			name: "Buck O'",
 			level: 1,
-			hp: 12,
-			hp_max: 12,
+			hp: 20,
+			hp_max: 20,
 			attack: 6,
 			defense: 2,
 			spd: 4,
@@ -523,6 +524,7 @@ function char_stats(){
 			actions: [global.action_library.punch],
 			status: [],
 			xp_value: 4,
+			gold_value: 2,
 			AIscript: function(){
 				var _action = actions[0];
 				var _possible_targets = array_filter(obj_battle.party_units, function(_unit, _index){return(_unit.hp > 0);});
@@ -543,6 +545,7 @@ function char_stats(){
 			actions: [global.action_library.punch],
 			status: [],
 			xp_value: 4,
+			gold_value: 3,
 			AIscript: function(){
 				var _action = actions[0];
 				var _possible_targets = array_filter(obj_battle.party_units, function(_unit, _index){return(_unit.hp > 0);});
@@ -563,6 +566,7 @@ function char_stats(){
 			actions: [global.action_library.punch],
 			status: [],
 			xp_value: 4,
+			gold_value: 3,
 			AIscript: function(){
 				var _action = actions[0];
 				var _possible_targets = array_filter(obj_battle.party_units, function(_unit, _index){return(_unit.hp > 0);});
@@ -584,6 +588,7 @@ function char_stats(){
 			actions: [global.action_library.punch],
 			status: [],
 			xp_value: 4,
+			gold_value: 4,
 			AIscript: function(){
 				var _action = actions[0];
 				var _possible_targets = array_filter(obj_battle.party_units, function(_unit, _index){return(_unit.hp > 0);});
@@ -604,6 +609,7 @@ function char_stats(){
 			sprites: {idle: spr_regulana_idle, defend: spr_regulana_idle},
 			actions: [global.action_library.heartburn],
 			xp_value:1,
+			gold_value: 9,
 			AIscript: function(){
 				var _action = actions[0];
 				var _possible_targets = array_filter(obj_battle.party_units, function(_unit, _index){return(_unit.hp > 0);});
@@ -622,6 +628,7 @@ function char_stats(){
 			sprites: {idle: spr_possessedlyraka},
 			actions: [global.action_library.punch],
 			xp_value:10,
+			gold_value: 9,
 			AIscript: function(){
 				var _action = actions[0];
 				var _possible_targets = array_filter(obj_battle.party_units, function(_unit, _index){return(_unit.hp > 0);});
@@ -642,6 +649,7 @@ function char_stats(){
 			actions: [global.action_library.punch, global.action_library.big_punch],
 			status:[],
 			xp_value:100,
+			gold_value: 30,
 			AIscript: function(){
 				var _action = choose(actions[0], actions[1]);
 				var _possible_targets = array_filter(obj_battle.party_units, function(_unit, _index){return(_unit.hp > 0);});
@@ -661,6 +669,7 @@ function char_stats(){
 			sprites: {idle: spr_ninja_idle},
 			actions: [global.action_library.punch],
 			xp_value: 70,
+			gold_value: 2,
 			AIscript: function(){
 				var _action = actions[0];
 				var _possible_targets = array_filter(obj_battle.party_units, function(_unit, _index){return(_unit.hp > 0);});
@@ -680,6 +689,7 @@ function char_stats(){
 			actions: [/*global.action_library.punch,*/ global.action_library.poison],
 			status: [],
 			xp_value: 140,
+			gold_value: 5,
 			AIscript: function(){
 				var _action = actions[0];
 				var _possible_targets = array_filter(obj_battle.party_units, function(_unit, _index){return(_unit.hp > 0);});
@@ -699,6 +709,7 @@ function char_stats(){
 			actions: [global.action_library.nothing],
 			status:[],
 			xp_value: 100,
+			gold_value: 45,
 			AIscript: function(){
 				var _action = actions[0];
 				var _possible_targets = array_filter(obj_battle.party_units, function(_unit, _index){return(_unit.hp > 0);});
@@ -787,7 +798,7 @@ function troop_dictionary(){
 
 
 
-#region leveling management
+#region leveling management 
 function recieve_exp(_xp){
 	for(var _i = 0; _i < array_length(global.party); _i++){
 		var _party = global.party[_i];
@@ -839,6 +850,12 @@ function level_up(_member, _hpm, _epm, _atk, _def, _sp, _spd){
 	if(_def_diff != 0) dialogue(DISPLAY.OVERHEAD,{text: _name+"'s defense increased by "+ string(_def_diff),name:""});
 	if(_sp_diff != 0) dialogue(DISPLAY.OVERHEAD,{text: _name+"'s special increased by "+ string(_sp_diff),name:""});
 	if(_spd_diff != 0) dialogue(DISPLAY.OVERHEAD,{text: _name+"'s speed increased by "+ string(_spd_diff),name:""});
+}
+#endregion
+
+#region Currency Management
+function recieve_currency(_gold){
+	global.currency.count += _gold;
 }
 #endregion
 

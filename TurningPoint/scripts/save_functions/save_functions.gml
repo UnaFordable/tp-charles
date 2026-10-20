@@ -29,7 +29,7 @@ function save_room(){
 			x:x,
 			y:y,
 			object: object_get_name(object_index),
-			//global.party: global.party
+			party: global.party
 		};
 		array_push(_array, _struct);
 	}
