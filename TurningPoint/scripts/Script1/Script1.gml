@@ -381,7 +381,7 @@ function char_stats(){
 	{
 		name: "???",
 		perk_iconID: 1,
-		level:	    3,
+		level:	    6,
 		//BASE STATS
 		hp_max_BASE:	 95,
 		ep_max_BASE:     85,
@@ -408,7 +408,7 @@ function char_stats(){
 	{
 		name: "Baxter",
 		perk_iconID: 2,
-		level:      3,
+		level:      7,
 		//BASE STATS
 		hp_max_BASE:	 76,
 		ep_max_BASE:     71,

@@ -49,6 +49,7 @@
     {"name":"Tile Spritesheets","order":20,"path":"folders/Sprites/Tile Spritesheets.yy",},
   ],
   "ResourceOrderSettings":[
+    {"name":"fnt_wingdings","order":1,"path":"fonts/fnt_wingdings/fnt_wingdings.yy",},
     {"name":"obj_action_button","order":11,"path":"objects/obj_action_button/obj_action_button.yy",},
     {"name":"obj_baxter","order":7,"path":"objects/obj_baxter/obj_baxter.yy",},
     {"name":"obj_bm_button","order":1,"path":"objects/obj_bm_button/obj_bm_button.yy",},
@@ -213,6 +214,7 @@
     {"name":"spr_shop_button","order":2,"path":"sprites/spr_shop_button/spr_shop_button.yy",},
     {"name":"spr_shop_item_button","order":3,"path":"sprites/spr_shop_item_button/spr_shop_item_button.yy",},
     {"name":"spr_shop","order":4,"path":"sprites/spr_shop/spr_shop.yy",},
+    {"name":"spr_sign","order":5,"path":"sprites/spr_sign/spr_sign.yy",},
     {"name":"spr_smores_idle","order":2,"path":"sprites/spr_smores_idle/spr_smores_idle.yy",},
     {"name":"spr_splash","order":3,"path":"sprites/spr_splash/spr_splash.yy",},
     {"name":"spr_stairs","order":42,"path":"sprites/spr_stairs/spr_stairs.yy",},

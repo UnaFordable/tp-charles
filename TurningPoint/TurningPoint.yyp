@@ -99,6 +99,7 @@
   "name":"TurningPoint",
   "resources":[
     {"id":{"name":"fnt_ds","path":"fonts/fnt_ds/fnt_ds.yy",},},
+    {"id":{"name":"fnt_wingdings","path":"fonts/fnt_wingdings/fnt_wingdings.yy",},},
     {"id":{"name":"obj_accessory","path":"objects/obj_accessory/obj_accessory.yy",},},
     {"id":{"name":"obj_action_button","path":"objects/obj_action_button/obj_action_button.yy",},},
     {"id":{"name":"obj_back_button","path":"objects/obj_back_button/obj_back_button.yy",},},
@@ -349,6 +350,7 @@
     {"id":{"name":"spr_shop_item_button","path":"sprites/spr_shop_item_button/spr_shop_item_button.yy",},},
     {"id":{"name":"spr_shop","path":"sprites/spr_shop/spr_shop.yy",},},
     {"id":{"name":"spr_shopmockup","path":"sprites/spr_shopmockup/spr_shopmockup.yy",},},
+    {"id":{"name":"spr_sign","path":"sprites/spr_sign/spr_sign.yy",},},
     {"id":{"name":"spr_skeeter_idle","path":"sprites/spr_skeeter_idle/spr_skeeter_idle.yy",},},
     {"id":{"name":"spr_smores_idle","path":"sprites/spr_smores_idle/spr_smores_idle.yy",},},
     {"id":{"name":"spr_splash","path":"sprites/spr_splash/spr_splash.yy",},},
